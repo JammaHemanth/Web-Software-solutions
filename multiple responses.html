@@ -1,404 +1,160 @@
-<<<<<<< HEAD
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-
-<style>
-.font{
-font-size:25px;
-font-family:arial;
-
-body{
-background-image:url('Images/logos.jpg');
-background-repeat:no-repeat;
-background-size:cover;
-bckground-position:center;
-background-attachment:fixed;
--webkit-backdrop-filter:blur(3.5px);
-backdrop-filter:blur(3.5px);
-}
-
-
-}
-
-</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<title>Online Test Answers-1</title>
 </head>
 <body>
+<main class="container py-4">
+  <div class="glass-card p-4 p-md-5" style="animation: scaleIn 0.5s ease;">
+    <header class="mb-4">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
+        <div>
+          <h2 class="text-white fw-bold mb-0"><i class="fas fa-check-circle me-2" style="color:var(--accent-teal);"></i>Online Test Answers-1</h2>
+          <small style="color:var(--text-muted);">Aptitude Answer Review</small>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <div class="score-ring-sm" id="scoreRingSm" style="--pct:360deg;border-color:var(--accent-teal);">
+            <span id="scoreTextSm" style="color:var(--accent-teal);">15/15</span>
+          </div>
+          <span class="badge" id="qCounter" style="background:var(--gradient-teal);font-size:0.85rem;padding:0.5rem 1rem;">
+            <i class="fas fa-question-circle me-1"></i>1 / 15
+          </span>
+        </div>
+      </div>
+    </header>
 
-<div class="container">
-<form class="w-30 m-5 border border-primary rounded p-3">
-<div calss="mb-3">
-<h3 class="bg-success text-light border rounded-top" align="center">Online Test Answers-1</h3>
-</div>
-<br> <br>
-<div class="font">
-<label>1.A sum of money at simple interest amounts to Rs. 815 in 3 years and to Rs. 854 in 4 years. The sum is:</label> <br>
-<input type="radio" class="form-check-input"  name="1" disabled> <label>  650</label> <br>
-<input type="radio" class="form-check-input" name="1" disabled> <label> 690</label> <br> 
-<input type="radio" class="form-check-input" name="1" value="" checked >  <label>698</label> <br>
-<input type="radio" class="form-check-input" name="1" disabled>  <label> 700 </label> <br> <br> 
-<ul><summary>Answer</summary>
-<details>Answer: c <br>
-Explanation: S.I. for 1 year = Rs. (854 - 815) = Rs. 39.<br>
-S.I. for 3 years = Rs.(39 x 3) = Rs. 117.<br>
- Principal = Rs. (815 - 117) = Rs. 698.</details> <br>  </ul>
+    <div class="row justify-content-center mb-3">
+      <div class="col-auto">
+        <div class="text-center">
+          <div class="score-ring" id="scoreRing" style="--pct:360deg;border-color:var(--accent-teal);">
+            <div class="score-text" id="scoreText" style="color:var(--accent-teal);">15/15</div>
+          </div>
+          <p class="mb-0" style="color:var(--text-muted);font-size:0.85rem;"><i class="fas fa-star me-1" style="color:var(--accent-warm);"></i>Correct Answers</p>
+        </div>
+      </div>
+    </div>
 
-<label>2. Find the odd man out. 3, 5, 11, 14, 17, 21</label> <br> 
-<input type="radio" class="form-check-input"  name="2" disabled> <label> 21</label> <br>
-<input type="radio" class="form-check-input" name="2" disabled> <label>17</label> <br>
-<input type="radio" class="form-check-input" name="2" value="" checked >  <label> 14</label> <br>
-<input type="radio" class="form-check-input" name="2" disabled>  <label>3</label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer: c <br>
-Explanation: Each of the numbers except 14 is an odd number. <br>
-The number '14' is the only EVEN number</details> <br>  </ul> 
+    <div class="progress-bar-custom">
+      <div class="progress-fill" id="reviewProgress" style="width:100%;"></div>
+    </div>
 
-<label>3. A boat can travel with a speed of 13 km/hr in still water. If the speed of the stream is 4 km/hr, find the time taken by the boat to go 68 km downstream.</label> <br>
-<input type="radio" class="form-check-input"  name="3" disabled> <label> 2 hours </label> <br>
-<input type="radio" class="form-check-input" name="3" disabled> <label> 3 hours </label>  <br>
-<input type="radio" class="form-check-input" name="3" value="" checked >  <label> 4 hours </label> <br>
-<input type="radio" class="form-check-input" name="3" disabled>  <label> 5 hours </label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer: c <br>
-Explanation: Speed downstream = (13 + 4) km/hr = 17 km/hr. <br>
-Time taken to travel 68 km downstream =	(68/17)hrs = 4 hrs</details> <br> </ul> 
+    <div class="progress-tracker" id="reviewDots"></div>
 
-<label>4.A man's speed with the current is 15 km/hr and the speed of the current is 2.5 km/hr. The man's speed against the current is:</label> <br>
-<input type="radio" class="form-check-input"  name="4" disabled> <label> 8.5 km/hr</label> <br>
-<input type="radio" class="form-check-input" name="4" disabled> <label> 9 km/hr</label> <br>
-<input type="radio" class="form-check-input" name="4" disabled>  <label> 10 km/hr</label> <br>
-<input type="radio" class="form-check-input" name="4" value="" checked >  <label> 12.5 km/hr</label> <br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer: d <br>
-Explanation: Man's rate in still water = (15 - 2.5) km/hr = 12.5 km/hr.<br>
-Man's rate against the current = (12.5 - 2.5) km/hr = 10 km/h</details> <br> </ul> 
+    <div id="answerContainer" class="quiz-card correct" style="min-height:360px;"></div>
 
-<label>5. It was Sunday on Jan 1, 2006. What was the day of the week Jan 1, 2010?</label> <br>  
-<input type="radio" class="form-check-input"  name="5" disabled> <label> Sunday</label> <br>
-<input type="radio" class="form-check-input" name="5" disabled> <label> Saturday</label>  <br>
-<input type="radio" class="form-check-input" name="5" value="" checked >  <label>Friday </label> <br>
-<input type="radio" class="form-check-input" name="5" disabled>  <label>Wednesday</label> <br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer: c <br>
-Explanation: On 31st December, 2005 it was Saturday. <br>
-Number of odd days from the year 2006 to the year 2009 = (1 + 1 + 2 + 1) = 5 days. <br>
-On 31st December 2009, it was Thursday. <br>
-Thus, on 1st Jan, 2010 it is Friday</details> <br> </ul> 
+    <div class="d-flex justify-content-between align-items-center mt-4 flex-wrap gap-2">
+      <button type="button" class="btn btn-outline-light px-4" id="prevBtn" disabled>
+        <i class="fas fa-arrow-left me-1"></i>Previous
+      </button>
+      <button type="button" class="btn btn-gradient px-4" id="nextBtn" style="background:var(--gradient-teal);">
+        Next<i class="fas fa-arrow-right ms-1"></i>
+      </button>
+    </div>
 
-<label> 6.A man has Rs.480 in the denominations of one-rupee notes, five-rupee notes and ten-rupee notes. The number of notes of each denomination is equal. What is the total number of notes that he has ?</label> <br>  
-<input type="radio" class="form-check-input"  name="6" disabled> <label> 45</label> <br>
-<input type="radio" class="form-check-input" name="6" disabled> <label> 60</label>  <br>
-<input type="radio" class="form-check-input" name="6" disabled>  <label> 75</label> <br>
-<input type="radio" class="form-check-input" name="6" value="" checked >  <label>90</label> <br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer: d <br>
-Explanation: Let number of notes of each denomination be x. <br>
-Then x + 5x + 10x = 480 <br>
- 16x = 480 <br>
- x = 30. <br>
-Hence, total number of notes = 3x = 90</details> <br> </ul> 
+    <div class="text-center mt-4">
+      <a href="feedback.html" class="btn btn-gradient btn-lg" style="background:var(--gradient-teal);"><i class="fas fa-check me-2"></i>Continue</a>
+    </div>
+  </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const data = [
+  { id:1, text:'A sum of money at simple interest amounts to Rs. 815 in 3 years and to Rs. 854 in 4 years. The sum is:', correct:'c', options:[{l:'a',t:'650'},{l:'b',t:'690'},{l:'c',t:'698'},{l:'d',t:'700'}], explanation:'S.I. for 1 year = Rs. (854 - 815) = Rs. 39.\nS.I. for 3 years = Rs.(39 x 3) = Rs. 117.\nPrincipal = Rs. (815 - 117) = Rs. 698.' },
+  { id:2, text:'Find the odd man out. 3, 5, 11, 14, 17, 21', correct:'c', options:[{l:'a',t:'21'},{l:'b',t:'17'},{l:'c',t:'14'},{l:'d',t:'3'}], explanation:'Each of the numbers except 14 is an odd number. The number \'14\' is the only EVEN number.' },
+  { id:3, text:'A boat can travel with a speed of 13 km/hr in still water. If the speed of the stream is 4 km/hr, find the time taken by the boat to go 68 km downstream.', correct:'c', options:[{l:'a',t:'2 hours'},{l:'b',t:'3 hours'},{l:'c',t:'4 hours'},{l:'d',t:'5 hours'}], explanation:'Speed downstream = (13 + 4) km/hr = 17 km/hr.\nTime taken to travel 68 km downstream = (68/17) hrs = 4 hrs.' },
+  { id:4, text:'A man\'s speed with the current is 15 km/hr and the speed of the current is 2.5 km/hr. The man\'s speed against the current is:', correct:'d', options:[{l:'a',t:'8.5 km/hr'},{l:'b',t:'9 km/hr'},{l:'c',t:'10 km/hr'},{l:'d',t:'12.5 km/hr'}], explanation:'Man\'s rate in still water = (15 - 2.5) km/hr = 12.5 km/hr.\nMan\'s rate against the current = (12.5 - 2.5) km/hr = 10 km/h.' },
+  { id:5, text:'It was Sunday on Jan 1, 2006. What was the day of the week Jan 1, 2010?', correct:'c', options:[{l:'a',t:'Sunday'},{l:'b',t:'Saturday'},{l:'c',t:'Friday'},{l:'d',t:'Wednesday'}], explanation:'On 31st December, 2005 it was Saturday. Number of odd days from the year 2006 to the year 2009 = (1 + 1 + 2 + 1) = 5 days. On 31st December 2009, it was Thursday. Thus, on 1st Jan, 2010 it is Friday.' },
+  { id:6, text:'A man has Rs.480 in the denominations of one-rupee notes, five-rupee notes and ten-rupee notes. The number of notes of each denomination is equal. What is the total number of notes that he has?', correct:'d', options:[{l:'a',t:'45'},{l:'b',t:'60'},{l:'c',t:'75'},{l:'d',t:'90'}], explanation:'Let number of notes of each denomination be x. Then x + 5x + 10x = 480 \u2192 16x = 480 \u2192 x = 30. Hence, total number of notes = 3x = 90.' },
+  { id:7, text:'Vincent has a paper route. Each morning, he delivers 37 newspapers to customers in his neighborhood. It takes Vincent 50 minutes to deliver all the papers. If Vincent is sick or has other plans, his friend Thomas, who lives on the same street, will sometimes deliver the papers for him.', correct:'a', options:[{l:'a',t:'Vincent and Thomas live in the same neighborhood'},{l:'b',t:'It takes Thomas more than 50 minutes to deliver the papers.'},{l:'c',t:'It is dark outside when Vincent begins his deliveries.'},{l:'d',t:'Thomas would like to have his own paper route.'}], explanation:'The fact that Vincent and Thomas live on the same street indicates that they live in the same neighborhood. There is no support for any of the other choices.' },
+  { id:8, text:'Odometer is to mileage as compass is to', correct:'d', options:[{l:'a',t:'Speed'},{l:'b',t:'Hiking'},{l:'c',t:'Needle'},{l:'d',t:'Direction'}], explanation:'An odometer is an instrument used to measure mileage. A compass is an instrument used to determine direction.' },
+  { id:9, text:'MONK : DEVOTION', correct:'d', options:[{l:'a',t:'maniac : pacifism'},{l:'b',t:'explorer : contentment'},{l:'c',t:'visionary : complacency'},{l:'d',t:'rover : wanderlust'}], explanation:'Devotion is characteristic of a monk; wanderlust is characteristic of a rover.' },
+  { id:10, text:'<b>Statement:</b> "You are hereby appointed as a programmer with a probation period of one year and your performance will be reviewed at the end of the period for confirmation." - A line in an appointment letter.<br><b>Assumptions:</b> I. The performance of an individual generally is not known at the time of appointment offer.<br>II. Generally an individual tries to prove his worth in the probation period.', correct:'d', options:[{l:'a',t:'Only assumption I is implicit'},{l:'b',t:'Only assumption II is implicit'},{l:'c',t:'Neither I nor II is implicit'},{l:'d',t:'Both I and II is implicit'}], explanation:'The performance of the individual has to be tested over a span of time as the statement mentions. So, I is implicit. The statement mentions that the individual\'s worth shall be reviewed (during probation period) before confirmation. So, II is also implicit.' },
+  { id:11, text:'Today is Monday. After 61 days, it will be', correct:'b', options:[{l:'a',t:'Wednesday'},{l:'b',t:'Saturday'},{l:'c',t:'Tuesday'},{l:'d',t:'Thursday'}], explanation:'Each day of the week is repeated after 7 days. So, after 63 days, it will be Monday. After 61 days, it will be Saturday.' },
+  { id:12, text:'In the following questions choose the word which is the exact OPPOSITE of the given words. ENORMOUS', correct:'c', options:[{l:'a',t:'Soft'},{l:'b',t:'Average'},{l:'c',t:'Tiny'},{l:'d',t:'Weak'}], explanation:'None' },
+  { id:13, text:'In questions given below out of four alternatives, choose the one which can be substituted for the given word/sentence. Extreme old age when a man behaves like a fool', correct:'c', options:[{l:'a',t:'Imbecility'},{l:'b',t:'Senility'},{l:'c',t:'Dotage'},{l:'d',t:'Superannuation'}], explanation:'None' },
+  { id:14, text:'Anti COVID Drug 2-DG has been developed by which organization?', correct:'a', options:[{l:'a',t:'DRDO'},{l:'b',t:'ISRO'},{l:'c',t:'CDIR'},{l:'d',t:'DGCI'}], explanation:'An anti-COVID-19 therapeutic application of the drug 2-DG has been developed by Institute of Nuclear Medicine and Allied Sciences a lab of DRDO in collaboration with Dr Reddy\'s Laboratories, Hyderabad.' },
+  { id:15, text:'Which education board has launched the mobile application "Dost for Life"?', correct:'b', options:[{l:'a',t:'ICSE Board'},{l:'b',t:'CBSE Board'},{l:'c',t:'Open Board'},{l:'d',t:'All of above'}], explanation:'The Central Board of Secondary Education has launched a counselling app "Dost for Life" for class 9 to class 12 students.' }
+];
 
-<label>7.Vincent has a paper route. Each morning, he delivers 37 newspapers to customers in his neighborhood. It takes Vincent 50 minutes to deliver all the papers. If Vincent is sick or has other plans, his friend Thomas, who lives on the same street, will sometimes deliver the papers for him.</label> <br>  
-<input type="radio" class="form-check-input"  name="7" value="" checked > <label>Vincent and Thomas live in the same neighborhood</label> <br>
-<input type="radio" class="form-check-input" name="7" disabled> <label>It takes Thomas more than 50 minutes to deliver the papers.</label>  <br>
-<input type="radio" class="form-check-input" name="7" disabled>  <label>It is dark outside when Vincent begins his deliveries.</label> <br>
-<input type="radio" class="form-check-input" name="7" disabled>  <label>Thomas would like to have his own paper route.</label> <br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer:a <br>
-Explanation: The fact that Vincent and Thomas live on the same street indicates that they live in the same neighborhood. There is no support for any of the other choices.</details> <br>  </ul> 
+const TOTAL = data.length;
+let currentIdx = 0;
 
-<label>8. Odometer is to mileage as compass is to</label> <br>  
-<input type="radio" class="form-check-input"  name="8" disabled> <label> Speed</label> <br>
-<input type="radio" class="form-check-input" name="8" disabled> <label> Hiking</label>  <br>
-<input type="radio" class="form-check-input" name="8" disabled>  <label> Needle</label> <br>
-<input type="radio" class="form-check-input" name="8" value="" checked >  <label> Direction</label> <br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer:d <br>
-Explanation: An odometer is an instrument used to measure mileage. A compass is an instrument used to determine direction. Choices a, b, and c are incorrect because none is an instrument.</details> <br> </ul>  
+function renderCard() {
+  const q = data[currentIdx];
+  const container = document.getElementById('answerContainer');
+  const opts = q.options.map(o => {
+    const isCorrect = o.l === q.correct;
+    return `<div class="form-check">
+      <input type="radio" class="form-check-input" name="q${q.id}" id="q${q.id}${o.l}" disabled ${isCorrect ? 'checked' : ''}>
+      <label class="form-check-label" for="q${q.id}${o.l}" ${isCorrect ? 'style="color:#22c55e;font-weight:600;"' : ''}>${isCorrect ? '<i class="fas fa-check-circle me-1"></i>' : ''}${o.t}</label>
+    </div>`;
+  }).join('');
 
+  container.style.opacity = '0';
+  container.style.transform = 'translateX(20px)';
+  setTimeout(() => {
+    container.innerHTML = `
+      <div class="d-flex justify-content-between align-items-start mb-3">
+        <label class="fw-bold" style="color:#fff;font-size:1.05rem;">${q.id}. ${q.text}</label>
+        <span class="badge" style="background:#22c55e;"><i class="fas fa-check me-1"></i>Correct</span>
+      </div>
+      ${opts}
+      <details>
+        <summary><i class="fas fa-lightbulb me-1"></i> Answer</summary>
+        <p class="mt-2 mb-0" style="color:rgba(255,255,255,0.8);">Answer: ${q.correct}<br>Explanation: ${q.explanation}</p>
+      </details>`;
+    container.style.transition = 'all 0.35s ease';
+    container.style.opacity = '1';
+    container.style.transform = 'translateX(0)';
+  }, 50);
 
-<label>9.MONK : DEVOTION </label> <br>  
-<input type="radio" class="form-check-input"  name="9" disabled> <label>maniac : pacifism</label> <br>
-<input type="radio" class="form-check-input" name="9" disabled> <label>explorer : contentment</label>  <br>
-<input type="radio" class="form-check-input" name="9" disabled>  <label>visionary : complacency</label> <br>
-<input type="radio" class="form-check-input" name="9" value="" checked >  <label>rover : wanderlust</label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer:d <br>
-Explanation: Devotion is characteristic of a monk; wanderlust is characteristic of a rover.</details> <br> </ul>  
-
-<label>10. <label><b>Statement:</b></label> "You are hereby appointed as a programmer with a probation period of one year and your performance will be reviewed at the end of the period for confirmation." - A line in an appointment letter.
-<label><b>Assumptions:</b></label>l.The performance of an individual generally is not known at the time of appointment offer. &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-ll.Generally an individual tries to prove his worth in the probation period.</label> <br>  
-<input type="radio" class="form-check-input"  name="10" disabled> <label> Only assumption I is implicit</label> <br>
-<input type="radio" class="form-check-input" name="10" disabled> <label> </label> Only assumption II is implicit<br>
-<input type="radio" class="form-check-input" name="10" disabled>  <label> </label> Neither I nor II is implicit<br>
-<input type="radio" class="form-check-input" name="10" value="" checked >  <label> </label> Both I and II is implicit<br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer:d <br>
-Explanation:The performance of the individual has to be tested over a span of time as the statement mentions. So, I is implicit. The statement mentions that the individual's worth shall be reviewed (during probation period) before confirmation. So, II is also implicit.</details> <br> </ul>  
-
-
-<label>11.Today is Monday. After 61 days, it will be </label> <br>  
-<input type="radio" class="form-check-input"  name="11" disabled> <label> wenesday</label> <br>
-<input type="radio" class="form-check-input" name="11" value="" checked > <label> </label> Saturday <br>
-<input type="radio" class="form-check-input" name="11" disabled>  <label>Tuesday </label> <br>
-<input type="radio" class="form-check-input" name="11" disabled>  <label> Thursday</label> <br> <br> 
-<ul><summary>Answer</summary>
-<details>Answer:b <br>
-Explanation:Each day of the week is repeated after 7 days. <br>
-So, after 63 days, it will be Monday. <br>
- After 61 days, it will be Saturday </details> <br> </ul>  
-
-<label>12.In the following questions choose the word which is the exact OPPOSITE of the given words. ENORMOUS </label> <br>  
-<input type="radio" class="form-check-input"  name="12" disabled>Soft <label> </label> <br>
-<input type="radio" class="form-check-input" name="12" disabled> <label>Average </label>  <br>
-<input type="radio" class="form-check-input" name="12" value="" checked >Tiny  <label> </label> <br>
-<input type="radio" class="form-check-input" name="12" disabled> Weak <label> </label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer:c <br>
-Explanation: None <br> </ul>  
-
-<label>13.In questions given below out of four alternatives, choose the one which can be substituted for the given word/sentence.Extreme old age when a man behaves like a fool </label> <br>  
-<input type="radio" class="form-check-input"  name="13" disabled> <label> Imbecility</label> <br>
-<input type="radio" class="form-check-input" name="13" disabled> <label>Senility </label>  <br>
-<input type="radio" class="form-check-input" name="13" value="" checked >  <label>Dotage </label> <br>
-<input type="radio" class="form-check-input" name="13" disabled>  <label> Superannuation</label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer:c <br>
-Explanation:None </details> <br> </ul>  
-
-<label>14.Anti COVID Drug 2-DG has been developed by which organization? </label> <br>  
-<input type="radio" class="form-check-input"  name="14" value="" checked > <label>DRDO </label> <br>
-<input type="radio" class="form-check-input" name="14" disabled> <label> ISRO</label>  <br>
-<input type="radio" class="form-check-input" name="14" disabled>  <label> CDIR</label> <br>
-<input type="radio" class="form-check-input" name="14" disabled>  <label> DGCI</label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer:a <br>
-Explanation: An anti-COVID-19 therapeutic application of the drug 2-DG has been developed by Institute of Nuclear Medicine and Allied Sciences a lab of DRDO in collaboration with Dr Reddy's Laboratories, Hyderabad.</details> <br> </ul>  
-
-<label>15. Which education board has launched the mobile application "Dost for Life"?</label> <br>  
-<input type="radio" class="form-check-input"  name="15" disabled> <label> ICSE Board</label> <br>
-<input type="radio" class="form-check-input" name="15" value="" checked > <label> CBSE Board</label>  <br>
-<input type="radio" class="form-check-input" name="15" disabled>  <label> open Board</label> <br>
-<input type="radio" class="form-check-input" name="15" disabled>  <label> All of above</label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer:b <br>
-Explanation:The Central Board of Secondary Education has launched a counselling app "Dost for Life" for class 9 to class 12 students </details> <br> </ul>  
-
-
-
-
-</div>
-<div class="text-end">
-<a href="feedback.html" type="ok" class="btn btn-primary">Ok</a>
-</div>
-</div>
-</body>
-=======
-<html>
-<head>
-
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-
-<style>
-.font{
-font-size:25px;
-font-family:arial;
-
-body{
-background-image:url('Images/logos.jpg');
-background-repeat:no-repeat;
-background-size:cover;
-bckground-position:center;
-background-attachment:fixed;
--webkit-backdrop-filter:blur(3.5px);
-backdrop-filter:blur(3.5px);
+  document.getElementById('qCounter').innerHTML = `<i class="fas fa-question-circle me-1"></i>${currentIdx+1} / ${TOTAL}`;
+  document.getElementById('prevBtn').disabled = currentIdx === 0;
+  document.getElementById('nextBtn').style.display = currentIdx === TOTAL - 1 ? 'none' : 'inline-flex';
+  updateDots();
 }
 
-
+function updateDots() {
+  const dots = document.querySelectorAll('.progress-dot');
+  dots.forEach((d, i) => {
+    d.className = 'progress-dot completed';
+    if (i === currentIdx) d.classList.add('active');
+  });
 }
 
-</style>
-</head>
-<body>
+function buildDots() {
+  const container = document.getElementById('reviewDots');
+  container.innerHTML = '';
+  for (let i = 0; i < TOTAL; i++) {
+    const d = document.createElement('div');
+    d.className = 'progress-dot completed';
+    d.textContent = i + 1;
+    d.addEventListener('click', () => { currentIdx = i; renderCard(); });
+    container.appendChild(d);
+  }
+}
 
-<div class="container">
-<form class="w-30 m-5 border border-primary rounded p-3">
-<div calss="mb-3">
-<h3 class="bg-success text-light border rounded-top" align="center">Online Test Answers-1</h3>
-</div>
-<br> <br>
-<div class="font">
-<label>1.A sum of money at simple interest amounts to Rs. 815 in 3 years and to Rs. 854 in 4 years. The sum is:</label> <br>
-<input type="radio" class="form-check-input"  name="1" disabled> <label>  650</label> <br>
-<input type="radio" class="form-check-input" name="1" disabled> <label> 690</label> <br> 
-<input type="radio" class="form-check-input" name="1" value="" checked >  <label>698</label> <br>
-<input type="radio" class="form-check-input" name="1" disabled>  <label> 700 </label> <br> <br> 
-<ul><summary>Answer</summary>
-<details>Answer: c <br>
-Explanation: S.I. for 1 year = Rs. (854 - 815) = Rs. 39.<br>
-S.I. for 3 years = Rs.(39 x 3) = Rs. 117.<br>
- Principal = Rs. (815 - 117) = Rs. 698.</details> <br>  </ul>
+function nextCard() { if (currentIdx < TOTAL - 1) { currentIdx++; renderCard(); } }
+function prevCard() { if (currentIdx > 0) { currentIdx--; renderCard(); } }
 
-<label>2. Find the odd man out. 3, 5, 11, 14, 17, 21</label> <br> 
-<input type="radio" class="form-check-input"  name="2" disabled> <label> 21</label> <br>
-<input type="radio" class="form-check-input" name="2" disabled> <label>17</label> <br>
-<input type="radio" class="form-check-input" name="2" value="" checked >  <label> 14</label> <br>
-<input type="radio" class="form-check-input" name="2" disabled>  <label>3</label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer: c <br>
-Explanation: Each of the numbers except 14 is an odd number. <br>
-The number '14' is the only EVEN number</details> <br>  </ul> 
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextCard();
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') prevCard();
+});
 
-<label>3. A boat can travel with a speed of 13 km/hr in still water. If the speed of the stream is 4 km/hr, find the time taken by the boat to go 68 km downstream.</label> <br>
-<input type="radio" class="form-check-input"  name="3" disabled> <label> 2 hours </label> <br>
-<input type="radio" class="form-check-input" name="3" disabled> <label> 3 hours </label>  <br>
-<input type="radio" class="form-check-input" name="3" value="" checked >  <label> 4 hours </label> <br>
-<input type="radio" class="form-check-input" name="3" disabled>  <label> 5 hours </label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer: c <br>
-Explanation: Speed downstream = (13 + 4) km/hr = 17 km/hr. <br>
-Time taken to travel 68 km downstream =	(68/17)hrs = 4 hrs</details> <br> </ul> 
+document.getElementById('nextBtn').addEventListener('click', nextCard);
+document.getElementById('prevBtn').addEventListener('click', prevCard);
 
-<label>4.A man's speed with the current is 15 km/hr and the speed of the current is 2.5 km/hr. The man's speed against the current is:</label> <br>
-<input type="radio" class="form-check-input"  name="4" disabled> <label> 8.5 km/hr</label> <br>
-<input type="radio" class="form-check-input" name="4" disabled> <label> 9 km/hr</label> <br>
-<input type="radio" class="form-check-input" name="4" disabled>  <label> 10 km/hr</label> <br>
-<input type="radio" class="form-check-input" name="4" value="" checked >  <label> 12.5 km/hr</label> <br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer: d <br>
-Explanation: Man's rate in still water = (15 - 2.5) km/hr = 12.5 km/hr.<br>
-Man's rate against the current = (12.5 - 2.5) km/hr = 10 km/h</details> <br> </ul> 
-
-<label>5. It was Sunday on Jan 1, 2006. What was the day of the week Jan 1, 2010?</label> <br>  
-<input type="radio" class="form-check-input"  name="5" disabled> <label> Sunday</label> <br>
-<input type="radio" class="form-check-input" name="5" disabled> <label> Saturday</label>  <br>
-<input type="radio" class="form-check-input" name="5" value="" checked >  <label>Friday </label> <br>
-<input type="radio" class="form-check-input" name="5" disabled>  <label>Wednesday</label> <br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer: c <br>
-Explanation: On 31st December, 2005 it was Saturday. <br>
-Number of odd days from the year 2006 to the year 2009 = (1 + 1 + 2 + 1) = 5 days. <br>
-On 31st December 2009, it was Thursday. <br>
-Thus, on 1st Jan, 2010 it is Friday</details> <br> </ul> 
-
-<label> 6.A man has Rs.480 in the denominations of one-rupee notes, five-rupee notes and ten-rupee notes. The number of notes of each denomination is equal. What is the total number of notes that he has ?</label> <br>  
-<input type="radio" class="form-check-input"  name="6" disabled> <label> 45</label> <br>
-<input type="radio" class="form-check-input" name="6" disabled> <label> 60</label>  <br>
-<input type="radio" class="form-check-input" name="6" disabled>  <label> 75</label> <br>
-<input type="radio" class="form-check-input" name="6" value="" checked >  <label>90</label> <br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer: d <br>
-Explanation: Let number of notes of each denomination be x. <br>
-Then x + 5x + 10x = 480 <br>
- 16x = 480 <br>
- x = 30. <br>
-Hence, total number of notes = 3x = 90</details> <br> </ul> 
-
-<label>7.Vincent has a paper route. Each morning, he delivers 37 newspapers to customers in his neighborhood. It takes Vincent 50 minutes to deliver all the papers. If Vincent is sick or has other plans, his friend Thomas, who lives on the same street, will sometimes deliver the papers for him.</label> <br>  
-<input type="radio" class="form-check-input"  name="7" value="" checked > <label>Vincent and Thomas live in the same neighborhood</label> <br>
-<input type="radio" class="form-check-input" name="7" disabled> <label>It takes Thomas more than 50 minutes to deliver the papers.</label>  <br>
-<input type="radio" class="form-check-input" name="7" disabled>  <label>It is dark outside when Vincent begins his deliveries.</label> <br>
-<input type="radio" class="form-check-input" name="7" disabled>  <label>Thomas would like to have his own paper route.</label> <br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer:a <br>
-Explanation: The fact that Vincent and Thomas live on the same street indicates that they live in the same neighborhood. There is no support for any of the other choices.</details> <br>  </ul> 
-
-<label>8. Odometer is to mileage as compass is to</label> <br>  
-<input type="radio" class="form-check-input"  name="8" disabled> <label> Speed</label> <br>
-<input type="radio" class="form-check-input" name="8" disabled> <label> Hiking</label>  <br>
-<input type="radio" class="form-check-input" name="8" disabled>  <label> Needle</label> <br>
-<input type="radio" class="form-check-input" name="8" value="" checked >  <label> Direction</label> <br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer:d <br>
-Explanation: An odometer is an instrument used to measure mileage. A compass is an instrument used to determine direction. Choices a, b, and c are incorrect because none is an instrument.</details> <br> </ul>  
-
-
-<label>9.MONK : DEVOTION </label> <br>  
-<input type="radio" class="form-check-input"  name="9" disabled> <label>maniac : pacifism</label> <br>
-<input type="radio" class="form-check-input" name="9" disabled> <label>explorer : contentment</label>  <br>
-<input type="radio" class="form-check-input" name="9" disabled>  <label>visionary : complacency</label> <br>
-<input type="radio" class="form-check-input" name="9" value="" checked >  <label>rover : wanderlust</label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer:d <br>
-Explanation: Devotion is characteristic of a monk; wanderlust is characteristic of a rover.</details> <br> </ul>  
-
-<label>10. <label><b>Statement:</b></label> "You are hereby appointed as a programmer with a probation period of one year and your performance will be reviewed at the end of the period for confirmation." - A line in an appointment letter.
-<label><b>Assumptions:</b></label>l.The performance of an individual generally is not known at the time of appointment offer. &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-ll.Generally an individual tries to prove his worth in the probation period.</label> <br>  
-<input type="radio" class="form-check-input"  name="10" disabled> <label> Only assumption I is implicit</label> <br>
-<input type="radio" class="form-check-input" name="10" disabled> <label> </label> Only assumption II is implicit<br>
-<input type="radio" class="form-check-input" name="10" disabled>  <label> </label> Neither I nor II is implicit<br>
-<input type="radio" class="form-check-input" name="10" value="" checked >  <label> </label> Both I and II is implicit<br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer:d <br>
-Explanation:The performance of the individual has to be tested over a span of time as the statement mentions. So, I is implicit. The statement mentions that the individual's worth shall be reviewed (during probation period) before confirmation. So, II is also implicit.</details> <br> </ul>  
-
-
-<label>11.Today is Monday. After 61 days, it will be </label> <br>  
-<input type="radio" class="form-check-input"  name="11" disabled> <label> wenesday</label> <br>
-<input type="radio" class="form-check-input" name="11" value="" checked > <label> </label> Saturday <br>
-<input type="radio" class="form-check-input" name="11" disabled>  <label>Tuesday </label> <br>
-<input type="radio" class="form-check-input" name="11" disabled>  <label> Thursday</label> <br> <br> 
-<ul><summary>Answer</summary>
-<details>Answer:b <br>
-Explanation:Each day of the week is repeated after 7 days. <br>
-So, after 63 days, it will be Monday. <br>
- After 61 days, it will be Saturday </details> <br> </ul>  
-
-<label>12.In the following questions choose the word which is the exact OPPOSITE of the given words. ENORMOUS </label> <br>  
-<input type="radio" class="form-check-input"  name="12" disabled>Soft <label> </label> <br>
-<input type="radio" class="form-check-input" name="12" disabled> <label>Average </label>  <br>
-<input type="radio" class="form-check-input" name="12" value="" checked >Tiny  <label> </label> <br>
-<input type="radio" class="form-check-input" name="12" disabled> Weak <label> </label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer:c <br>
-Explanation: None <br> </ul>  
-
-<label>13.In questions given below out of four alternatives, choose the one which can be substituted for the given word/sentence.Extreme old age when a man behaves like a fool </label> <br>  
-<input type="radio" class="form-check-input"  name="13" disabled> <label> Imbecility</label> <br>
-<input type="radio" class="form-check-input" name="13" disabled> <label>Senility </label>  <br>
-<input type="radio" class="form-check-input" name="13" value="" checked >  <label>Dotage </label> <br>
-<input type="radio" class="form-check-input" name="13" disabled>  <label> Superannuation</label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer:c <br>
-Explanation:None </details> <br> </ul>  
-
-<label>14.Anti COVID Drug 2-DG has been developed by which organization? </label> <br>  
-<input type="radio" class="form-check-input"  name="14" value="" checked > <label>DRDO </label> <br>
-<input type="radio" class="form-check-input" name="14" disabled> <label> ISRO</label>  <br>
-<input type="radio" class="form-check-input" name="14" disabled>  <label> CDIR</label> <br>
-<input type="radio" class="form-check-input" name="14" disabled>  <label> DGCI</label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer:a <br>
-Explanation: An anti-COVID-19 therapeutic application of the drug 2-DG has been developed by Institute of Nuclear Medicine and Allied Sciences a lab of DRDO in collaboration with Dr Reddy's Laboratories, Hyderabad.</details> <br> </ul>  
-
-<label>15. Which education board has launched the mobile application "Dost for Life"?</label> <br>  
-<input type="radio" class="form-check-input"  name="15" disabled> <label> ICSE Board</label> <br>
-<input type="radio" class="form-check-input" name="15" value="" checked > <label> CBSE Board</label>  <br>
-<input type="radio" class="form-check-input" name="15" disabled>  <label> open Board</label> <br>
-<input type="radio" class="form-check-input" name="15" disabled>  <label> All of above</label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer:b <br>
-Explanation:The Central Board of Secondary Education has launched a counselling app "Dost for Life" for class 9 to class 12 students </details> <br> </ul>  
-
-
-
-
-</div>
-<div class="text-end">
-<a href="feedback.html" type="ok" class="btn btn-primary">Ok</a>
-</div>
-</div>
+buildDots();
+renderCard();
+</script>
 </body>
->>>>>>> 0ea0fc3f2dba0c5d06f846c08d11817ac9dd0a4b
 </html>

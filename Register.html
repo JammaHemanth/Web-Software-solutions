@@ -1,137 +1,96 @@
-<<<<<<< HEAD
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-
-<base="Images"></base>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-
-<style>
-.body{
-background-color:black;
-}
-
-.header{
-height:9%;
-width:100%;
-color:white;
-background-color:purple;
-}
-
-.content{
-height:81%;
-width:100%;
-}
-
-.footer{
-height:10%;
-width:100%;
-background-color:RebeccaPurple;
-color:white;
-}
-
-
-</style>
-
 <body>
-<div class="header">
-<h1 align="center"><u>Web-software solutions</u></h1></div>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"></a>
-        <img src="Images\logos.jpg" style="width:40px;" class="rounded-pill"> &nbsp &nbsp &nbsp &nbsp
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+
+<nav class="navbar navbar-expand-lg navbar-modern">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <i class="fas fa-code me-2" style="color:var(--accent);font-size:1.5rem;"></i><span class="fw-bold" style="color:#fff;">WebSoft</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="home.html">Home</a>
-        </li><li class="nav-item dropdown">
-          <a class="nav-link" href="about.html">About us</a>
-          </li>
-        <li class="nav-item">
-          <a class="nav-link" href="gallery.html">Gallery</a>
-        </li>  
-        <li class="nav-item">
-          <a class="nav-link" href="carrer.html">carrer</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="service.html">Service</a>
-        </li>    
-        <li class="nav-item">
-          <a class="nav-link" href="login form.html">Sign in</a>
-        </li>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="carrer.html">Carrer</a></li>
+        <li class="nav-item"><a class="nav-link" href="service.html">Service</a></li>
+        <li class="nav-item"><a class="nav-link" href="login form.html">Sign in</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
+<header class="page-header">
+  <div class="container">
+    <h1><i class="fas fa-user-plus me-2"></i>Registration Form</h1>
+    <p class="subtitle">Create your account</p>
+  </div>
+</header>
 
-
-
-<div class="container">
-
-<form class="mb-5 border border-primary rounded p-3" action="bsforms.html">
-<div calss="mb-5">
-<h3 class="bg-dark text-light border rounded-top" align="center">Registration Form</h3>
-</div>
-
-<section class="vh-140" style="background-color: #9A616D;">
-  <div class="container py-5 h-140">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col col-xl-10">
-        <div class="card" style="border-radius: 1rem;">
+<main class="content-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="glass-card p-0 overflow-hidden">
           <div class="row g-0">
-            <div class="col-md-6 col-lg-5 d-none d-md-block"> <br> <br> 
-              <img src="Images\logos.jpg" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+            <div class="col-md-5 d-none d-md-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, #6f42c1, #5530a3);">
+              <div class="auth-decoration">
+                <i class="fas fa-user-plus auth-icon"></i>
+                <h3>Join WebSoft</h3>
+                <p>Create your account to access courses, track progress, and earn certifications.</p>
+                <div style="margin-top:2rem;"><i class="fas fa-check-circle me-2" style="color:#22c55e;"></i><span style="color:rgba(255,255,255,0.7);">Free access to all resources</span></div>
+                <div style="margin-top:0.5rem;"><i class="fas fa-check-circle me-2" style="color:#22c55e;"></i><span style="color:rgba(255,255,255,0.7);">Personalized learning paths</span></div>
+                <div style="margin-top:0.5rem;"><i class="fas fa-check-circle me-2" style="color:#22c55e;"></i><span style="color:rgba(255,255,255,0.7);">Industry-recognized certificates</span></div>
+              </div>
             </div>
-            <div class="col-md-6 col-lg-7 d-flex align-items-center">
-              <div class="card-body p-4 p-lg-5 text-black">
-
-              
-                  <div class="d-flex align-items-center mb-3 pb-1">
-                    <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
-                    <span class="h1 fw-bold mb-0">Web-software solutions</span>
+            <div class="col-md-7">
+              <div class="p-4 p-lg-5">
+                <form class="form-modern" action="bsforms.html">
+                  <div class="d-flex align-items-center mb-4">
+                    <div class="icon-wrapper me-3">
+                      <i class="fas fa-cubes fa-2x" style="color: #ff6219;"></i>
+                    </div>
+                    <span class="h3 fw-bold mb-0 text-light">Web-software solutions</span>
                   </div>
-
-                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Create your account</h5>
-
-                  <div class=" mb-4">
-                    <input type="text" class="form-control form-control-lg" name="name" required placeholder="Enter your name" required>
+                  <h5 class="fw-normal mb-4" style="letter-spacing: 1px; color: rgba(255,255,255,0.7);">Create your account</h5>
+                  <div class="mb-3">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-control form-control-lg" name="name" required placeholder="Enter your name">
                   </div>
-                  
-                  <div class=" mb-4">
-                    <input type="text" class="form-control form-control-lg" name="e-mail" required placeholder="Enter your E-mail" required>
+                  <div class="mb-3">
+                    <label class="form-label">E-mail</label>
+                    <input type="email" class="form-control form-control-lg" name="e-mail" required placeholder="Enter your E-mail">
                   </div>
-
-                  <div class=" mb-4">
-                    <input type="password" class="form-control form-control-lg" required placeholder="Password" required> 
+                  <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control form-control-lg" required placeholder="Password">
                   </div>
-
-                  <div class=" mb-4">
-                    <input type="password" class="form-control form-control-lg" required placeholder="Re-Type your Password" required> 
+                  <div class="mb-4">
+                    <label class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control form-control-lg" required placeholder="Re-Type your Password">
                   </div>
-
-                  <div class="pt-1 mb-4">
-                    <button class="btn btn-dark btn-lg btn-block">Sign in</button>
+                  <div class="pt-1 mb-3">
+                    <button class="btn btn-gradient btn-lg w-100"><i class="fas fa-user-check me-2"></i>Sign in</button>
                   </div>
-
-                  <!--<a class="small text" href="forgot.html">Forgot password?</a>  <br> <br>
-                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account?
-                  <a href="#" style="color: #393f81;">Register here</a>--> </p>
-                  <a href="#" class="small text">Terms of use.</a> &nbsp &nbsp
-                  <a href="#" class="small text">Privacy policy</a>
+                  <div class="text-center small" style="color: rgba(255,255,255,0.4);">
+                    <a href="#" class="text-decoration-none me-3" style="color: var(--accent);">Terms of use.</a>
+                    <a href="#" class="text-decoration-none" style="color: var(--accent);">Privacy policy</a>
+                  </div>
                 </form>
-
               </div>
             </div>
           </div>
@@ -139,180 +98,8 @@ color:white;
       </div>
     </div>
   </div>
- </div>
-  </div>
-</section>
+</main>
 
-<div class="footer"> <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp     
-&copy; Copy rights by software solutions Pvt Ltd., &nbsp &nbsp &nbsp 
-
-  Teams
-
- &nbsp &nbsp &nbsp  @Terms and conditions
-
- &nbsp &nbsp &nbsp  Carrer
-	       
-              </div>  
 
 </body>
-=======
-<html>
-<head>
-
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-
-<base="Images"></base>
-
-</head>
-
-<style>
-.body{
-background-color:black;
-}
-
-.header{
-height:9%;
-width:100%;
-color:white;
-background-color:purple;
-}
-
-.content{
-height:81%;
-width:100%;
-}
-
-.footer{
-height:10%;
-width:100%;
-background-color:RebeccaPurple;
-color:white;
-}
-
-
-</style>
-
-<body>
-<div class="header">
-<h1 align="center"><u>Web-software solutions</u></h1></div>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"></a>
-        <img src="Images\logos.jpg" style="width:40px;" class="rounded-pill"> &nbsp &nbsp &nbsp &nbsp
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="home.html">Home</a>
-        </li><li class="nav-item dropdown">
-          <a class="nav-link" href="about.html">About us</a>
-          </li>
-        <li class="nav-item">
-          <a class="nav-link" href="gallery.html">Gallery</a>
-        </li>  
-        <li class="nav-item">
-          <a class="nav-link" href="carrer.html">carrer</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="service.html">Service</a>
-        </li>    
-        <li class="nav-item">
-          <a class="nav-link" href="login form.html">Sign in</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
-
-
-<div class="container">
-
-<form class="mb-5 border border-primary rounded p-3" action="bsforms.html">
-<div calss="mb-5">
-<h3 class="bg-dark text-light border rounded-top" align="center">Registration Form</h3>
-</div>
-
-<section class="vh-140" style="background-color: #9A616D;">
-  <div class="container py-5 h-140">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col col-xl-10">
-        <div class="card" style="border-radius: 1rem;">
-          <div class="row g-0">
-            <div class="col-md-6 col-lg-5 d-none d-md-block"> <br> <br> 
-              <img src="Images\logos.jpg" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
-            </div>
-            <div class="col-md-6 col-lg-7 d-flex align-items-center">
-              <div class="card-body p-4 p-lg-5 text-black">
-
-              
-                  <div class="d-flex align-items-center mb-3 pb-1">
-                    <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
-                    <span class="h1 fw-bold mb-0">Web-software solutions</span>
-                  </div>
-
-                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Create your account</h5>
-
-                  <div class=" mb-4">
-                    <input type="text" class="form-control form-control-lg" name="name" required placeholder="Enter your name" required>
-                  </div>
-                  
-                  <div class=" mb-4">
-                    <input type="text" class="form-control form-control-lg" name="e-mail" required placeholder="Enter your E-mail" required>
-                  </div>
-
-                  <div class=" mb-4">
-                    <input type="password" class="form-control form-control-lg" required placeholder="Password" required> 
-                  </div>
-
-                  <div class=" mb-4">
-                    <input type="password" class="form-control form-control-lg" required placeholder="Re-Type your Password" required> 
-                  </div>
-
-                  <div class="pt-1 mb-4">
-                    <button class="btn btn-dark btn-lg btn-block">Sign in</button>
-                  </div>
-
-                  <!--<a class="small text" href="forgot.html">Forgot password?</a>  <br> <br>
-                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account?
-                  <a href="#" style="color: #393f81;">Register here</a>--> </p>
-                  <a href="#" class="small text">Terms of use.</a> &nbsp &nbsp
-                  <a href="#" class="small text">Privacy policy</a>
-                </form>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
- </div>
-  </div>
-</section>
-
-<div class="footer"> <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp     
-&copy; Copy rights by software solutions Pvt Ltd., &nbsp &nbsp &nbsp 
-
-  Teams
-
- &nbsp &nbsp &nbsp  @Terms and conditions
-
- &nbsp &nbsp &nbsp  Carrer
-	       
-              </div>  
-
-</body>
->>>>>>> 0ea0fc3f2dba0c5d06f846c08d11817ac9dd0a4b
 </html>

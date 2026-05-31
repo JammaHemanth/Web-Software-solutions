@@ -1,272 +1,494 @@
-<<<<<<< HEAD
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<title>Combined Assessment</title>
 <style>
-.font{
-font-size:25px;
-font-family:arial;
+.question-container {
+  min-height: 300px;
+  position: relative;
 }
-
-body{
-background-image:url('Images/logos.jpg');
-background-repeat:no-repeat;
-background-size:cover;
-bckground-position:center;
-background-attachment:fixed;
--webkit-backdrop-filter:blur(3.5px);
-backdrop-filter:blur(3.5px);
+.question-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(20px);
+  display: none;
 }
-
+.question-card.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+.question-card .q-number {
+  display: inline-block;
+  background: var(--gradient);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.2rem 0.8rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+.question-card .q-text {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+.question-card .form-check {
+  padding: 0.6rem 1rem 0.6rem 2.5rem;
+  margin-bottom: 0.25rem;
+  border-radius: 0.5rem;
+  transition: background 0.3s ease;
+}
+.question-card .form-check:hover {
+  background: rgba(139,92,246,0.08);
+}
+.question-card .form-check-input {
+  margin-top: 0.4rem;
+}
+.question-card .form-check-label {
+  color: rgba(255,255,255,0.8);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.question-card .form-check:hover .form-check-label {
+  color: #fff;
+}
+.tab-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.6);
+  padding: 0.6rem 1.8rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.tab-btn:hover {
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+}
+.tab-btn.active {
+  background: var(--gradient);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(111,66,193,0.3);
+}
+.tab-btn i {
+  margin-right: 0.5rem;
+}
+.nav-btns .btn {
+  min-width: 120px;
+}
+.timer-warning {
+  animation: pulse 1s ease-in-out infinite;
+  border-color: #ef4444 !important;
+}
+.timer-warning i {
+  color: #ef4444 !important;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
 </style>
-
 </head>
 <body>
 
+<main class="content-section">
 <div class="container">
-<form class="w-30 m-5 border border-primary rounded p-3">
-<div class="mb-3">
-<h3 class="bg-success text-light border rounded-top" align="center">Online Test-II</h3>
+  <div class="glass-card p-4 p-md-5 position-relative">
+
+    <!-- Header -->
+    <div class="d-flex flex-wrap align-items-center justify-content-between mb-4 gap-3">
+      <div>
+        <h2 class="fw-bold text-white mb-1"><i class="fas fa-tasks me-2" style="color:var(--accent);"></i>Combined Assessment</h2>
+        <p class="mb-0" style="color:var(--text-muted);font-size:0.9rem;">Complete both sections before submitting</p>
+      </div>
+      <div class="exam-timer" id="examTimer">
+        <i class="fas fa-hourglass-half"></i>
+        <span id="timerDisplay">30:00</span>
+      </div>
+    </div>
+
+    <!-- Tab Buttons -->
+    <div class="d-flex gap-2 mb-4">
+      <button class="tab-btn active" id="tabProgramming" onclick="switchSection('programming')">
+        <i class="fas fa-code"></i>Programming
+      </button>
+      <button class="tab-btn" id="tabAptitude" onclick="switchSection('aptitude')">
+        <i class="fas fa-brain"></i>Aptitude
+      </button>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar-custom">
+      <div class="progress-fill" id="progressFill" style="width:0%;"></div>
+    </div>
+
+    <!-- Question Dot Tracker -->
+    <div class="progress-tracker" id="dotTracker"></div>
+
+    <!-- Question Display -->
+    <div class="question-container" id="questionContainer"></div>
+
+    <!-- Navigation -->
+    <div class="d-flex flex-wrap justify-content-between align-items-center mt-4 gap-2">
+      <button class="btn btn-outline-glass" id="prevBtn" onclick="prevQuestion()">
+        <i class="fas fa-chevron-left me-1"></i>Previous
+      </button>
+      <span id="qCounter" style="color:var(--text-muted);font-size:0.9rem;font-weight:500;">1 / 15</span>
+      <button class="btn btn-outline-glass" id="nextBtn" onclick="nextQuestion()">
+        Next<i class="fas fa-chevron-right ms-1"></i>
+      </button>
+    </div>
+
+    <!-- Submit -->
+    <div class="text-center mt-4 pt-3 border-top border-light border-opacity-10">
+      <button class="btn btn-gradient btn-lg" onclick="submitAssessment()">
+        <i class="fas fa-paper-plane me-2"></i>Submit Assessment
+      </button>
+    </div>
+
+  </div>
 </div>
-<br> <br>
-<div class="font">
-<label>1.Who is the father of C language?</label> <br>
-<input type="radio" class="form-check-input"  name="1"> <label>  Steve Jobs</label> <br>
-<input type="radio" class="form-check-input" name="1"> <label> James Gosling</label> <br> 
-<input type="radio" class="form-check-input" name="1">  <label> Dennis Ritchie</label> <br>
-<input type="radio" class="form-check-input" name="1">  <label> Rasmus Lerdorf</label> <br> <br>
+</main>
 
-<label>2. What is the use of the tag in Javascript?</label> <br> 
-<input type="radio" class="form-check-input"  name="2"> <label> The content are displayed by non-JS-based browser</label> <br>
-<input type="radio" class="form-check-input" name="2"> <label>  Clear all cookies and cache</label> <br>
-<input type="radio" class="form-check-input" name="2">  <label> Both A and B</label> <br>
-<input type="radio" class="form-check-input" name="2">  <label> None of the above</label> <br> <br>
+<script>
+const programmingQuestions = [
+  {
+    question: 'Who is the father of C language?',
+    options: ['Steve Jobs', 'James Gosling', 'Dennis Ritchie', 'Rasmus Lerdorf'],
+    correctAnswer: 2
+  },
+  {
+    question: 'What is the use of the &lt;noscript&gt; tag in Javascript?',
+    options: ['The content are displayed by non-JS-based browser', 'Clear all cookies and cache', 'Both A and B', 'None of the above'],
+    correctAnswer: 0
+  },
+  {
+    question: 'What is/are the correct value(s) of font-weight property?',
+    options: ['bold, italic, underline', 'normal, bold, italic', 'normal, bold, bolder, lighter, initial, and inherit', 'None of the above'],
+    correctAnswer: 2
+  },
+  {
+    question: 'Which of these classes helps make a text stand out?',
+    options: ['small', 'lead', 'text-center', 'text-left'],
+    correctAnswer: 1
+  },
+  {
+    question: 'Functions in C Language are always _________',
+    options: ['Internal', 'External', 'Both Internal and External', 'External and Internal are not valid terms for functions'],
+    correctAnswer: 1
+  },
+  {
+    question: 'What do we call after initializing a plug-in to get A scripting interface?',
+    options: ['NP_GetMIMEDescription', 'NP_Initialize', 'NPP_GetValue', 'NP_GetValue'],
+    correctAnswer: 3
+  },
+  {
+    question: 'Which of the following below live on the heap in java?',
+    options: ['Class', 'Instance variable', 'Object', 'Method'],
+    correctAnswer: 2
+  },
+  {
+    question: 'Which of these interface handle sequences?',
+    options: ['Set', 'List', 'Comparator', 'Collection'],
+    correctAnswer: 1
+  },
+  {
+    question: 'What is true of the finalize() method?',
+    options: ['It may be called zero or one times', 'It may be called zero or more times', 'It will be called exactly once', 'It may be called one or more times'],
+    correctAnswer: 0
+  },
+  {
+    question: 'Which of the following is true about primitives?',
+    options: ['You can call methods on a primitive', 'You can convert a primitive to a wrapper class object simply by assigning it', 'You can convert a wrapper class object to a primitive by calling valueOf()', 'You can store a primitive directly into an ArrayList'],
+    correctAnswer: 1
+  },
+  {
+    question: 'Where is Client-side JavaScript code embedded within HTML documents?',
+    options: ['A URL that uses the special javascript:code', 'A URL that uses the special javascript:protocol', 'A URL that uses the special javascript:encoding', 'A URL that uses the special javascript:stack'],
+    correctAnswer: 1
+  },
+  {
+    question: 'Which CSS property specifies an image as the list item marker?',
+    options: ['list-style-image', 'list-style-picture', 'list-style-background', 'list-style-bgimage'],
+    correctAnswer: 0
+  },
+  {
+    question: 'Which of the following is correct about Bootstrap cross-browser consistency?',
+    options: ['Bootstrap uses Normalize to establish cross-browser consistency.', 'Normalize.css is a modern, HTML5-ready alternative to CSS resets.', 'Normalize.css a small CSS file to get better cross-browser consistency in the default styling of HTML', 'All of the above'],
+    correctAnswer: 3
+  },
+  {
+    question: 'Which of the following is correct about Bootstrap?',
+    options: ['Bootstrap\'s responsive CSS adjusts to Desktops, Tablets, and Mobiles.', 'Provides a clean and uniform solution for building an interface for developers.', 'It contains beautiful and functional built-in components which are easy to customize.', 'All of the above'],
+    correctAnswer: 3
+  },
+  {
+    question: 'Which CSS property is used to specify uppercase and lowercase letters in a text?',
+    options: ['text-transform', 'text-case', 'case', 'text-casing'],
+    correctAnswer: 0
+  }
+];
 
-<label>3. What is/are the correct value(s) of font-weight property?</label> <br>
-<input type="radio" class="form-check-input"  name="3"> <label> bold, italic, underline </label> <br>
-<input type="radio" class="form-check-input" name="3"> <label>  normal, bold, italic </label>  <br>
-<input type="radio" class="form-check-input" name="3">  <label> normal, bold, bolder, lighter, initial, and inherit </label> <br>
-<input type="radio" class="form-check-input" name="3">  <label> None of the above </label> <br> <br>
+const aptitudeQuestions = [
+  {
+    question: 'A sum of money at simple interest amounts to Rs. 815 in 3 years and to Rs. 854 in 4 years. The sum is:',
+    options: ['650', '690', '698', '700'],
+    correctAnswer: 2
+  },
+  {
+    question: 'Find the odd man out. 3, 5, 11, 14, 17, 21',
+    options: ['21', '17', '14', '3'],
+    correctAnswer: 2
+  },
+  {
+    question: 'A boat can travel with a speed of 13 km/hr in still water. If the speed of the stream is 4 km/hr, find the time taken by the boat to go 68 km downstream',
+    options: ['2 hours', '3 hours', '4 hours', '5 hours'],
+    correctAnswer: 2
+  },
+  {
+    question: 'A man\'s speed with the current is 15 km/hr and the speed of the current is 2.5 km/hr. The man\'s speed against the current is:',
+    options: ['8.5 km/hr', '9 km/hr', '10 km/hr', '12.5 km/hr'],
+    correctAnswer: 2
+  },
+  {
+    question: 'It was Sunday on Jan 1, 2006. What was the day of the week Jan 1, 2010?',
+    options: ['Sunday', 'Saturday', 'Friday', 'Wednesday'],
+    correctAnswer: 2
+  },
+  {
+    question: 'A man has Rs.480 in the denominations of one-rupee notes, five-rupee notes and ten-rupee notes. The number of notes of each denomination is equal. What is the total number of notes that he has?',
+    options: ['45', '60', '75', '90'],
+    correctAnswer: 3
+  },
+  {
+    question: 'Vincent has a paper route. Each morning, he delivers 37 newspapers to customers in his neighborhood. It takes Vincent 50 minutes to deliver all the papers. If Vincent is sick or has other plans, his friend Thomas, who lives on the same street, will sometimes deliver the papers for him. Which of the following can be inferred from the passage?',
+    options: ['Vincent and Thomas live in the same neighborhood', 'It takes Thomas more than 50 minutes to deliver the papers', 'It is dark outside when Vincent begins his deliveries', 'Thomas would like to have his own paper route'],
+    correctAnswer: 0
+  },
+  {
+    question: 'Odometer is to mileage as compass is to',
+    options: ['Speed', 'Hiking', 'Needle', 'Direction'],
+    correctAnswer: 3
+  },
+  {
+    question: 'MONK : DEVOTION',
+    options: ['maniac : pacifism', 'explorer : contentment', 'visionary : complacency', 'rover : wanderlust'],
+    correctAnswer: 3
+  },
+  {
+    question: 'Statement: "You are hereby appointed as a programmer with a probation period of one year and your performance will be reviewed at the end of the period for confirmation." - A line in an appointment letter. Assumptions: I. The performance of an individual generally is not known at the time of appointment offer. II. Generally an individual tries to prove his worth in the probation period.',
+    options: ['Only assumption I is implicit', 'Only assumption II is implicit', 'Neither I nor II is implicit', 'Both I and II is implicit'],
+    correctAnswer: 3
+  },
+  {
+    question: 'Today is Monday. After 61 days, it will be',
+    options: ['Wednesday', 'Saturday', 'Tuesday', 'Thursday'],
+    correctAnswer: 1
+  },
+  {
+    question: 'In the following questions choose the word which is the exact OPPOSITE of the given words. ENORMOUS',
+    options: ['Soft', 'Average', 'Tiny', 'Weak'],
+    correctAnswer: 2
+  },
+  {
+    question: 'Extreme old age when a man behaves like a fool',
+    options: ['Imbecility', 'Senility', 'Dotage', 'Superannuation'],
+    correctAnswer: 2
+  },
+  {
+    question: 'Anti COVID Drug 2-DG has been developed by which organization?',
+    options: ['DRDO', 'ISRO', 'CDIR', 'DGCI'],
+    correctAnswer: 0
+  },
+  {
+    question: 'Which education board has launched the mobile application \'Dost for Life\'?',
+    options: ['ICSE Board', 'CBSE Board', 'Open Board', 'All of above'],
+    correctAnswer: 1
+  }
+];
 
-<label>4.  Which of these classes helps make a text stand out?</label> <br>
-<input type="radio" class="form-check-input"  name="4"> <label>small </a></label> <br>
-<input type="radio" class="form-check-input" name="4"> <label> lead</label> <br>
-<input type="radio" class="form-check-input" name="4">  <label> text-center</label> <br>
-<input type="radio" class="form-check-input" name="4">  <label>  text-left</label> <br> <br>
+const TOTAL_QUESTIONS = 15;
+let currentSection = 'programming';
+let currentIndex = { programming: 0, aptitude: 0 };
+let answers = { programming: {}, aptitude: {} };
+let timerInterval;
+let timeLeft = 30 * 60;
 
-<label>5. Functions in C Language are always _________ </label> <br>  
-<input type="radio" class="form-check-input"  name="5"> <label> Internal</label> <br>
-<input type="radio" class="form-check-input" name="5"> <label> External</label>  <br>
-<input type="radio" class="form-check-input" name="5">  <label>Both Internal and External </label> <br>
-<input type="radio" class="form-check-input" name="5">  <label>External and Internal are not valid terms for functions</label> <br> <br>
-
-<label> 6.What do we call after initializing a plug-in to get A scripting interface?</label> <br>  
-<input type="radio" class="form-check-input"  name="6"> <label> NP_GetMIMEDescription</label> <br>
-<input type="radio" class="form-check-input" name="6"> <label>  NP_Initialize</label>  <br>
-<input type="radio" class="form-check-input" name="6">  <label> NPP_GetValue</label> <br>
-<input type="radio" class="form-check-input" name="6">  <label>  NP_GetValue</label> <br> <br>
-
-<label>7. Which of the follwing below live on the heap in java?</label> <br>  
-<input type="radio" class="form-check-input"  name="7"> <label> Class</label> <br>
-<input type="radio" class="form-check-input" name="7"> <label> Instance variable</label>  <br>
-<input type="radio" class="form-check-input" name="7">  <label> Object</label> <br>
-<input type="radio" class="form-check-input" name="7">  <label> Method</label> <br> <br>
-
-<label>8. Which of these interface handle sequences?</label> <br>  
-<input type="radio" class="form-check-input"  name="8"> <label> Set</label> <br>
-<input type="radio" class="form-check-input" name="8"> <label> List</label>  <br>
-<input type="radio" class="form-check-input" name="8">  <label> Comparator</label> <br>
-<input type="radio" class="form-check-input" name="8">  <label> Collection</label> <br> <br>   
-
-<label>9.What is true of the finalize() method? </label> <br>  
-<input type="radio" class="form-check-input"  name="9"> <label> It may be called zero or one times.</label> <br>
-<input type="radio" class="form-check-input" name="9"> <label> It may be called zero or more times.</label>  <br>
-<input type="radio" class="form-check-input" name="9">  <label> It will be called exactly once.</label> <br>
-<input type="radio" class="form-check-input" name="9">  <label>  It may be called one or more times.</label> <br> <br> 
-
-<label>10. Which of the following is true about primitives?</label> <br>  
-<input type="radio" class="form-check-input"  name="10"> <label> You can call methods on a primitive.</label> <br>
-<input type="radio" class="form-check-input" name="10"> <label> </label>  You can convert a primitive to a wrapper class object simply by assigning it.<br>
-<input type="radio" class="form-check-input" name="10">  <label> </label> You can convert a wrapper class object to a primitive by calling valueOf().<br>
-<input type="radio" class="form-check-input" name="10">  <label> </label>  You can store a primitive directly into an ArrayList. <br>  <br>
- 
-<label>11.  Where is Client-side JavaScript code is embedded within HTML documents?</label> <br>  
-<input type="radio" class="form-check-input"  name="11"> <label>A URL that uses the special javascript:code </label> <br>
-<input type="radio" class="form-check-input" name="11"> <label> A URL that uses the special javascript:protocol</label>  <br>
-<input type="radio" class="form-check-input" name="11">  <label>A URL that uses the special javascript:encoding </label> <br>
-<input type="radio" class="form-check-input" name="11">  <label>A URL that uses the special javascript:stack </label> <br> <br> 
-
-<label>12. Which CSS property specifies an image as the list item marker? </label><br>  
-<input type="radio" class="form-check-input"  name="12"> <label>list-style-image </label> <br>
-<input type="radio" class="form-check-input" name="12"> <label>list-style-picture </label>  <br>
-<input type="radio" class="form-check-input" name="12">  <label> list-style-background</label> <br>
-<input type="radio" class="form-check-input" name="12">  <label> list-style-bgimage</label> <br> <br> 
-
-<label>13. Which of the following is correct about Bootstrap cross-browser consistency?</label> <br>  
-<input type="radio" class="form-check-input"  name="13"> <label>Bootstrap uses Normalize to establish cross-browser consistency. </label> <br>
-<input type="radio" class="form-check-input" name="13"> <label> Normalize.css is a modern, HTML5-ready alternative to CSS resets.</label>  <br>
-<input type="radio" class="form-check-input" name="13">  <label>Normalize.css a small CSS file to get better cross-browser consistency in the default styling of HTML </label> <br>
-<input type="radio" class="form-check-input" name="13">  <label> All of the above</label> <br> <br> 
-
-<label>14. Which of the following is correct about Bootstrap?</label> <br>  
-<input type="radio" class="form-check-input"  name="14"> <label>Bootstrap's responsive CSS adjusts to Desktops, Tablets, and Mobiles. </label> <br>
-<input type="radio" class="form-check-input" name="14"> <label> Provides a clean and uniform solution for building an interface for developers.</label>  <br>
-<input type="radio" class="form-check-input" name="14">  <label> It contains beautiful and functional built-in components which are easy to customize. </label> <br>
-<input type="radio" class="form-check-input" name="14">  <label>All of the above  </label> <br> <br> 
-
-<label>15.Which CSS property is used to specify uppercase and lowercase letters in a text? </label> <br>  
-<input type="radio" class="form-check-input"  name="15"> <label>text-transform </label> <br>
-<input type="radio" class="form-check-input" name="15"> <label> text-case</label>  <br>
-<input type="radio" class="form-check-input" name="15">  <label>case </label> <br>
-<input type="radio" class="form-check-input" name="15">  <label>text-casing </label> <br> <br> 
-
-
-</div>
-<div class="text-end">
-<a href="feedback1.html" type="submit" class="btn btn-primary">Submit</a>
-</div>
-</div>
-</body>
-=======
-<html>
-<head>
-
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-
-<style>
-.font{
-font-size:25px;
-font-family:arial;
+function getSectionData() {
+  return currentSection === 'programming' ? programmingQuestions : aptitudeQuestions;
 }
 
-body{
-background-image:url('Images/logos.jpg');
-background-repeat:no-repeat;
-background-size:cover;
-bckground-position:center;
-background-attachment:fixed;
--webkit-backdrop-filter:blur(3.5px);
-backdrop-filter:blur(3.5px);
+function getQuestions() {
+  return getSectionData();
 }
 
-</style>
+function renderQuestion() {
+  const qs = getQuestions();
+  const idx = currentIndex[currentSection];
+  const q = qs[idx];
+  const container = document.getElementById('questionContainer');
+  const selected = answers[currentSection][idx];
 
-</head>
-<body>
+  let optsHtml = '';
+  q.options.forEach((opt, oi) => {
+    const checked = selected === oi ? 'checked' : '';
+    optsHtml += `
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="q${idx}" id="q${idx}_o${oi}" value="${oi}" ${checked} onchange="selectAnswer(${idx}, ${oi})">
+        <label class="form-check-label" for="q${idx}_o${oi}">${opt}</label>
+      </div>`;
+  });
 
-<div class="container">
-<form class="w-30 m-5 border border-primary rounded p-3">
-<div class="mb-3">
-<h3 class="bg-success text-light border rounded-top" align="center">Online Test-II</h3>
-</div>
-<br> <br>
-<div class="font">
-<label>1.Who is the father of C language?</label> <br>
-<input type="radio" class="form-check-input"  name="1"> <label>  Steve Jobs</label> <br>
-<input type="radio" class="form-check-input" name="1"> <label> James Gosling</label> <br> 
-<input type="radio" class="form-check-input" name="1">  <label> Dennis Ritchie</label> <br>
-<input type="radio" class="form-check-input" name="1">  <label> Rasmus Lerdorf</label> <br> <br>
+  container.innerHTML = `
+    <div class="question-card active">
+      <span class="q-number">Question ${idx + 1} of ${TOTAL_QUESTIONS}</span>
+      <div class="q-text">${q.question}</div>
+      ${optsHtml}
+    </div>`;
 
-<label>2. What is the use of the tag in Javascript?</label> <br> 
-<input type="radio" class="form-check-input"  name="2"> <label> The content are displayed by non-JS-based browser</label> <br>
-<input type="radio" class="form-check-input" name="2"> <label>  Clear all cookies and cache</label> <br>
-<input type="radio" class="form-check-input" name="2">  <label> Both A and B</label> <br>
-<input type="radio" class="form-check-input" name="2">  <label> None of the above</label> <br> <br>
+  updateCounter();
+  updateDots();
+  updateProgressBar();
+  updateNavButtons();
+}
 
-<label>3. What is/are the correct value(s) of font-weight property?</label> <br>
-<input type="radio" class="form-check-input"  name="3"> <label> bold, italic, underline </label> <br>
-<input type="radio" class="form-check-input" name="3"> <label>  normal, bold, italic </label>  <br>
-<input type="radio" class="form-check-input" name="3">  <label> normal, bold, bolder, lighter, initial, and inherit </label> <br>
-<input type="radio" class="form-check-input" name="3">  <label> None of the above </label> <br> <br>
+function selectAnswer(qIndex, optIndex) {
+  answers[currentSection][qIndex] = optIndex;
+  updateDots();
+}
 
-<label>4.  Which of these classes helps make a text stand out?</label> <br>
-<input type="radio" class="form-check-input"  name="4"> <label>small </a></label> <br>
-<input type="radio" class="form-check-input" name="4"> <label> lead</label> <br>
-<input type="radio" class="form-check-input" name="4">  <label> text-center</label> <br>
-<input type="radio" class="form-check-input" name="4">  <label>  text-left</label> <br> <br>
+function updateCounter() {
+  const idx = currentIndex[currentSection];
+  document.getElementById('qCounter').textContent = `${idx + 1} / ${TOTAL_QUESTIONS}`;
+}
 
-<label>5. Functions in C Language are always _________ </label> <br>  
-<input type="radio" class="form-check-input"  name="5"> <label> Internal</label> <br>
-<input type="radio" class="form-check-input" name="5"> <label> External</label>  <br>
-<input type="radio" class="form-check-input" name="5">  <label>Both Internal and External </label> <br>
-<input type="radio" class="form-check-input" name="5">  <label>External and Internal are not valid terms for functions</label> <br> <br>
+function updateProgressBar() {
+  const qs = getQuestions();
+  let answered = 0;
+  for (let i = 0; i < qs.length; i++) {
+    if (answers[currentSection][i] !== undefined) answered++;
+  }
+  const pct = (answered / qs.length) * 100;
+  document.getElementById('progressFill').style.width = pct + '%';
+}
 
-<label> 6.What do we call after initializing a plug-in to get A scripting interface?</label> <br>  
-<input type="radio" class="form-check-input"  name="6"> <label> NP_GetMIMEDescription</label> <br>
-<input type="radio" class="form-check-input" name="6"> <label>  NP_Initialize</label>  <br>
-<input type="radio" class="form-check-input" name="6">  <label> NPP_GetValue</label> <br>
-<input type="radio" class="form-check-input" name="6">  <label>  NP_GetValue</label> <br> <br>
+function updateDots() {
+  const tracker = document.getElementById('dotTracker');
+  const idx = currentIndex[currentSection];
+  let html = '';
+  for (let i = 0; i < TOTAL_QUESTIONS; i++) {
+    let cls = 'progress-dot';
+    if (i === idx) cls += ' active';
+    else if (answers[currentSection][i] !== undefined) cls += ' completed';
+    html += `<div class="${cls}" onclick="goToQuestion(${i})">${i + 1}</div>`;
+  }
+  tracker.innerHTML = html;
+}
 
-<label>7. Which of the follwing below live on the heap in java?</label> <br>  
-<input type="radio" class="form-check-input"  name="7"> <label> Class</label> <br>
-<input type="radio" class="form-check-input" name="7"> <label> Instance variable</label>  <br>
-<input type="radio" class="form-check-input" name="7">  <label> Object</label> <br>
-<input type="radio" class="form-check-input" name="7">  <label> Method</label> <br> <br>
+function goToQuestion(index) {
+  currentIndex[currentSection] = index;
+  renderQuestion();
+}
 
-<label>8. Which of these interface handle sequences?</label> <br>  
-<input type="radio" class="form-check-input"  name="8"> <label> Set</label> <br>
-<input type="radio" class="form-check-input" name="8"> <label> List</label>  <br>
-<input type="radio" class="form-check-input" name="8">  <label> Comparator</label> <br>
-<input type="radio" class="form-check-input" name="8">  <label> Collection</label> <br> <br>   
+function updateNavButtons() {
+  const idx = currentIndex[currentSection];
+  document.getElementById('prevBtn').disabled = idx === 0;
+  document.getElementById('nextBtn').disabled = idx === TOTAL_QUESTIONS - 1;
+}
 
-<label>9.What is true of the finalize() method? </label> <br>  
-<input type="radio" class="form-check-input"  name="9"> <label> It may be called zero or one times.</label> <br>
-<input type="radio" class="form-check-input" name="9"> <label> It may be called zero or more times.</label>  <br>
-<input type="radio" class="form-check-input" name="9">  <label> It will be called exactly once.</label> <br>
-<input type="radio" class="form-check-input" name="9">  <label>  It may be called one or more times.</label> <br> <br> 
+function nextQuestion() {
+  const idx = currentIndex[currentSection];
+  if (idx < TOTAL_QUESTIONS - 1) {
+    currentIndex[currentSection]++;
+    renderQuestion();
+  }
+}
 
-<label>10. Which of the following is true about primitives?</label> <br>  
-<input type="radio" class="form-check-input"  name="10"> <label> You can call methods on a primitive.</label> <br>
-<input type="radio" class="form-check-input" name="10"> <label> </label>  You can convert a primitive to a wrapper class object simply by assigning it.<br>
-<input type="radio" class="form-check-input" name="10">  <label> </label> You can convert a wrapper class object to a primitive by calling valueOf().<br>
-<input type="radio" class="form-check-input" name="10">  <label> </label>  You can store a primitive directly into an ArrayList. <br>  <br>
- 
-<label>11.  Where is Client-side JavaScript code is embedded within HTML documents?</label> <br>  
-<input type="radio" class="form-check-input"  name="11"> <label>A URL that uses the special javascript:code </label> <br>
-<input type="radio" class="form-check-input" name="11"> <label> A URL that uses the special javascript:protocol</label>  <br>
-<input type="radio" class="form-check-input" name="11">  <label>A URL that uses the special javascript:encoding </label> <br>
-<input type="radio" class="form-check-input" name="11">  <label>A URL that uses the special javascript:stack </label> <br> <br> 
+function prevQuestion() {
+  const idx = currentIndex[currentSection];
+  if (idx > 0) {
+    currentIndex[currentSection]--;
+    renderQuestion();
+  }
+}
 
-<label>12. Which CSS property specifies an image as the list item marker? </label><br>  
-<input type="radio" class="form-check-input"  name="12"> <label>list-style-image </label> <br>
-<input type="radio" class="form-check-input" name="12"> <label>list-style-picture </label>  <br>
-<input type="radio" class="form-check-input" name="12">  <label> list-style-background</label> <br>
-<input type="radio" class="form-check-input" name="12">  <label> list-style-bgimage</label> <br> <br> 
+function switchSection(section) {
+  currentSection = section;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(section === 'programming' ? 'tabProgramming' : 'tabAptitude').classList.add('active');
+  renderQuestion();
+}
 
-<label>13. Which of the following is correct about Bootstrap cross-browser consistency?</label> <br>  
-<input type="radio" class="form-check-input"  name="13"> <label>Bootstrap uses Normalize to establish cross-browser consistency. </label> <br>
-<input type="radio" class="form-check-input" name="13"> <label> Normalize.css is a modern, HTML5-ready alternative to CSS resets.</label>  <br>
-<input type="radio" class="form-check-input" name="13">  <label>Normalize.css a small CSS file to get better cross-browser consistency in the default styling of HTML </label> <br>
-<input type="radio" class="form-check-input" name="13">  <label> All of the above</label> <br> <br> 
+function startTimer() {
+  const display = document.getElementById('timerDisplay');
+  const timerEl = document.getElementById('examTimer');
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    if (timeLeft < 0) {
+      clearInterval(timerInterval);
+      submitAssessment();
+      return;
+    }
+    const m = Math.floor(timeLeft / 60);
+    const s = timeLeft % 60;
+    display.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    if (timeLeft <= 60) {
+      timerEl.classList.add('timer-warning');
+    } else if (timeLeft <= 300) {
+      timerEl.style.borderColor = '#f59e0b';
+    }
+  }, 1000);
+}
 
-<label>14. Which of the following is correct about Bootstrap?</label> <br>  
-<input type="radio" class="form-check-input"  name="14"> <label>Bootstrap's responsive CSS adjusts to Desktops, Tablets, and Mobiles. </label> <br>
-<input type="radio" class="form-check-input" name="14"> <label> Provides a clean and uniform solution for building an interface for developers.</label>  <br>
-<input type="radio" class="form-check-input" name="14">  <label> It contains beautiful and functional built-in components which are easy to customize. </label> <br>
-<input type="radio" class="form-check-input" name="14">  <label>All of the above  </label> <br> <br> 
+function computeResults(questions, sectionAnswers) {
+  const wrongAnswers = [];
+  let score = 0;
+  questions.forEach((q, i) => {
+    if (sectionAnswers[i] === q.correctAnswer) {
+      score++;
+    } else if (sectionAnswers[i] !== undefined) {
+      wrongAnswers.push({
+        question: q.question,
+        yourAnswer: q.options[sectionAnswers[i]],
+        correctAnswer: q.options[q.correctAnswer]
+      });
+    }
+  });
+  return { score, total: questions.length, wrongAnswers };
+}
 
-<label>15.Which CSS property is used to specify uppercase and lowercase letters in a text? </label> <br>  
-<input type="radio" class="form-check-input"  name="15"> <label>text-transform </label> <br>
-<input type="radio" class="form-check-input" name="15"> <label> text-case</label>  <br>
-<input type="radio" class="form-check-input" name="15">  <label>case </label> <br>
-<input type="radio" class="form-check-input" name="15">  <label>text-casing </label> <br> <br> 
+function submitAssessment() {
+  clearInterval(timerInterval);
+  const progResults = computeResults(programmingQuestions, answers.programming);
+  const aptResults = computeResults(aptitudeQuestions, answers.aptitude);
+  localStorage.setItem('programming_results', JSON.stringify(progResults));
+  localStorage.setItem('aptitude_results', JSON.stringify(aptResults));
+  window.location.href = 'combined-results.html';
+}
 
-
-</div>
-<div class="text-end">
-<a href="feedback1.html" type="submit" class="btn btn-primary">Submit</a>
-</div>
-</div>
+document.addEventListener('DOMContentLoaded', function() {
+  renderQuestion();
+  startTimer();
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
->>>>>>> 0ea0fc3f2dba0c5d06f846c08d11817ac9dd0a4b
 </html>

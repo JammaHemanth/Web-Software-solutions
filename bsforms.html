@@ -1,510 +1,346 @@
-<<<<<<< HEAD
-<html>
-      <head>
-<!-- CSS only -->
-<link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <style>
-.btn{
-text-align: center;
-}
-
-.header{
-width:100%;
-height:9%;
-background-color:Purple;
-color:white;
-}
-
-.content{
-width:100%;
-height:81%;
-overflow:scroll;
-}
-
-.footer{
-width:100%;
-height:10%;
-background-color:RebeccaPurple;
-color:white;
-}
-
-.img-fluid{
-width:50%;
-height:50%;
-}
-
-.justify{
-text-align:justify;
-}
-
-.img{
-width:50%;
-height:50%;
-background-position:right;
-}
-
-.box{
-border:1px solid;
-height:30%;
-width:30%;
-position:relative;
-background-position:right;
-}
-
-.anim1{
-animation-name:square;
-animation-duration:10s;
-animation-delay:0s;
-animation-direction:alternate;
-animation-iteration-count:infinite;
-}
-@keyframes square{
-from{ top:0px;left:80px;background-image:url('https://www.dynodesoft.com/images/dynode.jpg')background-size:cover}
-to{ top:0px;left:120px;background-image:url('https://www.dynodesoft.com/images/dynode.jpg');background-size:cover}
-}
-
-
+.form-modern .form-select option { color:#1e1b4b;background:#e2e8f0;padding:0.5rem; }
+.form-modern .form-select optgroup { color:var(--accent);font-weight:700;font-size:0.85rem;letter-spacing:0.3px;background:#1e1b4b; }
+.form-modern .form-select optgroup option { color:#1e1b4b;background:#e2e8f0;padding-left:1.5rem;font-weight:400; }
+.form-modern .form-select optgroup option:hover { background:var(--accent);color:#fff; }
 </style>
-      </head>
-   <body>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-modern">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <i class="fas fa-code me-2" style="color:var(--accent);font-size:1.5rem;"></i><span class="fw-bold" style="color:#fff;">WebSoft</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="carrer.html">Carrer</a></li>
+        <li class="nav-item"><a class="nav-link" href="service.html">Service</a></li>
+        <li class="nav-item"><a class="nav-link" href="login form.html">Sign in</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container">
+    <h1 class="float-anim"><i class="fas fa-file-alt me-2"></i>Registration Form</h1>
+    <p class="subtitle">Complete your registration details</p>
+  </div>
+</header>
+
+<main class="content-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="progress-bar-custom">
+          <div class="progress-fill" id="formProgress" style="width: 0%;"></div>
+        </div>
+        <div class="glass-card p-4 p-lg-5" style="animation: scaleIn 0.5s ease;">
+          <form class="form-modern" action="rules.html" id="regForm">
+            <div class="row mb-3 fade-in-up">
+              <div class="col-md-6 mb-3 mb-md-0">
+                <div class="form-group">
+                  <label class="form-label"><i class="fas fa-user me-1" style="color:var(--accent);"></i> First Name</label>
+                  <input type="text" class="form-control" name="fname" placeholder="Enter your First Name" required oninput="updateProgress()">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label"><i class="fas fa-user me-1" style="color:var(--accent);"></i> Last Name</label>
+                  <input type="text" class="form-control" name="lname" placeholder="Enter your Last Name" required oninput="updateProgress()">
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-3 fade-in-up">
+              <div class="col-md-6 mb-3 mb-md-0">
+                <div class="form-group">
+                  <label class="form-label"><i class="fas fa-envelope me-1" style="color:var(--accent);"></i> E-mail</label>
+                  <input type="email" class="form-control" name="email" placeholder="Enter your E-mail" required oninput="updateProgress()">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label"><i class="fas fa-briefcase me-1" style="color:var(--accent);"></i> Job Roles</label>
+                  <select class="form-select" name="jobrole" onchange="updateProgress()">
+                    <option value="">— Select Your Role —</option>
+                    <optgroup label="Engineering & Technology">
+                    <option>Front-end Developer</option>
+                    <option>Back-end Developer</option>
+                    <option>Full-Stack Developer</option>
+                    <option>Web Developer</option>
+                    <option>Java Developer</option>
+                    <option>Systems Engineer</option>
+                    <option>Senior Systems Engineer</option>
+                    </optgroup>
+                    <optgroup label="Data & Analytics">
+                    <option>Analyst – Data Science</option>
+                    <option>Associate Business Analyst</option>
+                    <option>Business Development Associate</option>
+                    </optgroup>
+                    <optgroup label="Design & Experience">
+                    <option>Designer – Experience Design</option>
+                    <option>Senior Designer – Experience Design</option>
+                    <option>Lead – Experience Design</option>
+                    <option>Senior Lead – Experience Design</option>
+                    </optgroup>
+                    <optgroup label="Consulting & Finance">
+                    <option>Associate Consultant</option>
+                    <option>Associate Finance</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3 fade-in-up">
+              <div class="form-group">
+                <label class="form-label"><i class="fas fa-home me-1" style="color:var(--accent);"></i> Address</label>
+                <textarea class="form-control" rows="2" name="address" placeholder="Enter your Address" required oninput="updateProgress()"></textarea>
+              </div>
+            </div>
+
+            <div class="row mb-3 fade-in-up">
+              <div class="col-md-6 mb-3 mb-md-0">
+                <div class="form-group">
+                  <label class="form-label"><i class="fas fa-city me-1" style="color:var(--accent);"></i> City</label>
+                  <select class="form-select" name="city" onchange="updateProgress()">
+                    <option value="">— Select Your City —</option>
+                    <optgroup label=" Metropolitan Cities">
+                    <option>Mumbai</option>
+                    <option>Delhi / NCR</option>
+                    <option>Bangalore</option>
+                    <option>Chennai</option>
+                    <option>Kolkata</option>
+                    <option>Hyderabad</option>
+                    <option>Pune</option>
+                    <option>Ahmedabad</option>
+                    </optgroup>
+                    <optgroup label="Other Major Hubs">
+                    <option>Gurgaon</option>
+                    <option>Noida</option>
+                    <option>Gandhinagar</option>
+                    <option>Chandigarh</option>
+                    <option>Jaipur</option>
+                    <option>Lucknow</option>
+                    <option>Indore</option>
+                    <option>Coimbatore</option>
+                    <option>Kochi</option>
+                    <option>Visakhapatnam</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label"><i class="fas fa-map-pin me-1" style="color:var(--accent);"></i> Pin-code</label>
+                  <input type="text" class="form-control" name="pincode" placeholder="Enter your Pin-code" oninput="updateProgress()">
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-3 fade-in-up">
+              <div class="col-md-6 mb-3 mb-md-0">
+                <div class="form-group">
+                  <label class="form-label"><i class="fas fa-calendar me-1" style="color:var(--accent);"></i> D.O.B</label>
+                  <input type="date" class="form-control" name="dob" onchange="updateProgress()">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label"><i class="fas fa-phone me-1" style="color:var(--accent);"></i> Phone number</label>
+                  <input type="tel" class="form-control" name="phone" placeholder="Enter your Phone number" required oninput="updateProgress()">
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-4 fade-in-up">
+              <label class="form-label d-block"><i class="fas fa-venus-mars me-1" style="color:var(--accent);"></i> Gender</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" value="male" id="male" onchange="updateProgress()">
+                <label class="form-check-label" for="male">Male</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" value="female" id="female" onchange="updateProgress()">
+                <label class="form-check-label" for="female">Female</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" value="others" id="others" onchange="updateProgress()">
+                <label class="form-check-label" for="others">Others</label>
+              </div>
+            </div>
+
+            <div class="mb-4 fade-in-up">
+              <label class="form-label d-block"><i class="fas fa-heart me-1" style="color:var(--accent);"></i> Hobbies</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="hobbies" value="reading" id="reading" onchange="updateProgress()">
+                <label class="form-check-label" for="reading">Reading</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="hobbies" value="travel" id="travel" onchange="updateProgress()">
+                <label class="form-check-label" for="travel">Travel</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" name="hobbies" value="designing" id="designing" onchange="updateProgress()">
+                <label class="form-check-label" for="designing">Designing</label>
+              </div>
+            </div>
+
+            <div class="row mb-3 fade-in-up">
+              <div class="col-md-6 mb-3 mb-md-0">
+                <div class="form-group">
+                  <label class="form-label"><i class="fas fa-graduation-cap me-1" style="color:var(--accent);"></i> Qualification</label>
+                  <select class="form-select" name="qualification" onchange="updateProgress()">
+                    <option value="">— Select Your Qualification —</option>
+                    <optgroup label="Bachelor's Degree">
+                    <option value="B.Tech Computer Science">B.Tech – Computer Science</option>
+                    <option value="B.Tech Mechanical">B.Tech – Mechanical</option>
+                    <option value="B.Tech ECE">B.Tech – Electronics & Communication</option>
+                    <option value="B.Tech EEE">B.Tech – Electrical & Electronics</option>
+                    <option value="B.Tech Civil">B.Tech – Civil</option>
+                    <option value="B.Sc">B.Sc – Sciences</option>
+                    <option value="BCA">BCA – Computer Applications</option>
+                    <option value="BBA">BBA – Business Administration</option>
+                    <option value="B.Com">B.Com – Commerce</option>
+                    </optgroup>
+                    <optgroup label="Master's Degree">
+                    <option value="M.Tech">M.Tech – Master of Technology</option>
+                    <option value="MCA">MCA – Computer Applications</option>
+                    <option value="MBA">MBA – Business Administration</option>
+                    <option value="M.Sc">M.Sc – Sciences</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                    <option value="Diploma">Diploma</option>
+                    <option value="PhD">PhD – Doctorate</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label"><i class="fas fa-percentage me-1" style="color:var(--accent);"></i> G.P.A / Percentage</label>
+                  <input type="number" class="form-control" name="gpa" step="0.01" placeholder="Enter your GPA" required oninput="updateProgress()">
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-3 fade-in-up">
+              <div class="col-md-6 mb-3 mb-md-0">
+                <label class="form-label"><i class="fas fa-file-upload me-1" style="color:var(--accent);"></i> Resume</label>
+                <div class="file-upload-wrapper" onclick="document.getElementById('resumeInput').click()" id="resumeWrapper">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                  <p class="mt-2 mb-0" style="color:rgba(255,255,255,0.6);">Click to upload your Resume</p>
+                  <small style="color:rgba(255,255,255,0.3);">PDF, DOC - Max 5MB</small>
+                  <input type="file" id="resumeInput" name="resume" hidden onchange="handleFileUpload(this, 'resumeWrapper')">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label"><i class="fas fa-camera me-1" style="color:var(--accent);"></i> Passport Photo</label>
+                <div class="file-upload-wrapper" onclick="document.getElementById('photoInput').click()" id="photoWrapper">
+                  <i class="fas fa-image"></i>
+                  <p class="mt-2 mb-0" style="color:rgba(255,255,255,0.6);">Click to upload Photo</p>
+                  <small style="color:rgba(255,255,255,0.3);">JPG, PNG - Max 2MB</small>
+                  <input type="file" id="photoInput" name="photo" accept="image/*" hidden onchange="handleFileUpload(this, 'photoWrapper')">
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-4 fade-in-up">
+              <label class="form-label d-block"><i class="fas fa-code me-1" style="color:var(--accent);"></i> Coding Skills</label>
+              <div class="d-flex align-items-center gap-3">
+                <input type="range" class="form-range flex-grow-1" name="skills" min="0" max="100" step="1" value="50" id="skillRange" oninput="updateSkillDisplay(this.value); updateProgress();">
+                <span class="skill-value" id="skillValue">50%</span>
+              </div>
+              <div class="d-flex justify-content-between small" style="color: rgba(255,255,255,0.3);">
+                <span>Beginner</span><span>Intermediate</span><span>Expert</span>
+              </div>
+            </div>
+
+            <div class="form-check mb-4 fade-in-up">
+              <input class="form-check-input" type="checkbox" name="agree" id="agreeCheck" required onchange="updateProgress()">
+              <label class="form-check-label" for="agreeCheck">I agree to the <a href="#" style="color:var(--accent);">terms and conditions</a></label>
+            </div>
+
+            <div class="d-flex gap-3 justify-content-end fade-in-up">
+              <button type="reset" class="btn btn-outline-glass" onclick="resetProgress()"><i class="fas fa-undo me-1"></i>Reset</button>
+              <button type="submit" class="btn btn-gradient"><i class="fas fa-paper-plane me-1"></i>Submit</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
 
 
-<!--Borders and title-->
-<div class="container">
-
-<form class="w-30 m-5 border border-primary rounded p-3" action="rules.html">
-
-<div class="mb-3">
-<h3 class="bg-primary text-light border rounded-top" align="center">Registration Form</h3>
-</div>
-
-<div class=" mb-3 mt-3">
-<div class="row">
-<div class="col">
-<label class="form-name">First Name</label>
-<input type="text" class="form-control" name="name" placeholder="Enter your First Name" required>
-</div>
-<div class="col">
-<label class="form-name">Last Name</label>
-<input type="text" class="form-control" name="name" placeholder="Enter your Last Name" required>
-</div>
-</div>
-</div>
-
-<div class="mb-3 mt-3">
-<div class="row">
-<div class="col">
-<label class="form-name">E-mail</label>
-<input type="text" class="form-control" name="e-mail" placeholder="Enter your E-mail" required>
-</div>
-<div class="col">
-<label for="job" class="form-label">Job Roles</label>
-   
-<select class="form-select">
-
-      <optgroup label="Job roles"></option>
-      <option>Analyst - Data Science</option> 
-      <option>Associate Business Analyst</option> 
-      <option>Associate Consultant</option> 
-      <option>Associate Finance</option>
-      <option>Business Development Associate</option> 
-      <option>Designer – Experience Design</option>  
-      <option>Lead - Experience Design</option> 
-      <option>Senior Designer – Experience Design</option> 
-      <option>Senior Lead - Experience Design</option> 
-      <option>Systems Engineer</option> 
-      <option>Senior Systems Engineer</option> 
-      <option>Java developer</option>
-      <option>Web developer</option>
-      <option>Front-end developer</option>
-      <option>Back-end developer</option>
-    </select>
-</div>
-</div>
-</div>
-
-<label for="Address">Address</label>
-<textarea class="form-control" rows="2" id="Address" name="text" placeholder="Enter your Address" required></textarea>
-
-<div class=" form-floating mb-3 mt-3">
-<div class="row">
-<div class="col">
-<label class="form-name">City</label>
-
-<select class="form-select">
-
-      <optgroup label="City"></option>
-      <option>Andhra Pradesh</option> 
-      <option>Ahmedabad and Gandhinagar</option> 
-      <option>Bangalore</option> 
-      <option>Chennai</option>
-      <option>Hyderabad</option> 
-      <option>Kolkata</option>  
-      <option>Mumbai</option> 
-      <option>NCR – Delhi Noida and Gurgaon</option> 
-      <option>Pune </option> 
-    </select>
-
-</div>
-<div class=" col">
-<label class="form-name">Pin-code</label>
-<input type="number" class="form-control" name="name" placeholder="Enter your Pin-code">
-</div>
-</div>
-</div>
-
-<div class="mb-3 mt-3">
-<div class="row">
-<div class=" col">
-<label class="form-name">D.O.B</label>
-<input type="datetime-local" class="form-control" name="name" placeholder="Enter your City">
-</div>
-<div class=" col">
-<label class="form-name">Phone number</label>
-<input type="number" class="form-control" name="name" placeholder="Enter your Phone number" required>
-</div>
-</div>
-</div>
-
-<div class="mb-5 mt-5">
-<label>Gender</label> &nbsp
-<label>Male</label>
-<input type="radio" class="form-check-input"  name="gender"> &nbsp
-<label >Female</label>
-<input type="radio" class="form-check-input" name="gender"> &nbsp
-<label>Others</label>
-<input type="radio" class="form-check-input" name="gender"> 
-</div>
-
-<div class="mb-5 mt-5">
-<label>Hobbies</label> &nbsp
-<label>Reading</label>
-<input type="checkbox" class="form-check-input"  name="hobbies"> &nbsp
-<label >Travel</label>
-<input type="checkbox" class="form-check-input" name="hobbies"> &nbsp
-<label>Designing</label>
-<input type="checkbox" class="form-check-input" name="hobbies"> 
-</div>
-
-
-<div class="mb-3 mt-3">
-<div class="row">
-<div class="col">
-<label>Qualifiaction:</label>
-<select>
-<option value="Enter Your Qualifiacion">Enter Your Qualifiacion</option>
-<optgroup label ="B.Tech"></option>
-<option value="Mechanical">Mechanical</option>
-<option value="C.S.E">C.S.E</option>
-<option value="E.E.E">E.E.E</option>
-<option value="E.C.E">E.C.E</option>
-<option value="Civil">Civil</option>
-</select>
-</div>
-<div class="col">
-<label class="form-name">G.P.A/Percentage</label>
-<input type="number" class="form-control" required>
-</div>
-</div>
-</div>
-
-<div class="mb-3 mt-3">
-<label >Update your Resume</label> &nbsp
-<input type="file" name="file">
-</div>
-
-<br> 
-
-<div class="mb-3 mt-3">
-<label >Update your passport photo</label> &nbsp
-<input type="file" name="file">
-</div>
-
-<div class="mb-5 mt-5" w-50>
-<label>Coding Skills</label> &nbsp
-<input type="range" name="range">
-</div>
-
-<div class="form-check mb-3">
-<input class="form-check-input" type="checkbox" id="myCheck"  name="remember" required>
-<label class="form-check-label" for="myCheck">I agree to the terms and conditions</label>
-
-
-</div>
-
-<div class="float-end">
-<button type="submit" class="btn btn-primary">Submit</button>
-</div>
-
-<div class="text-end">
-<button type="reset" class="btn btn-dark">Reset</button> &nbsp &nbsp 
-</div>
-</div>
-</div>
-</form>
-
-           
-
-
+<script>
+function updateSkillDisplay(val) {
+  document.getElementById('skillValue').textContent = val + '%';
+}
+function updateProgress() {
+  const form = document.getElementById('regForm');
+  const fields = form.querySelectorAll('input, select, textarea');
+  let filled = 0;
+  fields.forEach(f => {
+    if (f.type === 'checkbox' || f.type === 'radio') {
+      if (f.checked) filled++;
+    } else if (f.value && f.value.trim() !== '') {
+      filled++;
+    }
+  });
+  const pct = Math.min(100, Math.round((filled / fields.length) * 100));
+  document.getElementById('formProgress').style.width = pct + '%';
+}
+function resetProgress() {
+  setTimeout(() => document.getElementById('formProgress').style.width = '0%', 50);
+}
+function handleFileUpload(input, wrapperId) {
+  const wrapper = document.getElementById(wrapperId);
+  if (input.files && input.files[0]) {
+    wrapper.style.borderColor = '#22c55e';
+    wrapper.style.background = 'rgba(34,197,94,0.08)';
+    const icon = wrapper.querySelector('i');
+    icon.className = 'fas fa-check-circle';
+    icon.style.color = '#22c55e';
+    const text = wrapper.querySelector('p');
+    text.textContent = input.files[0].name;
+    text.style.color = '#22c55e';
+    updateProgress();
+  }
+}
+document.querySelectorAll('.file-upload-wrapper').forEach(w => {
+  w.addEventListener('dragover', e => { e.preventDefault(); w.classList.add('dragover'); });
+  w.addEventListener('dragleave', () => w.classList.remove('dragover'));
+  w.addEventListener('drop', e => {
+    e.preventDefault();
+    w.classList.remove('dragover');
+    const input = w.querySelector('input[type="file"]');
+    if (e.dataTransfer.files.length) {
+      input.files = e.dataTransfer.files;
+      handleFileUpload(input, w.id);
+    }
+  });
+});
+</script>
 </body>
-=======
-<html>
-      <head>
-<!-- CSS only -->
-<link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-
-<style>
-.btn{
-text-align: center;
-}
-
-.header{
-width:100%;
-height:9%;
-background-color:Purple;
-color:white;
-}
-
-.content{
-width:100%;
-height:81%;
-overflow:scroll;
-}
-
-.footer{
-width:100%;
-height:10%;
-background-color:RebeccaPurple;
-color:white;
-}
-
-.img-fluid{
-width:50%;
-height:50%;
-}
-
-.justify{
-text-align:justify;
-}
-
-.img{
-width:50%;
-height:50%;
-background-position:right;
-}
-
-.box{
-border:1px solid;
-height:30%;
-width:30%;
-position:relative;
-background-position:right;
-}
-
-.anim1{
-animation-name:square;
-animation-duration:10s;
-animation-delay:0s;
-animation-direction:alternate;
-animation-iteration-count:infinite;
-}
-@keyframes square{
-from{ top:0px;left:80px;background-image:url('https://www.dynodesoft.com/images/dynode.jpg')background-size:cover}
-to{ top:0px;left:120px;background-image:url('https://www.dynodesoft.com/images/dynode.jpg');background-size:cover}
-}
-
-
-</style>
-      </head>
-   <body>
-
-
-<!--Borders and title-->
-<div class="container">
-
-<form class="w-30 m-5 border border-primary rounded p-3" action="rules.html">
-
-<div class="mb-3">
-<h3 class="bg-primary text-light border rounded-top" align="center">Registration Form</h3>
-</div>
-
-<div class=" mb-3 mt-3">
-<div class="row">
-<div class="col">
-<label class="form-name">First Name</label>
-<input type="text" class="form-control" name="name" placeholder="Enter your First Name" required>
-</div>
-<div class="col">
-<label class="form-name">Last Name</label>
-<input type="text" class="form-control" name="name" placeholder="Enter your Last Name" required>
-</div>
-</div>
-</div>
-
-<div class="mb-3 mt-3">
-<div class="row">
-<div class="col">
-<label class="form-name">E-mail</label>
-<input type="text" class="form-control" name="e-mail" placeholder="Enter your E-mail" required>
-</div>
-<div class="col">
-<label for="job" class="form-label">Job Roles</label>
-   
-<select class="form-select">
-
-      <optgroup label="Job roles"></option>
-      <option>Analyst - Data Science</option> 
-      <option>Associate Business Analyst</option> 
-      <option>Associate Consultant</option> 
-      <option>Associate Finance</option>
-      <option>Business Development Associate</option> 
-      <option>Designer – Experience Design</option>  
-      <option>Lead - Experience Design</option> 
-      <option>Senior Designer – Experience Design</option> 
-      <option>Senior Lead - Experience Design</option> 
-      <option>Systems Engineer</option> 
-      <option>Senior Systems Engineer</option> 
-      <option>Java developer</option>
-      <option>Web developer</option>
-      <option>Front-end developer</option>
-      <option>Back-end developer</option>
-    </select>
-</div>
-</div>
-</div>
-
-<label for="Address">Address</label>
-<textarea class="form-control" rows="2" id="Address" name="text" placeholder="Enter your Address" required></textarea>
-
-<div class=" form-floating mb-3 mt-3">
-<div class="row">
-<div class="col">
-<label class="form-name">City</label>
-
-<select class="form-select">
-
-      <optgroup label="City"></option>
-      <option>Andhra Pradesh</option> 
-      <option>Ahmedabad and Gandhinagar</option> 
-      <option>Bangalore</option> 
-      <option>Chennai</option>
-      <option>Hyderabad</option> 
-      <option>Kolkata</option>  
-      <option>Mumbai</option> 
-      <option>NCR – Delhi Noida and Gurgaon</option> 
-      <option>Pune </option> 
-    </select>
-
-</div>
-<div class=" col">
-<label class="form-name">Pin-code</label>
-<input type="number" class="form-control" name="name" placeholder="Enter your Pin-code">
-</div>
-</div>
-</div>
-
-<div class="mb-3 mt-3">
-<div class="row">
-<div class=" col">
-<label class="form-name">D.O.B</label>
-<input type="datetime-local" class="form-control" name="name" placeholder="Enter your City">
-</div>
-<div class=" col">
-<label class="form-name">Phone number</label>
-<input type="number" class="form-control" name="name" placeholder="Enter your Phone number" required>
-</div>
-</div>
-</div>
-
-<div class="mb-5 mt-5">
-<label>Gender</label> &nbsp
-<label>Male</label>
-<input type="radio" class="form-check-input"  name="gender"> &nbsp
-<label >Female</label>
-<input type="radio" class="form-check-input" name="gender"> &nbsp
-<label>Others</label>
-<input type="radio" class="form-check-input" name="gender"> 
-</div>
-
-<div class="mb-5 mt-5">
-<label>Hobbies</label> &nbsp
-<label>Reading</label>
-<input type="checkbox" class="form-check-input"  name="hobbies"> &nbsp
-<label >Travel</label>
-<input type="checkbox" class="form-check-input" name="hobbies"> &nbsp
-<label>Designing</label>
-<input type="checkbox" class="form-check-input" name="hobbies"> 
-</div>
-
-
-<div class="mb-3 mt-3">
-<div class="row">
-<div class="col">
-<label>Qualifiaction:</label>
-<select>
-<option value="Enter Your Qualifiacion">Enter Your Qualifiacion</option>
-<optgroup label ="B.Tech"></option>
-<option value="Mechanical">Mechanical</option>
-<option value="C.S.E">C.S.E</option>
-<option value="E.E.E">E.E.E</option>
-<option value="E.C.E">E.C.E</option>
-<option value="Civil">Civil</option>
-</select>
-</div>
-<div class="col">
-<label class="form-name">G.P.A/Percentage</label>
-<input type="number" class="form-control" required>
-</div>
-</div>
-</div>
-
-<div class="mb-3 mt-3">
-<label >Update your Resume</label> &nbsp
-<input type="file" name="file">
-</div>
-
-<br> 
-
-<div class="mb-3 mt-3">
-<label >Update your passport photo</label> &nbsp
-<input type="file" name="file">
-</div>
-
-<div class="mb-5 mt-5" w-50>
-<label>Coding Skills</label> &nbsp
-<input type="range" name="range">
-</div>
-
-<div class="form-check mb-3">
-<input class="form-check-input" type="checkbox" id="myCheck"  name="remember" required>
-<label class="form-check-label" for="myCheck">I agree to the terms and conditions</label>
-
-
-</div>
-
-<div class="float-end">
-<button type="submit" class="btn btn-primary">Submit</button>
-</div>
-
-<div class="text-end">
-<button type="reset" class="btn btn-dark">Reset</button> &nbsp &nbsp 
-</div>
-</div>
-</div>
-</form>
-
-           
-
-
-</body>
->>>>>>> 0ea0fc3f2dba0c5d06f846c08d11817ac9dd0a4b
 </html>

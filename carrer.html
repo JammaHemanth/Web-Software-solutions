@@ -1,474 +1,230 @@
-<<<<<<< HEAD
-<html>
-      <head>
-<!-- CSS only -->
-<link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<title>Career - Web-software Solutions</title>
+</head>
+<body>
 
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-
-<style>
-.btn{
-text-align: center;
-}
-
-.header{
-width:100%;
-height:9%;
-background-color:Purple;
-color:white;
-}
-
-.content{
-width:100%;
-height:70%;
-overflow:scroll;
-}
-
-.footer{
-width:100%;
-height:10%;
-background-color:RebeccaPurple;
-color:white;
-}
-
-.img-fluid{
-width:50%;
-height:50%;
-}
-
-.justify{
-text-align:justify;
-}
-
-.img{
-width:50%;
-height:50%;
-background-position:right;
-}
-
-.box{
-border:1px solid;
-height:30%;
-width:30%;
-position:relative;
-background-position:right;
-}
-
-.anim1{
-animation-name:square;
-animation-duration:10s;
-animation-delay:0s;
-animation-direction:alternate;
-animation-iteration-count:infinite;
-}
-@keyframes square{
-from{ top:0px;left:80px;background-image:url('https://www.dynodesoft.com/images/dynode.jpg')background-size:cover}
-to{ top:0px;left:120px;background-image:url('https://www.dynodesoft.com/images/dynode.jpg');background-size:cover}
-}
-
-
-body{
-background-image:url('Images/logos.jpg');
-background-repeat:no-repeat;
-background-size:cover;
-bckground-position:center;
-background-attachment:fixed;
--webkit-backdrop-filter:blur(5.5px);
-backdrop-filter:blur(4.0px);
-}
-
-</style>
-      </head>
-   <body>
-
-<div class="header">
-<h1 align="center"><u>Web-software solutions</u></h1> </div>
-
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"></a>
-        <img src="Images\logos.jpg" style="width:40px;" class="rounded-pill"> &nbsp &nbsp &nbsp &nbsp
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+<nav class="navbar navbar-expand-lg navbar-modern">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <i class="fas fa-code me-2" style="color:var(--accent);font-size:1.5rem;"></i><span class="fw-bold" style="color:#fff;">WebSoft</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="home.html">Home</a>
-        </li>
-          <a class="nav-link" href="about.html">About us</a>
-          </li>
-        <li class="nav-item">
-          <a class="nav-link" href="gallery.html">Gallery</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="carrer.html">carrer</a>
-        </li> 
-        <li class="nav-item">
-          <a class="nav-link" href="service.html">Service</a>
-        </li>   
-        <li class="nav-item">
-          <a class="nav-link" href="login form.html">Sign in</a>
-        </li>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="carrer.html">Career</a></li>
+        <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="login form.html">Sign In</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-</div>
+<main class="container py-5">
+  <div class="text-center mb-5 fade-in-up">
+    <div class="icon-decoration icon-decoration-lg mb-3" style="margin:0 auto 1.5rem;">
+      <i class="fas fa-briefcase"></i>
+    </div>
+    <h1 class="display-4 fw-bold gradient-text">Join Our Team</h1>
+    <p class="lead" style="color:rgba(255,255,255,0.7);max-width:700px;margin:0 auto;">Build your career with WebSoft — where innovation meets opportunity. Explore open roles below.</p>
+    <div class="section-divider"></div>
+  </div>
 
-<div class="container">
+  <div class="stats-grid fade-in-up">
+    <div class="stat-item"><span class="stat-number" data-count="14">0</span><span class="stat-label">Open Positions</span></div>
+    <div class="stat-item"><span class="stat-number" data-count="50">0</span><span class="stat-label">Team Members</span></div>
+    <div class="stat-item"><span class="stat-number" data-count="3">0</span><span class="stat-label">Office Locations</span></div>
+    <div class="stat-item"><span class="stat-number" data-count="92">0</span><span class="stat-label">Employee Satisfaction %</span></div>
+  </div>
 
-<br> 	
-
-<table class="table table-bordered table-hover table-striped">
-<thead class="table-dark">
-<tr>
-    <th>S.no</th>
-    <th>Role</th>
-    <th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-     <td>1</td>
-     <td>Analyst - Data Science</td>
-     <td>Design and perform exploratory data analysis, identify meaningful information out of data. Must have expertise in using tools for data analysis.</td>
-</tr>
-     
-<tr>
-     <td>2</td>
-     <td>Associate Business Analyst</td>
-     <td>Provide support to consulting and technical teams in different processes to ensure delivery of high quality solutions to clients.</td>
-</tr>
-
-<tr>
-     <td>3</td>
-     <td>Associate Consultant</td>
-     <td>Support the consulting team in different phases of the project and provide high quality solutions to clients.</td>
-</tr>
-
-<tr>
-     <td>4</td>
-     <td>Associate Finance</td>
-     <td>Participate in, manage and review operations related to Finance functions to faciltate smooth conduct of Finance operations within the recommended framework. </td>
-</tr>
-
-<tr>
-     <td>5</td>
-     <td>Business Development Associate</td>
-     <td>Generate qualified leads through market research, and client introduction, to assist the organization in presenting business value to the clients.</td>
-</tr>
-
-<tr>
-     <td>6</td>
-     <td>Designer – Experience Design</td>
-     <td>It is a profession responsible for turning applications into something that people enjoy to complete tasks in an efficient manner</td>
-</tr>
-
-<tr>
-     <td>7</td>
-     <td>Lead - Experience Design</td>
-     <td>Contribute to high-level design concepts, work directly with clients, and create design outcomes to ensure quality of solutions.</td>
-</tr>
-
-<tr>
-     <td>8</td>
-     <td>Senior Designer – Experience Design</td>
-     <td>From user experience standpoint, support creation of detailed designs and prototypes to ensure quality of solutions. </td>
-</tr>
-
-<tr>
-     <td>9</td>
-     <td>Senior Lead - Experience Design</td>
-     <td>Contribute to high-level design concepts, work directly with clients, and create design outcomes to ensure quality of solutions.</td>
-</tr>
-
-<tr>
-     <td>10</td>
-     <td>Systems Engineer</td>
-     <td>Implement design, development, validation and support activities in line with architecture requirements.</td>
-</tr>
-
-<tr>
-     <td>11</td>
-     <td>Senior Systems Engineer</td>
-     <td>designing, implementing, and managing software in order to meet client needs.</td>
-</tr>
-
-<tr>
-     <td>12</td>
-     <td>Java Full Stack</td>
-     <td>designing user interactions on websites, developing servers and databases for website functionality and coding for mobile platforms.</td>
-</tr>
-
-<tr>
-     <td>13</td>
-     <td>Front-End devlepor</td>
-     <td>developing new user-facing features, determining the structure and design of web pages</td>
-</tr>
-
-<tr>
-     <td>14</td>
-     <td>Back-End devlepor</td>
-     <td>Implement in build and maintain the mechanisms that process data and perform actions on websites</td>
-</tr>
-
-</tbody>
-</table>
-
-</div> <br> <br>
-           
-<div class="footer"> <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp     
-&copy; Copy rights by software solutions Pvt Ltd., &nbsp &nbsp &nbsp 
-
-  Teams
-
- &nbsp &nbsp &nbsp  @Terms and conditions
-
- &nbsp &nbsp &nbsp  Carrer
-	       
-              </div>  
-       </body>
-=======
-<html>
-      <head>
-<!-- CSS only -->
-<link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-
-<style>
-.btn{
-text-align: center;
-}
-
-.header{
-width:100%;
-height:9%;
-background-color:Purple;
-color:white;
-}
-
-.content{
-width:100%;
-height:70%;
-overflow:scroll;
-}
-
-.footer{
-width:100%;
-height:10%;
-background-color:RebeccaPurple;
-color:white;
-}
-
-.img-fluid{
-width:50%;
-height:50%;
-}
-
-.justify{
-text-align:justify;
-}
-
-.img{
-width:50%;
-height:50%;
-background-position:right;
-}
-
-.box{
-border:1px solid;
-height:30%;
-width:30%;
-position:relative;
-background-position:right;
-}
-
-.anim1{
-animation-name:square;
-animation-duration:10s;
-animation-delay:0s;
-animation-direction:alternate;
-animation-iteration-count:infinite;
-}
-@keyframes square{
-from{ top:0px;left:80px;background-image:url('https://www.dynodesoft.com/images/dynode.jpg')background-size:cover}
-to{ top:0px;left:120px;background-image:url('https://www.dynodesoft.com/images/dynode.jpg');background-size:cover}
-}
-
-
-body{
-background-image:url('Images/logos.jpg');
-background-repeat:no-repeat;
-background-size:cover;
-bckground-position:center;
-background-attachment:fixed;
--webkit-backdrop-filter:blur(5.5px);
-backdrop-filter:blur(4.0px);
-}
-
-</style>
-      </head>
-   <body>
-
-<div class="header">
-<h1 align="center"><u>Web-software solutions</u></h1> </div>
-
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"></a>
-        <img src="Images\logos.jpg" style="width:40px;" class="rounded-pill"> &nbsp &nbsp &nbsp &nbsp
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="home.html">Home</a>
-        </li>
-          <a class="nav-link" href="about.html">About us</a>
-          </li>
-        <li class="nav-item">
-          <a class="nav-link" href="gallery.html">Gallery</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="carrer.html">carrer</a>
-        </li> 
-        <li class="nav-item">
-          <a class="nav-link" href="service.html">Service</a>
-        </li>   
-        <li class="nav-item">
-          <a class="nav-link" href="login form.html">Sign in</a>
-        </li>
-      </ul>
+  <div class="row g-4 mb-5 fade-in-up">
+    <div class="col-md-3 col-6">
+      <div class="benefit-card"><i class="fas fa-home"></i><h6>Remote Work</h6><p>Flexible work-from-home options</p></div>
+    </div>
+    <div class="col-md-3 col-6">
+      <div class="benefit-card"><i class="fas fa-graduation-cap"></i><h6>Learning</h6><p>Continuous upskilling &amp; certifications</p></div>
+    </div>
+    <div class="col-md-3 col-6">
+      <div class="benefit-card"><i class="fas fa-heartbeat"></i><h6>Health</h6><p>Comprehensive medical coverage</p></div>
+    </div>
+    <div class="col-md-3 col-6">
+      <div class="benefit-card"><i class="fas fa-plane"></i><h6>Vacation</h6><p>Generous paid time off policy</p></div>
     </div>
   </div>
-</nav>
 
-</div>
+  <div class="fade-in-up">
+    <div class="text-center mb-4">
+      <h2 class="display-5 fw-bold gradient-text"><i class="fas fa-briefcase me-2" style="-webkit-text-fill-color:var(--accent);"></i>Current Openings</h2>
+      <p class="lead" style="color:rgba(255,255,255,0.6);">14 exciting roles waiting for the right talent. Find your next challenge below.</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="row g-3">
+      <div class="col-lg-6 fade-in-up">
+        <div class="glass-card p-3 d-flex align-items-start gap-3" style="border-left:4px solid var(--accent);">
+          <div class="icon-decoration" style="width:48px;height:48px;font-size:1.2rem;flex-shrink:0;"><span class="fw-bold">1</span></div>
+          <div><h5 class="fw-bold mb-1 gradient-text" style="font-size:1.1rem;">Analyst - Data Science</h5><p class="mb-0" style="color:rgba(255,255,255,0.65);font-size:0.9rem;">Design and perform exploratory data analysis, identify meaningful information out of data. Must have expertise in using tools for data analysis.</p><a href="rules.html" class="btn btn-sm" style="background:var(--gradient);color:#fff;border-radius:2rem;padding:0.25rem 1.4rem;font-size:0.8rem;text-decoration:none;font-weight:600;box-shadow:0 4px 12px rgba(139,92,246,0.3);display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:0.4rem;"><i class="fas fa-paper-plane me-1"></i>Apply Now</a><div class="mt-2 pt-2 border-top border-light border-opacity-10 d-flex gap-2"><a href="multiple.html" class="btn btn-sm" style="background:rgba(139,92,246,0.15);color:var(--accent);border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-code me-1"></i>Programming</a><a href="multiple.html" class="btn btn-sm" style="background:rgba(34,211,238,0.15);color:#22d3ee;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-brain me-1"></i>Aptitude</a><a href="combined-results.html" class="btn btn-sm" style="background:rgba(34,197,94,0.15);color:#22c55e;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-chart-bar me-1"></i>Results</a></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-in-up">
+        <div class="glass-card p-3 d-flex align-items-start gap-3" style="border-left:4px solid var(--accent);">
+          <div class="icon-decoration" style="width:48px;height:48px;font-size:1.2rem;flex-shrink:0;"><span class="fw-bold">2</span></div>
+          <div><h5 class="fw-bold mb-1 gradient-text" style="font-size:1.1rem;">Associate Business Analyst</h5><p class="mb-0" style="color:rgba(255,255,255,0.65);font-size:0.9rem;">Provide support to consulting and technical teams in different processes to ensure delivery of high quality solutions to clients.</p><a href="rules.html" class="btn btn-sm" style="background:var(--gradient);color:#fff;border-radius:2rem;padding:0.25rem 1.4rem;font-size:0.8rem;text-decoration:none;font-weight:600;box-shadow:0 4px 12px rgba(139,92,246,0.3);display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:0.4rem;"><i class="fas fa-paper-plane me-1"></i>Apply Now</a><div class="mt-2 pt-2 border-top border-light border-opacity-10 d-flex gap-2"><a href="multiple.html" class="btn btn-sm" style="background:rgba(139,92,246,0.15);color:var(--accent);border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-code me-1"></i>Programming</a><a href="multiple.html" class="btn btn-sm" style="background:rgba(34,211,238,0.15);color:#22d3ee;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-brain me-1"></i>Aptitude</a><a href="combined-results.html" class="btn btn-sm" style="background:rgba(34,197,94,0.15);color:#22c55e;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-chart-bar me-1"></i>Results</a></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-in-up">
+        <div class="glass-card p-3 d-flex align-items-start gap-3" style="border-left:4px solid var(--accent);">
+          <div class="icon-decoration" style="width:48px;height:48px;font-size:1.2rem;flex-shrink:0;"><span class="fw-bold">3</span></div>
+          <div><h5 class="fw-bold mb-1 gradient-text" style="font-size:1.1rem;">Associate Consultant</h5><p class="mb-0" style="color:rgba(255,255,255,0.65);font-size:0.9rem;">Support the consulting team in different phases of the project and provide high quality solutions to clients.</p><a href="rules.html" class="btn btn-sm" style="background:var(--gradient);color:#fff;border-radius:2rem;padding:0.25rem 1.4rem;font-size:0.8rem;text-decoration:none;font-weight:600;box-shadow:0 4px 12px rgba(139,92,246,0.3);display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:0.4rem;"><i class="fas fa-paper-plane me-1"></i>Apply Now</a><div class="mt-2 pt-2 border-top border-light border-opacity-10 d-flex gap-2"><a href="multiple.html" class="btn btn-sm" style="background:rgba(139,92,246,0.15);color:var(--accent);border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-code me-1"></i>Programming</a><a href="multiple.html" class="btn btn-sm" style="background:rgba(34,211,238,0.15);color:#22d3ee;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-brain me-1"></i>Aptitude</a><a href="combined-results.html" class="btn btn-sm" style="background:rgba(34,197,94,0.15);color:#22c55e;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-chart-bar me-1"></i>Results</a></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-in-up">
+        <div class="glass-card p-3 d-flex align-items-start gap-3" style="border-left:4px solid var(--accent);">
+          <div class="icon-decoration" style="width:48px;height:48px;font-size:1.2rem;flex-shrink:0;"><span class="fw-bold">4</span></div>
+          <div><h5 class="fw-bold mb-1 gradient-text" style="font-size:1.1rem;">Associate Finance</h5><p class="mb-0" style="color:rgba(255,255,255,0.65);font-size:0.9rem;">Participate in, manage and review operations related to Finance functions to faciltate smooth conduct of Finance operations within the recommended framework.</p><a href="rules.html" class="btn btn-sm" style="background:var(--gradient);color:#fff;border-radius:2rem;padding:0.25rem 1.4rem;font-size:0.8rem;text-decoration:none;font-weight:600;box-shadow:0 4px 12px rgba(139,92,246,0.3);display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:0.4rem;"><i class="fas fa-paper-plane me-1"></i>Apply Now</a><div class="mt-2 pt-2 border-top border-light border-opacity-10 d-flex gap-2"><a href="multiple.html" class="btn btn-sm" style="background:rgba(139,92,246,0.15);color:var(--accent);border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-code me-1"></i>Programming</a><a href="multiple.html" class="btn btn-sm" style="background:rgba(34,211,238,0.15);color:#22d3ee;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-brain me-1"></i>Aptitude</a><a href="combined-results.html" class="btn btn-sm" style="background:rgba(34,197,94,0.15);color:#22c55e;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-chart-bar me-1"></i>Results</a></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-in-up">
+        <div class="glass-card p-3 d-flex align-items-start gap-3" style="border-left:4px solid var(--accent);">
+          <div class="icon-decoration" style="width:48px;height:48px;font-size:1.2rem;flex-shrink:0;"><span class="fw-bold">5</span></div>
+          <div><h5 class="fw-bold mb-1 gradient-text" style="font-size:1.1rem;">Business Development Associate</h5><p class="mb-0" style="color:rgba(255,255,255,0.65);font-size:0.9rem;">Generate qualified leads through market research, and client introduction, to assist the organization in presenting business value to the clients.</p><a href="rules.html" class="btn btn-sm" style="background:var(--gradient);color:#fff;border-radius:2rem;padding:0.25rem 1.4rem;font-size:0.8rem;text-decoration:none;font-weight:600;box-shadow:0 4px 12px rgba(139,92,246,0.3);display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:0.4rem;"><i class="fas fa-paper-plane me-1"></i>Apply Now</a><div class="mt-2 pt-2 border-top border-light border-opacity-10 d-flex gap-2"><a href="multiple.html" class="btn btn-sm" style="background:rgba(139,92,246,0.15);color:var(--accent);border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-code me-1"></i>Programming</a><a href="multiple.html" class="btn btn-sm" style="background:rgba(34,211,238,0.15);color:#22d3ee;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-brain me-1"></i>Aptitude</a><a href="combined-results.html" class="btn btn-sm" style="background:rgba(34,197,94,0.15);color:#22c55e;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-chart-bar me-1"></i>Results</a></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-in-up">
+        <div class="glass-card p-3 d-flex align-items-start gap-3" style="border-left:4px solid var(--accent);">
+          <div class="icon-decoration" style="width:48px;height:48px;font-size:1.2rem;flex-shrink:0;"><span class="fw-bold">6</span></div>
+          <div><h5 class="fw-bold mb-1 gradient-text" style="font-size:1.1rem;">Designer - Experience Design</h5><p class="mb-0" style="color:rgba(255,255,255,0.65);font-size:0.9rem;">It is a profession responsible for turning applications into something that people enjoy to complete tasks in an efficient manner.</p><a href="rules.html" class="btn btn-sm" style="background:var(--gradient);color:#fff;border-radius:2rem;padding:0.25rem 1.4rem;font-size:0.8rem;text-decoration:none;font-weight:600;box-shadow:0 4px 12px rgba(139,92,246,0.3);display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:0.4rem;"><i class="fas fa-paper-plane me-1"></i>Apply Now</a><div class="mt-2 pt-2 border-top border-light border-opacity-10 d-flex gap-2"><a href="multiple.html" class="btn btn-sm" style="background:rgba(139,92,246,0.15);color:var(--accent);border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-code me-1"></i>Programming</a><a href="multiple.html" class="btn btn-sm" style="background:rgba(34,211,238,0.15);color:#22d3ee;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-brain me-1"></i>Aptitude</a><a href="combined-results.html" class="btn btn-sm" style="background:rgba(34,197,94,0.15);color:#22c55e;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-chart-bar me-1"></i>Results</a></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-in-up">
+        <div class="glass-card p-3 d-flex align-items-start gap-3" style="border-left:4px solid var(--accent);">
+          <div class="icon-decoration" style="width:48px;height:48px;font-size:1.2rem;flex-shrink:0;"><span class="fw-bold">7</span></div>
+          <div><h5 class="fw-bold mb-1 gradient-text" style="font-size:1.1rem;">Lead - Experience Design</h5><p class="mb-0" style="color:rgba(255,255,255,0.65);font-size:0.9rem;">Contribute to high-level design concepts, work directly with clients, and create design outcomes to ensure quality of solutions.</p><a href="rules.html" class="btn btn-sm" style="background:var(--gradient);color:#fff;border-radius:2rem;padding:0.25rem 1.4rem;font-size:0.8rem;text-decoration:none;font-weight:600;box-shadow:0 4px 12px rgba(139,92,246,0.3);display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:0.4rem;"><i class="fas fa-paper-plane me-1"></i>Apply Now</a><div class="mt-2 pt-2 border-top border-light border-opacity-10 d-flex gap-2"><a href="multiple.html" class="btn btn-sm" style="background:rgba(139,92,246,0.15);color:var(--accent);border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-code me-1"></i>Programming</a><a href="multiple.html" class="btn btn-sm" style="background:rgba(34,211,238,0.15);color:#22d3ee;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-brain me-1"></i>Aptitude</a><a href="combined-results.html" class="btn btn-sm" style="background:rgba(34,197,94,0.15);color:#22c55e;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-chart-bar me-1"></i>Results</a></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-in-up">
+        <div class="glass-card p-3 d-flex align-items-start gap-3" style="border-left:4px solid var(--accent);">
+          <div class="icon-decoration" style="width:48px;height:48px;font-size:1.2rem;flex-shrink:0;"><span class="fw-bold">8</span></div>
+          <div><h5 class="fw-bold mb-1 gradient-text" style="font-size:1.1rem;">Senior Designer - Experience Design</h5><p class="mb-0" style="color:rgba(255,255,255,0.65);font-size:0.9rem;">From user experience standpoint, support creation of detailed designs and prototypes to ensure quality of solutions.</p><a href="rules.html" class="btn btn-sm" style="background:var(--gradient);color:#fff;border-radius:2rem;padding:0.25rem 1.4rem;font-size:0.8rem;text-decoration:none;font-weight:600;box-shadow:0 4px 12px rgba(139,92,246,0.3);display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:0.4rem;"><i class="fas fa-paper-plane me-1"></i>Apply Now</a><div class="mt-2 pt-2 border-top border-light border-opacity-10 d-flex gap-2"><a href="multiple.html" class="btn btn-sm" style="background:rgba(139,92,246,0.15);color:var(--accent);border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-code me-1"></i>Programming</a><a href="multiple.html" class="btn btn-sm" style="background:rgba(34,211,238,0.15);color:#22d3ee;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-brain me-1"></i>Aptitude</a><a href="combined-results.html" class="btn btn-sm" style="background:rgba(34,197,94,0.15);color:#22c55e;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-chart-bar me-1"></i>Results</a></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-in-up">
+        <div class="glass-card p-3 d-flex align-items-start gap-3" style="border-left:4px solid var(--accent);">
+          <div class="icon-decoration" style="width:48px;height:48px;font-size:1.2rem;flex-shrink:0;"><span class="fw-bold">9</span></div>
+          <div><h5 class="fw-bold mb-1 gradient-text" style="font-size:1.1rem;">Senior Lead - Experience Design</h5><p class="mb-0" style="color:rgba(255,255,255,0.65);font-size:0.9rem;">Contribute to high-level design concepts, work directly with clients, and create design outcomes to ensure quality of solutions.</p><a href="rules.html" class="btn btn-sm" style="background:var(--gradient);color:#fff;border-radius:2rem;padding:0.25rem 1.4rem;font-size:0.8rem;text-decoration:none;font-weight:600;box-shadow:0 4px 12px rgba(139,92,246,0.3);display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:0.4rem;"><i class="fas fa-paper-plane me-1"></i>Apply Now</a><div class="mt-2 pt-2 border-top border-light border-opacity-10 d-flex gap-2"><a href="multiple.html" class="btn btn-sm" style="background:rgba(139,92,246,0.15);color:var(--accent);border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-code me-1"></i>Programming</a><a href="multiple.html" class="btn btn-sm" style="background:rgba(34,211,238,0.15);color:#22d3ee;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-brain me-1"></i>Aptitude</a><a href="combined-results.html" class="btn btn-sm" style="background:rgba(34,197,94,0.15);color:#22c55e;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-chart-bar me-1"></i>Results</a></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-in-up">
+        <div class="glass-card p-3 d-flex align-items-start gap-3" style="border-left:4px solid var(--accent);">
+          <div class="icon-decoration" style="width:48px;height:48px;font-size:1.2rem;flex-shrink:0;"><span class="fw-bold">10</span></div>
+          <div><h5 class="fw-bold mb-1 gradient-text" style="font-size:1.1rem;">Systems Engineer</h5><p class="mb-0" style="color:rgba(255,255,255,0.65);font-size:0.9rem;">Implement design, development, validation and support activities in line with architecture requirements.</p><a href="rules.html" class="btn btn-sm" style="background:var(--gradient);color:#fff;border-radius:2rem;padding:0.25rem 1.4rem;font-size:0.8rem;text-decoration:none;font-weight:600;box-shadow:0 4px 12px rgba(139,92,246,0.3);display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:0.4rem;"><i class="fas fa-paper-plane me-1"></i>Apply Now</a><div class="mt-2 pt-2 border-top border-light border-opacity-10 d-flex gap-2"><a href="multiple.html" class="btn btn-sm" style="background:rgba(139,92,246,0.15);color:var(--accent);border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-code me-1"></i>Programming</a><a href="multiple.html" class="btn btn-sm" style="background:rgba(34,211,238,0.15);color:#22d3ee;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-brain me-1"></i>Aptitude</a><a href="combined-results.html" class="btn btn-sm" style="background:rgba(34,197,94,0.15);color:#22c55e;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-chart-bar me-1"></i>Results</a></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-in-up">
+        <div class="glass-card p-3 d-flex align-items-start gap-3" style="border-left:4px solid var(--accent);">
+          <div class="icon-decoration" style="width:48px;height:48px;font-size:1.2rem;flex-shrink:0;"><span class="fw-bold">11</span></div>
+          <div><h5 class="fw-bold mb-1 gradient-text" style="font-size:1.1rem;">Senior Systems Engineer</h5><p class="mb-0" style="color:rgba(255,255,255,0.65);font-size:0.9rem;">Designing, implementing, and managing software in order to meet client needs.</p><a href="rules.html" class="btn btn-sm" style="background:var(--gradient);color:#fff;border-radius:2rem;padding:0.25rem 1.4rem;font-size:0.8rem;text-decoration:none;font-weight:600;box-shadow:0 4px 12px rgba(139,92,246,0.3);display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:0.4rem;"><i class="fas fa-paper-plane me-1"></i>Apply Now</a><div class="mt-2 pt-2 border-top border-light border-opacity-10 d-flex gap-2"><a href="multiple.html" class="btn btn-sm" style="background:rgba(139,92,246,0.15);color:var(--accent);border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-code me-1"></i>Programming</a><a href="multiple.html" class="btn btn-sm" style="background:rgba(34,211,238,0.15);color:#22d3ee;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-brain me-1"></i>Aptitude</a><a href="combined-results.html" class="btn btn-sm" style="background:rgba(34,197,94,0.15);color:#22c55e;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-chart-bar me-1"></i>Results</a></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-in-up">
+        <div class="glass-card p-3 d-flex align-items-start gap-3" style="border-left:4px solid var(--accent);">
+          <div class="icon-decoration" style="width:48px;height:48px;font-size:1.2rem;flex-shrink:0;"><span class="fw-bold">12</span></div>
+          <div><h5 class="fw-bold mb-1 gradient-text" style="font-size:1.1rem;">Java Full Stack</h5><p class="mb-0" style="color:rgba(255,255,255,0.65);font-size:0.9rem;">Designing user interactions on websites, developing servers and databases for website functionality and coding for mobile platforms.</p><a href="rules.html" class="btn btn-sm" style="background:var(--gradient);color:#fff;border-radius:2rem;padding:0.25rem 1.4rem;font-size:0.8rem;text-decoration:none;font-weight:600;box-shadow:0 4px 12px rgba(139,92,246,0.3);display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:0.4rem;"><i class="fas fa-paper-plane me-1"></i>Apply Now</a><div class="mt-2 pt-2 border-top border-light border-opacity-10 d-flex gap-2"><a href="multiple.html" class="btn btn-sm" style="background:rgba(139,92,246,0.15);color:var(--accent);border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-code me-1"></i>Programming</a><a href="multiple.html" class="btn btn-sm" style="background:rgba(34,211,238,0.15);color:#22d3ee;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-brain me-1"></i>Aptitude</a><a href="combined-results.html" class="btn btn-sm" style="background:rgba(34,197,94,0.15);color:#22c55e;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-chart-bar me-1"></i>Results</a></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-in-up">
+        <div class="glass-card p-3 d-flex align-items-start gap-3" style="border-left:4px solid var(--accent);">
+          <div class="icon-decoration" style="width:48px;height:48px;font-size:1.2rem;flex-shrink:0;"><span class="fw-bold">13</span></div>
+          <div><h5 class="fw-bold mb-1 gradient-text" style="font-size:1.1rem;">Front-End Developer</h5><p class="mb-0" style="color:rgba(255,255,255,0.65);font-size:0.9rem;">Developing new user-facing features, determining the structure and design of web pages.</p><a href="rules.html" class="btn btn-sm" style="background:var(--gradient);color:#fff;border-radius:2rem;padding:0.25rem 1.4rem;font-size:0.8rem;text-decoration:none;font-weight:600;box-shadow:0 4px 12px rgba(139,92,246,0.3);display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:0.4rem;"><i class="fas fa-paper-plane me-1"></i>Apply Now</a><div class="mt-2 pt-2 border-top border-light border-opacity-10 d-flex gap-2"><a href="multiple.html" class="btn btn-sm" style="background:rgba(139,92,246,0.15);color:var(--accent);border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-code me-1"></i>Programming</a><a href="multiple.html" class="btn btn-sm" style="background:rgba(34,211,238,0.15);color:#22d3ee;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-brain me-1"></i>Aptitude</a><a href="combined-results.html" class="btn btn-sm" style="background:rgba(34,197,94,0.15);color:#22c55e;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-chart-bar me-1"></i>Results</a></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-in-up">
+        <div class="glass-card p-3 d-flex align-items-start gap-3" style="border-left:4px solid var(--accent);">
+          <div class="icon-decoration" style="width:48px;height:48px;font-size:1.2rem;flex-shrink:0;"><span class="fw-bold">14</span></div>
+          <div><h5 class="fw-bold mb-1 gradient-text" style="font-size:1.1rem;">Back-End Developer</h5><p class="mb-0" style="color:rgba(255,255,255,0.65);font-size:0.9rem;">Implement in build and maintain the mechanisms that process data and perform actions on websites.</p><a href="rules.html" class="btn btn-sm" style="background:var(--gradient);color:#fff;border-radius:2rem;padding:0.25rem 1.4rem;font-size:0.8rem;text-decoration:none;font-weight:600;box-shadow:0 4px 12px rgba(139,92,246,0.3);display:inline-flex;align-items:center;gap:0.4rem;margin-bottom:0.4rem;"><i class="fas fa-paper-plane me-1"></i>Apply Now</a><div class="mt-2 pt-2 border-top border-light border-opacity-10 d-flex gap-2"><a href="multiple.html" class="btn btn-sm" style="background:rgba(139,92,246,0.15);color:var(--accent);border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-code me-1"></i>Programming</a><a href="multiple.html" class="btn btn-sm" style="background:rgba(34,211,238,0.15);color:#22d3ee;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-brain me-1"></i>Aptitude</a><a href="combined-results.html" class="btn btn-sm" style="background:rgba(34,197,94,0.15);color:#22c55e;border-radius:2rem;padding:0.15rem 0.8rem;font-size:0.75rem;text-decoration:none;"><i class="fas fa-chart-bar me-1"></i>Results</a></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class="container">
+  <div class="text-center mt-4 fade-in-up">
+    <p style="color:rgba(255,255,255,0.6);">Don't see the perfect role? Send us your resume at <a href="#" style="color:var(--accent);">careers@websoft.com</a></p>
+  </div>
+</main>
 
-<br> 	
+<footer class="footer-modern">
+  <div class="container">
+    <div class="row g-4 pb-4 border-bottom border-light border-opacity-10 mb-4">
+      <div class="col-lg-4">
+        <h5 class="text-white fw-bold mb-3"><i class="fas fa-code me-2" style="color:var(--accent);"></i>WebSoft</h5>
+        <p class="mb-0" style="color:rgba(255,255,255,0.55);font-size:0.9rem;">Empowering learners with cutting-edge web development and software testing education. Build your future with industry-aligned courses.</p>
+      </div>
+      <div class="col-lg-2 col-md-4">
+        <h6 class="text-white fw-semibold mb-3">Quick Links</h6>
+        <div class="d-flex flex-column gap-2">
+          <a href="home.html" style="color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.9rem;transition:color 0.3s;"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;"></i>Home</a>
+          <a href="about.html" style="color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.9rem;transition:color 0.3s;"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;"></i>About</a>
+          <a href="gallery.html" style="color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.9rem;transition:color 0.3s;"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;"></i>Gallery</a>
+          <a href="carrer.html" style="color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.9rem;transition:color 0.3s;"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;"></i>Career</a>
+          <a href="service.html" style="color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.9rem;transition:color 0.3s;"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;"></i>Services</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4">
+        <h6 class="text-white fw-semibold mb-3">Contact</h6>
+        <div class="d-flex flex-column gap-2" style="color:rgba(255,255,255,0.55);font-size:0.9rem;">
+          <span><i class="fas fa-envelope me-2" style="color:var(--accent);"></i>info@websoft.com</span>
+          <span><i class="fas fa-phone me-2" style="color:var(--accent);"></i>+1 (555) 123-4567</span>
+          <span><i class="fas fa-map-marker-alt me-2" style="color:var(--accent);"></i>123 Tech St, Silicon Valley, CA</span>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4">
+        <h6 class="text-white fw-semibold mb-3">Follow Us</h6>
+        <div class="d-flex gap-3">
+          <a href="#" class="d-flex align-items-center justify-content-center" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='var(--gradient)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.color='rgba(255,255,255,0.6)'"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="d-flex align-items-center justify-content-center" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='var(--gradient)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.color='rgba(255,255,255,0.6)'"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="d-flex align-items-center justify-content-center" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='var(--gradient)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.color='rgba(255,255,255,0.6)'"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="d-flex align-items-center justify-content-center" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='var(--gradient)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.color='rgba(255,255,255,0.6)'"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p class="mt-3 mb-0" style="color:rgba(255,255,255,0.4);font-size:0.8rem;">Stay connected for updates and new courses.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        <p class="mb-0" style="color:rgba(255,255,255,0.4);font-size:0.85rem;">&copy; 2026 WebSoft Solutions Pvt Ltd. All rights reserved. | <a href="#" style="color:var(--accent);text-decoration:none;">Privacy Policy</a> | <a href="#" style="color:var(--accent);text-decoration:none;">Terms of Service</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
 
-<table class="table table-bordered table-hover table-striped">
-<thead class="table-dark">
-<tr>
-    <th>S.no</th>
-    <th>Role</th>
-    <th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-     <td>1</td>
-     <td>Analyst - Data Science</td>
-     <td>Design and perform exploratory data analysis, identify meaningful information out of data. Must have expertise in using tools for data analysis.</td>
-</tr>
-     
-<tr>
-     <td>2</td>
-     <td>Associate Business Analyst</td>
-     <td>Provide support to consulting and technical teams in different processes to ensure delivery of high quality solutions to clients.</td>
-</tr>
-
-<tr>
-     <td>3</td>
-     <td>Associate Consultant</td>
-     <td>Support the consulting team in different phases of the project and provide high quality solutions to clients.</td>
-</tr>
-
-<tr>
-     <td>4</td>
-     <td>Associate Finance</td>
-     <td>Participate in, manage and review operations related to Finance functions to faciltate smooth conduct of Finance operations within the recommended framework. </td>
-</tr>
-
-<tr>
-     <td>5</td>
-     <td>Business Development Associate</td>
-     <td>Generate qualified leads through market research, and client introduction, to assist the organization in presenting business value to the clients.</td>
-</tr>
-
-<tr>
-     <td>6</td>
-     <td>Designer – Experience Design</td>
-     <td>It is a profession responsible for turning applications into something that people enjoy to complete tasks in an efficient manner</td>
-</tr>
-
-<tr>
-     <td>7</td>
-     <td>Lead - Experience Design</td>
-     <td>Contribute to high-level design concepts, work directly with clients, and create design outcomes to ensure quality of solutions.</td>
-</tr>
-
-<tr>
-     <td>8</td>
-     <td>Senior Designer – Experience Design</td>
-     <td>From user experience standpoint, support creation of detailed designs and prototypes to ensure quality of solutions. </td>
-</tr>
-
-<tr>
-     <td>9</td>
-     <td>Senior Lead - Experience Design</td>
-     <td>Contribute to high-level design concepts, work directly with clients, and create design outcomes to ensure quality of solutions.</td>
-</tr>
-
-<tr>
-     <td>10</td>
-     <td>Systems Engineer</td>
-     <td>Implement design, development, validation and support activities in line with architecture requirements.</td>
-</tr>
-
-<tr>
-     <td>11</td>
-     <td>Senior Systems Engineer</td>
-     <td>designing, implementing, and managing software in order to meet client needs.</td>
-</tr>
-
-<tr>
-     <td>12</td>
-     <td>Java Full Stack</td>
-     <td>designing user interactions on websites, developing servers and databases for website functionality and coding for mobile platforms.</td>
-</tr>
-
-<tr>
-     <td>13</td>
-     <td>Front-End devlepor</td>
-     <td>developing new user-facing features, determining the structure and design of web pages</td>
-</tr>
-
-<tr>
-     <td>14</td>
-     <td>Back-End devlepor</td>
-     <td>Implement in build and maintain the mechanisms that process data and perform actions on websites</td>
-</tr>
-
-</tbody>
-</table>
-
-</div> <br> <br>
-           
-<div class="footer"> <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp     
-&copy; Copy rights by software solutions Pvt Ltd., &nbsp &nbsp &nbsp 
-
-  Teams
-
- &nbsp &nbsp &nbsp  @Terms and conditions
-
- &nbsp &nbsp &nbsp  Carrer
-	       
-              </div>  
-       </body>
->>>>>>> 0ea0fc3f2dba0c5d06f846c08d11817ac9dd0a4b
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const stats = document.querySelectorAll('.stat-number');
+  stats.forEach(stat => {
+    const target = parseInt(stat.getAttribute('data-count'));
+    let current = 0;
+    const inc = Math.ceil(target / 60);
+    const timer = setInterval(() => {
+      current += inc;
+      if (current >= target) { current = target; clearInterval(timer); }
+      const suffix = target === 92 ? '%' : '+';
+      stat.textContent = current + suffix;
+    }, 30);
+  });
+});
+</script>
+</body>
 </html>

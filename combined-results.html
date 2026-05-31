@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Combined Test Results</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  :root {
+    --accent: #a78bfa;
+    --gradient: linear-gradient(135deg, #6f42c1, #8b5cf6);
+    --text-muted: rgba(255,255,255,0.55);
+    --accent-warm: #f59e0b;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #confetti-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  .trophy-wrapper {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .trophy-icon {
+    font-size: 5rem;
+    color: var(--accent-warm);
+    display: inline-block;
+    filter: drop-shadow(0 0 20px rgba(245,158,11,0.5));
+    animation: trophyDrop 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+               trophyBounce 3s ease-in-out 1.2s infinite;
+    opacity: 0;
+  }
+
+  @keyframes trophyDrop {
+    0% { opacity: 0; transform: translateY(-80px) scale(0.3) rotate(-15deg); }
+    60% { opacity: 1; transform: translateY(8px) scale(1.15) rotate(3deg); }
+    100% { opacity: 1; transform: translateY(0) scale(1) rotate(0); }
+  }
+
+  @keyframes trophyBounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-10px) scale(1.08); }
+  }
+
+  .overall-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 2rem;
+    padding: 0.6rem 1.8rem 0.6rem 1rem;
+    margin-bottom: 2rem;
+    animation: scaleIn 0.6s ease 0.8s both;
+  }
+
+  .overall-badge .score-ring-sm {
+    width: 48px;
+    height: 48px;
+    border-width: 3px;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  .overall-badge .score-ring-sm.high {
+    border-color: #22c55e;
+  }
+
+  .overall-badge .score-ring-sm.medium {
+    border-color: var(--accent-warm);
+  }
+
+  .overall-badge .score-ring-sm.low {
+    border-color: #ef4444;
+  }
+
+  .section-card {
+    padding: 1.5rem;
+    height: 100%;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .section-card.show {
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .section-card .card-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-card .card-icon.programming {
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  }
+
+  .section-card .card-icon.aptitude {
+    background: linear-gradient(135deg, #f59e0b, #f97316);
+  }
+
+  .section-card .score-number {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #fff;
+  }
+
+  .section-card .score-detail {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  .section-card .progress {
+    height: 8px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+    margin-top: 1rem;
+  }
+
+  .section-card .progress-bar {
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-card .progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    animation: shimmer 2s infinite;
+  }
+
+  .section-card .progress-bar.prog-bar {
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  }
+
+  .section-card .progress-bar.apt-bar {
+    background: linear-gradient(135deg, #f59e0b, #f97316);
+  }
+
+  .review-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .review-header i {
+    font-size: 1.5rem;
+    color: #ef4444;
+  }
+
+  .table-review {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
+  }
+
+  .table-review thead th {
+    background: rgba(239,68,68,0.15);
+    color: #fca5a5;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-bottom: 1px solid rgba(239,68,68,0.2);
+  }
+
+  .table-review tbody tr {
+    background: rgba(255,255,255,0.04);
+    border-radius: 0.5rem;
+    transition: background 0.3s ease;
+  }
+
+  .table-review tbody tr:hover {
+    background: rgba(255,255,255,0.08);
+  }
+
+  .table-review tbody td {
+    padding: 0.85rem 1rem;
+    color: #e2e8f0;
+    border: none;
+    vertical-align: middle;
+  }
+
+  .table-review .badge-section {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 1rem;
+  }
+
+  .table-review .badge-section.prog {
+    background: rgba(59,130,246,0.2);
+    color: #93c5fd;
+  }
+
+  .table-review .badge-section.apt {
+    background: rgba(245,158,11,0.2);
+    color: #fcd34d;
+  }
+
+  .table-review .answer-wrong {
+    color: #ef4444;
+    font-weight: 500;
+  }
+
+  .table-review .answer-correct {
+    color: #22c55e;
+    font-weight: 500;
+  }
+
+  .action-buttons .btn {
+    padding: 0.6rem 1.8rem;
+    border-radius: 2rem;
+    font-weight: 600;
+  }
+
+  @media (max-width: 576px) {
+    .trophy-icon { font-size: 3.5rem; }
+    .section-card .score-number { font-size: 1.8rem; }
+    .overall-badge { font-size: 0.9rem; padding: 0.4rem 1rem 0.4rem 0.6rem; }
+    .overall-badge .score-ring-sm { width: 38px; height: 38px; font-size: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="confetti-canvas"></canvas>
+
+<div class="container py-5">
+
+  <div class="trophy-wrapper">
+    <i class="fas fa-trophy trophy-icon"></i>
+  </div>
+
+  <h1 class="text-center fw-bold mb-1" style="font-size:2.2rem;letter-spacing:-0.5px;">Combined Test Results</h1>
+  <p class="text-center mb-4" style="color:var(--text-muted);font-size:1.05rem;">
+    <i class="fas fa-star me-1" style="color:var(--accent-warm);"></i>
+    Here's how you performed across both sections
+  </p>
+
+  <div class="text-center">
+    <div class="overall-badge" id="overallBadge">
+      <div class="score-ring-sm" id="overallRing">
+        <span id="overallPct">0%</span>
+      </div>
+      <div class="text-start">
+        <div class="fw-semibold" style="color:#fff;">Overall Score</div>
+        <div style="color:var(--text-muted);font-size:0.85rem;" id="overallFraction">0 / 0</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-4 mb-5">
+    <div class="col-md-6">
+      <div class="glass-card section-card" id="progCard">
+        <div class="card-icon programming"><i class="fas fa-code"></i></div>
+        <h5 class="fw-bold mb-1" style="color:#fff;">Programming</h5>
+        <div class="score-number" id="progScore">0</div>
+        <div class="score-detail" id="progDetail">0 / 0 correct</div>
+        <div class="progress">
+          <div class="progress-bar prog-bar" id="progBar" role="progressbar" style="width:0%"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="glass-card section-card" id="aptCard">
+        <div class="card-icon aptitude"><i class="fas fa-brain"></i></div>
+        <h5 class="fw-bold mb-1" style="color:#fff;">Aptitude</h5>
+        <div class="score-number" id="aptScore">0</div>
+        <div class="score-detail" id="aptDetail">0 / 0 correct</div>
+        <div class="progress">
+          <div class="progress-bar apt-bar" id="aptBar" role="progressbar" style="width:0%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="glass-card p-4" id="reviewSection" style="display:none;">
+    <div class="review-header">
+      <i class="fas fa-xmark-circle"></i>
+      <h4 class="fw-bold mb-0" style="color:#fff;">Wrong Answer Review</h4>
+      <span class="badge bg-danger rounded-pill ms-auto" id="wrongCount">0</span>
+    </div>
+    <div class="table-responsive">
+      <table class="table-review">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Section</th>
+            <th>Question</th>
+            <th>Your Answer</th>
+            <th>Correct Answer</th>
+          </tr>
+        </thead>
+        <tbody id="reviewBody"></tbody>
+      </table>
+    </div>
+    <div class="text-center text-muted py-3" id="noWrongMsg" style="display:none;">
+      <i class="fas fa-check-circle me-1" style="color:#22c55e;"></i> Perfect score — no wrong answers!
+    </div>
+  </div>
+
+  <div class="text-center mt-4 action-buttons">
+    <a href="multiple.html" class="btn btn-gradient me-2">
+      <i class="fas fa-redo-alt me-1"></i> Retry Test
+    </a>
+    <button class="btn btn-outline-glass" onclick="clearResults()">
+      <i class="fas fa-trash-alt me-1"></i> Clear Results
+    </button>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+(function() {
+  const progRaw = localStorage.getItem('programming_results');
+  const aptRaw = localStorage.getItem('aptitude_results');
+
+  if (!progRaw && !aptRaw) {
+    document.body.innerHTML =
+      '<div class="container py-5 text-center" style="min-height:60vh;display:flex;flex-direction:column;justify-content:center;align-items:center;">' +
+        '<i class="fas fa-inbox mb-3" style="font-size:4rem;color:var(--text-muted);"></i>' +
+        '<h3 class="fw-bold" style="color:#fff;">No Results Found</h3>' +
+        '<p style="color:var(--text-muted);max-width:400px;">Please complete the Programming and Aptitude tests first. Your results will appear here once both are submitted.</p>' +
+        '<a href="multiple.html" class="btn btn-gradient mt-2"><i class="fas fa-arrow-right me-1"></i> Take Tests</a>' +
+      '</div>';
+    return;
+  }
+
+  let prog = progRaw ? JSON.parse(progRaw) : { score: 0, total: 0, wrongAnswers: [] };
+  let apt = aptRaw ? JSON.parse(aptRaw) : { score: 0, total: 0, wrongAnswers: [] };
+
+  if (!Array.isArray(prog.wrongAnswers)) prog.wrongAnswers = [];
+  if (!Array.isArray(apt.wrongAnswers)) apt.wrongAnswers = [];
+
+  const combinedScore = prog.score + apt.score;
+  const combinedTotal = prog.total + apt.total;
+  const pct = combinedTotal > 0 ? Math.round((combinedScore / combinedTotal) * 100) : 0;
+
+  document.getElementById('overallPct').textContent = pct + '%';
+  document.getElementById('overallFraction').textContent = combinedScore + ' / ' + combinedTotal;
+
+  const overallRing = document.getElementById('overallRing');
+  if (pct >= 70) overallRing.classList.add('high');
+  else if (pct >= 40) overallRing.classList.add('medium');
+  else overallRing.classList.add('low');
+
+  prog.pct = prog.total > 0 ? Math.round((prog.score / prog.total) * 100) : 0;
+  apt.pct = apt.total > 0 ? Math.round((apt.score / apt.total) * 100) : 0;
+
+  document.getElementById('progScore').textContent = prog.score;
+  document.getElementById('progDetail').textContent = prog.score + ' / ' + prog.total + ' correct';
+  document.getElementById('progBar').style.width = prog.pct + '%';
+
+  document.getElementById('aptScore').textContent = apt.score;
+  document.getElementById('aptDetail').textContent = apt.score + ' / ' + apt.total + ' correct';
+  document.getElementById('aptBar').style.width = apt.pct + '%';
+
+  document.getElementById('progCard').classList.add('show');
+  document.getElementById('aptCard').classList.add('show');
+
+  const allWrong = [];
+  prog.wrongAnswers.forEach(function(w) { allWrong.push({ section: 'Programming', question: w.question, yourAnswer: w.yourAnswer, correctAnswer: w.correctAnswer }); });
+  apt.wrongAnswers.forEach(function(w) { allWrong.push({ section: 'Aptitude', question: w.question, yourAnswer: w.yourAnswer, correctAnswer: w.correctAnswer }); });
+
+  const reviewSection = document.getElementById('reviewSection');
+  const reviewBody = document.getElementById('reviewBody');
+  const wrongCount = document.getElementById('wrongCount');
+  const noWrongMsg = document.getElementById('noWrongMsg');
+
+  if (allWrong.length === 0) {
+    reviewSection.style.display = 'block';
+    noWrongMsg.style.display = 'block';
+    wrongCount.textContent = '0';
+    wrongCount.classList.remove('bg-danger');
+    wrongCount.classList.add('bg-success');
+  } else {
+    reviewSection.style.display = 'block';
+    wrongCount.textContent = allWrong.length;
+    allWrong.forEach(function(w, i) {
+      var tr = document.createElement('tr');
+      tr.innerHTML =
+        '<td>' + (i + 1) + '</td>' +
+        '<td><span class="badge-section ' + (w.section === 'Programming' ? 'prog' : 'apt') + '">' + w.section + '</span></td>' +
+        '<td>' + escapeHtml(w.question) + '</td>' +
+        '<td class="answer-wrong">' + escapeHtml(w.yourAnswer) + '</td>' +
+        '<td class="answer-correct">' + escapeHtml(w.correctAnswer) + '</td>';
+      reviewBody.appendChild(tr);
+    });
+  }
+
+  function escapeHtml(str) {
+    if (!str) return '—';
+    var div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  // confetti
+  var canvas = document.getElementById('confetti-canvas');
+  var ctx = canvas.getContext('2d');
+  var W, H;
+  var particles = [];
+  var colors = ['#a78bfa','#f59e0b','#22d3ee','#22c55e','#ef4444','#fbbf24','#8b5cf6','#ec4899','#3b82f6'];
+  var running = true;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  var count = Math.min(180, Math.floor(W * H / 8000));
+  for (var i = 0; i < count; i++) {
+    particles.push(createParticle(true));
+  }
+
+  function createParticle(randomY) {
+    return {
+      x: Math.random() * W,
+      y: randomY ? Math.random() * H * -1 : -10,
+      w: rand(4, 10),
+      h: rand(4, 10),
+      color: colors[Math.floor(Math.random() * colors.length)],
+      vx: rand(-1.2, 1.2),
+      vy: rand(1.2, 3.5),
+      rot: Math.random() * 360,
+      rv: rand(-4, 4),
+      opacity: rand(0.6, 1)
+    };
+  }
+
+  function rand(min, max) { return Math.random() * (max - min) + min; }
+
+  function draw() {
+    if (!running) return;
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < particles.length; i++) {
+      var p = particles[i];
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot * Math.PI / 180);
+      ctx.globalAlpha = p.opacity;
+      var shape = Math.floor(p.x) % 3;
+      ctx.fillStyle = p.color;
+      if (shape === 0) {
+        ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+      } else if (shape === 1) {
+        ctx.beginPath();
+        ctx.arc(0, 0, p.w/2, 0, Math.PI * 2);
+        ctx.fill();
+      } else {
+        ctx.beginPath();
+        ctx.moveTo(0, -p.h/2);
+        ctx.lineTo(p.w/2, p.h/2);
+        ctx.lineTo(-p.w/2, p.h/2);
+        ctx.closePath();
+        ctx.fill();
+      }
+      ctx.restore();
+      p.x += p.vx;
+      p.y += p.vy;
+      p.rot += p.rv;
+      if (p.y > H + 20) {
+        particles[i] = createParticle(false);
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+
+  setTimeout(function() { running = false; ctx.clearRect(0, 0, W, H); }, 6000);
+})();
+
+function clearResults() {
+  localStorage.removeItem('programming_results');
+  localStorage.removeItem('aptitude_results');
+  location.reload();
+}
+</script>
+</body>
+</html>

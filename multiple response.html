@@ -1,418 +1,160 @@
-<<<<<<< HEAD
-+<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-
-<style>
-.font{
-font-size:25px;
-font-family:arial;
-}
-
-body{
-background-image:url('Images/logos.jpg');
-background-repeat:no-repeat;
-background-size:cover;
-bckground-position:center;
-background-attachment:fixed;
--webkit-backdrop-filter:blur(3.5px);
-backdrop-filter:blur(3.5px);
-}
-
-</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<title>Online Test-II Answers</title>
 </head>
 <body>
+<main class="container py-4">
+  <div class="glass-card p-4 p-md-5" style="animation: scaleIn 0.5s ease;">
+    <header class="mb-4">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
+        <div>
+          <h2 class="text-white fw-bold mb-0"><i class="fas fa-check-circle me-2" style="color:var(--accent);"></i>Online Test-II</h2>
+          <small style="color:var(--text-muted);">Programming Answer Review</small>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <div class="score-ring-sm" id="scoreRingSm">
+            <span id="scoreTextSm">15/15</span>
+          </div>
+          <span class="badge" id="qCounter" style="background:var(--gradient);font-size:0.85rem;padding:0.5rem 1rem;">
+            <i class="fas fa-question-circle me-1"></i>1 / 15
+          </span>
+        </div>
+      </div>
+    </header>
 
-<div class="container">
-<form class="w-30 m-5 border border-primary rounded p-3">
-<div calss="mb-3">
-<h3 class="bg-success text-light border rounded-top" align="center">Online Test-II</h3>
-</div>
-<br> <br>
-<div class="font">
-<label>1.Who is the father of C language?</label> <br>
-<input type="radio" class="form-check-input"  name="1" disabled> <label>  Steve Jobs</label> <br>
-<input type="radio" class="form-check-input" name="1" disabled> <label> James Gosling</label> <br> 
-<input type="radio" class="form-check-input" name="1" value="" checked >  <label> Dennis Ritchie</label> <br>
-<input type="radio" class="form-check-input" name="1" disabled>  <label> Rasmus Lerdorf</label> <br> <br> 
-<ul><summary>Answer</summary>
-<details>Answer: c <br>
-Explanation: Dennis Ritchie is the father of C Programming Language. C programming language was developed in 1972 at American Telephone & Telegraph Bell Laboratories of USA.</details> <br> </ul> 
+    <div class="row justify-content-center mb-3">
+      <div class="col-auto">
+        <div class="text-center">
+          <div class="score-ring" id="scoreRing" style="--pct:360deg;">
+            <div class="score-text" id="scoreText">15/15</div>
+          </div>
+          <p class="text-white-50 mb-0" style="font-size:0.85rem;">Correct Answers</p>
+        </div>
+      </div>
+    </div>
 
-<label>2. What is the use of the tag in Javascript?</label> <br> 
-<input type="radio" class="form-check-input"  name="2" disabled> <label>  The content are displayed by non-JS-based browser</label> <br>
-<input type="radio" class="form-check-input" name="2" disabled> <label> Clear all cookies and cache</label> <br>
-<input type="radio" class="form-check-input" name="2" disabled>  <label>  Both A and B</label> <br>
-<input type="radio" class="form-check-input" name="2"  value="" checked >  <label> None of the above</label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer: d <br>
-Explanation: Since only underscore and no other special character is allowed in a variable name, it results in an error.</details> <br>  </ul> 
+    <div class="progress-bar-custom">
+      <div class="progress-fill" id="reviewProgress" style="width:100%;"></div>
+    </div>
 
-<label>3.  What is/are the correct value(s) of font-weight property?</label> <br>
-<input type="radio" class="form-check-input"  name="3" disabled> <label> bold, italic, underline </label> <br>
-<input type="radio" class="form-check-input" name="3" disabled> <label> normal, bold, italic </label>  <br>
-<input type="radio" class="form-check-input" name="3"  value="" checked >  <label> normal, bold, bolder, lighter, initial, and inherit </label> <br>
-<input type="radio" class="form-check-input" name="3" disabled>  <label> None of the above </label> <br> <br>
+    <div class="progress-tracker" id="reviewDots"></div>
 
-<ul> <summary>Answer</summary>
-<details>Answer: c <br>
-Explanation: The valid values of the font-weight property: <br>
+    <div id="answerContainer" class="quiz-card correct" style="min-height:360px;"></div>
 
-normal <br>
-bold <br>
-bolder <br>
-lighter <br>
-initial <br>
-inherit <br>
-</details> <br> </ul> 
+    <div class="d-flex justify-content-between align-items-center mt-4 flex-wrap gap-2">
+      <button type="button" class="btn btn-outline-light px-4" id="prevBtn" disabled>
+        <i class="fas fa-arrow-left me-1"></i>Previous
+      </button>
+      <button type="button" class="btn btn-gradient px-4" id="nextBtn">
+        Next<i class="fas fa-arrow-right ms-1"></i>
+      </button>
+    </div>
 
-<label>4. Which of these classes helps make a text stand out?</label> <br>
-<input type="radio" class="form-check-input"  name="4" disabled> <label> small</label> <br>
-<input type="radio" class="form-check-input" name="4" disabled> <label> lead</label> <br>
-<input type="radio" class="form-check-input" name="4"  value="" checked >  <label> text-center</label> <br>
-<input type="radio" class="form-check-input" name="4" disabled>  <label>text-left</label> <br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer: b <br>
-Explanation: None.</details> <br> </ul> 
+    <div class="text-center mt-4">
+      <a href="feedback1.html" class="btn btn-gradient btn-lg"><i class="fas fa-check me-2"></i>Continue</a>
+    </div>
+  </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const data = [
+  { id:1, text:'Who is the father of C language?', correct:'c', options:[{l:'a',t:'Steve Jobs'},{l:'b',t:'James Gosling'},{l:'c',t:'Dennis Ritchie'},{l:'d',t:'Rasmus Lerdorf'}], explanation:'Dennis Ritchie is the father of C Programming Language. C programming language was developed in 1972 at American Telephone &amp; Telegraph Bell Laboratories of USA.', expanded:true },
+  { id:2, text:'What is the use of the &lt;noscript&gt; tag in Javascript?', correct:'d', options:[{l:'a',t:'The content are displayed by non-JS-based browser'},{l:'b',t:'Clear all cookies and cache'},{l:'c',t:'Both A and B'},{l:'d',t:'None of the above'}], explanation:'Since only underscore and no other special character is allowed in a variable name, it results in an error.' },
+  { id:3, text:'What is/are the correct value(s) of font-weight property?', correct:'c', options:[{l:'a',t:'bold, italic, underline'},{l:'b',t:'normal, bold, italic'},{l:'c',t:'normal, bold, bolder, lighter, initial, and inherit'},{l:'d',t:'None of the above'}], explanation:'The valid values of the font-weight property:\nnormal\nbold\nbolder\nlighter\ninitial\ninherit' },
+  { id:4, text:'Which of these classes helps make a text stand out?', correct:'b', options:[{l:'a',t:'small'},{l:'b',t:'lead'},{l:'c',t:'text-center'},{l:'d',t:'text-left'}], explanation:'None.' },
+  { id:5, text:'Functions in C Language are always _________', correct:'b', options:[{l:'a',t:'Internal'},{l:'b',t:'External'},{l:'c',t:'Both Internal and External'},{l:'d',t:'External and Internal are not valid terms for functions'}], explanation:'None' },
+  { id:6, text:'What do we call after initializing a plug-in to get A scripting interface?', correct:'c', options:[{l:'a',t:'NP_GetMIMEDescription'},{l:'b',t:'NP_Initialize'},{l:'c',t:'NPP_GetValue'},{l:'d',t:'NP_GetValue'}], explanation:'None' },
+  { id:7, text:'Which of the following below live on the heap in java?', correct:'c', options:[{l:'a',t:'Class'},{l:'b',t:'Instance variable'},{l:'c',t:'Object'},{l:'d',t:'Method'}], explanation:'None' },
+  { id:8, text:'Which of these interface handle sequences?', correct:'b', options:[{l:'a',t:'Set'},{l:'b',t:'List'},{l:'c',t:'Comparator'},{l:'d',t:'Collection'}], explanation:'None' },
+  { id:9, text:'What is true of the finalize() method?', correct:'a', options:[{l:'a',t:'It may be called zero or one times.'},{l:'b',t:'It may be called zero or more times.'},{l:'c',t:'It will be called exactly once.'},{l:'d',t:'It may be called one or more times.'}], explanation:'The finalize() method may not be called, such as if your program crashes. However, it is guaranteed to be called no more than once.' },
+  { id:10, text:'Which of the following is true about primitives?', correct:'b', options:[{l:'a',t:'You can call methods on a primitive.'},{l:'b',t:'You can convert a primitive to a wrapper class object simply by assigning it.'},{l:'c',t:'You can convert a wrapper class object to a primitive by calling valueOf().'},{l:'d',t:'You can store a primitive directly into an ArrayList.'}], explanation:'You can convert a primitive to a wrapper class object simply by assigning it' },
+  { id:11, text:'Where is Client-side JavaScript code embedded within HTML documents?', correct:'b', options:[{l:'a',t:'A URL that uses the special javascript:code'},{l:'b',t:'A URL that uses the special javascript:protocol'},{l:'c',t:'A URL that uses the special javascript:encoding'},{l:'d',t:'A URL that uses the special javascript:stack'}], explanation:'The Client-side JavaScript code is embedded within HTML documents in four ways:\n1. Inline, between a pair of "script" tags\n2. From an external file specified by the src attribute of a "script" tag\n3. In an HTML event handler attribute, such as onclick or onmouseover\n4. In a URL that uses the special javascript: protocol.' },
+  { id:12, text:'Which CSS property specifies an image as the list item marker?', correct:'a', options:[{l:'a',t:'list-style-image'},{l:'b',t:'list-style-picture'},{l:'c',t:'list-style-background'},{l:'d',t:'list-style-bgimage'}], explanation:'The list-style-image property specifies an image as the list item marker.\n\nExample:\n\nul {\n  list-style-image: url(\'sqpurple.gif\');\n}' },
+  { id:13, text:'Which of the following is correct about Bootstrap cross-browser consistency?', correct:'d', options:[{l:'a',t:'Bootstrap uses Normalize to establish cross-browser consistency.'},{l:'b',t:'Normalize.css is a modern, HTML5-ready alternative to CSS resets.'},{l:'c',t:'Normalize.css a small CSS file to get better cross-browser consistency in the default styling of HTML'},{l:'d',t:'All of the above'}], explanation:'None' },
+  { id:14, text:'Which of the following is correct about Bootstrap?', correct:'d', options:[{l:'a',t:'Bootstrap\'s responsive CSS adjusts to Desktops, Tablets, and Mobiles.'},{l:'b',t:'Provides a clean and uniform solution for building an interface for developers.'},{l:'c',t:'It contains beautiful and functional built-in components which are easy to customize.'},{l:'d',t:'All of the above'}], explanation:'None' },
+  { id:15, text:'Which CSS property is used to specify uppercase and lowercase letters in a text?', correct:'a', options:[{l:'a',t:'text-transform'},{l:'b',t:'text-case'},{l:'c',t:'case'},{l:'d',t:'text-casing'}], explanation:'The text-transform property is used to specify uppercase and lowercase letters in a text.\n\nExample:\n\np {\n  text-transform: uppercase / lowercase / capitalize;\n}' }
+];
 
-<label>5. Functions in C Language are always _________ ?</label> <br>  
-<input type="radio" class="form-check-input"  name="5" disabled> <label> Internal</label> <br>
-<input type="radio" class="form-check-input" name="5" value="" checked > <label> External</label>  <br>
-<input type="radio" class="form-check-input" name="5" disabled>  <label>Both Internal and External </label> <br>
-<input type="radio" class="form-check-input" name="5" disabled>  <label>External and Internal are not valid terms for functions</label> <br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer: b
-Explanation: None</details> <br> </ul> 
+const TOTAL = data.length;
+let currentIdx = 0;
 
-<label> 6.What do we call after initializing a plug-in to get A scripting interface?</label> <br>  
-<input type="radio" class="form-check-input"  name="6" disabled> <label> NP_GetMIMEDescription</label> <br>
-<input type="radio" class="form-check-input" name="6" disabled> <label>  NP_Initialize</label>  <br>
-<input type="radio" class="form-check-input" name="6" value="" checked >  <label> NPP_GetValue</label> <br>
-<input type="radio" class="form-check-input" name="6" disabled>  <label>  NP_GetValue</label> <br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer: c <br>
-Explanation: None</details> <br> </ul> 
+function renderCard() {
+  const q = data[currentIdx];
+  const container = document.getElementById('answerContainer');
+  const opts = q.options.map(o => {
+    const isCorrect = o.l === q.correct;
+    return `<div class="form-check">
+      <input type="radio" class="form-check-input" name="q${q.id}" id="q${q.id}${o.l}" disabled ${isCorrect ? 'checked' : ''}>
+      <label class="form-check-label" for="q${q.id}${o.l}" ${isCorrect ? 'style="color:#22c55e;font-weight:600;"' : ''}>${isCorrect ? '<i class="fas fa-check-circle me-1"></i>' : ''}${o.t}</label>
+    </div>`;
+  }).join('');
 
-<label>7. Which of the follwing below live on the heap in java?</label> <br>  
-<input type="radio" class="form-check-input"  name="7" disabled> <label> Class</label> <br>
-<input type="radio" class="form-check-input" name="7" disabled> <label> Instance variable</label>  <br>
-<input type="radio" class="form-check-input" name="7" value="" checked > <label> Object</label> <br>
-<input type="radio" class="form-check-input" name="7" disabled>  <label> Method</label> <br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer:c <br>
-Explanation: None</details> <br>  </ul> 
+  container.style.opacity = '0';
+  container.style.transform = 'translateX(20px)';
+  setTimeout(() => {
+    container.innerHTML = `
+      <div class="d-flex justify-content-between align-items-start mb-3">
+        <label class="fw-bold" style="color:#fff;font-size:1.05rem;">${q.id}. ${q.text}</label>
+        <span class="badge" style="background:#22c55e;"><i class="fas fa-check me-1"></i>Correct</span>
+      </div>
+      ${opts}
+      <details ${q.expanded ? 'open' : ''}>
+        <summary><i class="fas fa-lightbulb me-1"></i> Answer</summary>
+        <p class="mt-2 mb-0" style="color:rgba(255,255,255,0.8);">Answer: ${q.correct}<br>Explanation: ${q.explanation}</p>
+      </details>`;
+    container.style.transition = 'all 0.35s ease';
+    container.style.opacity = '1';
+    container.style.transform = 'translateX(0)';
+  }, 50);
 
-<label>8. Which of these interface handle sequences?</label> <br>  
-<input type="radio" class="form-check-input"  name="8" disabled> <label> Set</label> <br>
-<input type="radio" class="form-check-input" name="8" value="" checked> <label> List</label>  <br>
-<input type="radio" class="form-check-input" name="8" disabled>  <label> Comparator</label> <br>
-<input type="radio" class="form-check-input" name="8" disabled>  <label> Collection</label> <br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer:b <br>
-Explanation: None</details> <br> </ul>  
-
-
-<label>9.What is true of the finalize() method? </label> <br>  
-<input type="radio" class="form-check-input"  name="9" value="" checked > <label> It may be called zero or one times.</label> <br>
-<input type="radio" class="form-check-input" name="9" disabled> <label> It may be called zero or more times.</label>  <br>
-<input type="radio" class="form-check-input" name="9" disabled>  <label> It will be called exactly once.</label> <br>
-<input type="radio" class="form-check-input" name="9" disabled>  <label>  It may be called one or more times.</label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer:a <br>
-Explanation: The finalize() method may not be called, such as if your program crashes. However, it is guaranteed to be called no more than once.</details> <br> </ul>  
-
-<label>10. Which of the following is true about primitives?</label> <br>  
-<input type="radio" class="form-check-input"  name="10" disabled> <label> You can call methods on a primitive.</label> <br>
-<input type="radio" class="form-check-input" name="10" value="" checked > <label> </label>  You can convert a primitive to a wrapper class object simply by assigning it.<br>
-<input type="radio" class="form-check-input" name="10" disabled>  <label> </label> You can convert a wrapper class object to a primitive by calling valueOf().<br>
-<input type="radio" class="form-check-input" name="10" disabled>  <label> </label>   You can store a primitive directly into an ArrayList. <br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer:b <br>
-Explanation: You can convert a primitive to a wrapper class object simply by assigning it</details> <br> </ul>  
-
-
-<label>11. Where is Client-side JavaScript code is embedded within HTML documents?</label> <br>  
-<input type="radio" class="form-check-input"  name="11" disabled> <label>A URL that uses the special javascript:code </label> <br>
-<input type="radio" class="form-check-input" name="11" value="" checked > <label> A URL that uses the special javascript:protocol</label>  <br>
-<input type="radio" class="form-check-input" name="11" disabled>  <label>A URL that uses the special javascript:encoding </label> <br>
-<input type="radio" class="form-check-input" name="11" disabled>  <label>A URL that uses the special javascript:stack </label> <br> <br> 
-<ul><summary>Answer</summary>
-<details>Answer:b <br>
-Explanation: The Client-side JavaScript code is embedded within HTML documents in four ways : <br>
-1.Inline, between a pair of “script” tags <br>
-2.From an external file specified by the src attribute of a “script” tag <br>
-3.In an HTML event handler attribute, such as onclick or onmouseover <br>
-4.In a URL that uses the special javascript: protocol. </details> <br> </ul>  
-
-<label>12. Which CSS property specifies an image as the list item marker?</label> <br>  
-<input type="radio" class="form-check-input"  name="12" value="" checked > <label>list-style-image </label> <br>
-<input type="radio" class="form-check-input" name="12" disabled> <label> list-style-picture</label>  <br>
-<input type="radio" class="form-check-input" name="12" disabled>  <label> list-style-background</label> <br>
-<input type="radio" class="form-check-input" name="12" disabled>  <label> list-style-bgimage</label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer:a <br>
-Explanation: The list-style-image property specifies an image as the list item marker. <br>
-
-Example: <br>
-
-ul { <br>
-  list-style-image: url('sqpurple.gif'); <br>
-} </deatils><br> </ul>  <br> 
-
-<label>13. Which of the following is correct about Bootstrap cross-browser consistency? </label> <br>  
-<input type="radio" class="form-check-input"  name="13" disabled> <label>Bootstrap uses Normalize to establish cross-browser consistency. </label> <br>
-<input type="radio" class="form-check-input" name="13" disabled> <label>Normalize.css is a modern, HTML5-ready alternative to CSS resets. </label>  <br>
-<input type="radio" class="form-check-input" name="13" disabled>  <label>Normalize.css a small CSS file to get better cross-browser consistency in the default styling of HTML . </label><br>
-<input type="radio" class="form-check-input" name="13" value="" checked >  <label>All of the above </label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer:d <br>
-Explanation: None</details> <br> </ul>  
-
-<label>14. Which of the following is correct about Bootstrap?</label> <br>  
-<input type="radio" class="form-check-input"  name="14" disabled> <label> Bootstrap's responsive CSS adjusts to Desktops, Tablets, and Mobiles.</label> <br>
-<input type="radio" class="form-check-input" name="14" disabled> <label> Provides a clean and uniform solution for building an interface for developers.</label>  <br>
-<input type="radio" class="form-check-input" name="14" disabled>  <label> It contains beautiful and functional built-in components which are easy to customize.</label> <br>
-<input type="radio" class="form-check-input" name="14" value="" checked >  <label>All of the above  </label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer:d <br>
-Explanation:None </details> <br> </ul>  
-
-<label>15.Which CSS property is used to specify uppercase and lowercase letters in a text? </label> <br>  
-<input type="radio" class="form-check-input"  name="15" value="" checked > <label>text-transform </label> <br>
-<input type="radio" class="form-check-input" name="15" disabled> <label> text-case</label>  <br>
-<input type="radio" class="form-check-input" name="15" disabled>  <label> case</label> <br>
-<input type="radio" class="form-check-input" name="15" disabled> <label>text-casing </label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer:a <br>
-Explanation: The text-transform property is used to specify uppercase and lowercase letters in a text.
-Example: <br>
-
-p { <br>
-  text-transform: uppercase / lowercase / capitalize; <br>
+  document.getElementById('qCounter').innerHTML = `<i class="fas fa-question-circle me-1"></i>${currentIdx+1} / ${TOTAL}`;
+  document.getElementById('prevBtn').disabled = currentIdx === 0;
+  document.getElementById('nextBtn').style.display = currentIdx === TOTAL - 1 ? 'none' : 'inline-flex';
+  updateDots();
 }
-</details> <br> </ul>  
 
+function updateDots() {
+  const dots = document.querySelectorAll('.progress-dot');
+  dots.forEach((d, i) => {
+    d.className = 'progress-dot completed';
+    if (i === currentIdx) d.classList.add('active');
+  });
+}
 
+function buildDots() {
+  const container = document.getElementById('reviewDots');
+  container.innerHTML = '';
+  for (let i = 0; i < TOTAL; i++) {
+    const d = document.createElement('div');
+    d.className = 'progress-dot completed';
+    d.textContent = i + 1;
+    d.addEventListener('click', () => { currentIdx = i; renderCard(); });
+    container.appendChild(d);
+  }
+}
 
+function nextCard() { if (currentIdx < TOTAL - 1) { currentIdx++; renderCard(); } }
+function prevCard() { if (currentIdx > 0) { currentIdx--; renderCard(); } }
 
-</div>
-<div class="text-end">
-<a href="feedback1.html" type="ok" class="btn btn-primary">Ok</a>
-</div>
-</div>
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextCard();
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') prevCard();
+});
+
+document.getElementById('nextBtn').addEventListener('click', nextCard);
+document.getElementById('prevBtn').addEventListener('click', prevCard);
+
+buildDots();
+renderCard();
+</script>
 </body>
-=======
-+<html>
-<head>
-
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-
-<style>
-.font{
-font-size:25px;
-font-family:arial;
-}
-
-body{
-background-image:url('Images/logos.jpg');
-background-repeat:no-repeat;
-background-size:cover;
-bckground-position:center;
-background-attachment:fixed;
--webkit-backdrop-filter:blur(3.5px);
-backdrop-filter:blur(3.5px);
-}
-
-</style>
-</head>
-<body>
-
-<div class="container">
-<form class="w-30 m-5 border border-primary rounded p-3">
-<div calss="mb-3">
-<h3 class="bg-success text-light border rounded-top" align="center">Online Test-II</h3>
-</div>
-<br> <br>
-<div class="font">
-<label>1.Who is the father of C language?</label> <br>
-<input type="radio" class="form-check-input"  name="1" disabled> <label>  Steve Jobs</label> <br>
-<input type="radio" class="form-check-input" name="1" disabled> <label> James Gosling</label> <br> 
-<input type="radio" class="form-check-input" name="1" value="" checked >  <label> Dennis Ritchie</label> <br>
-<input type="radio" class="form-check-input" name="1" disabled>  <label> Rasmus Lerdorf</label> <br> <br> 
-<ul><summary>Answer</summary>
-<details>Answer: c <br>
-Explanation: Dennis Ritchie is the father of C Programming Language. C programming language was developed in 1972 at American Telephone & Telegraph Bell Laboratories of USA.</details> <br> </ul> 
-
-<label>2. What is the use of the tag in Javascript?</label> <br> 
-<input type="radio" class="form-check-input"  name="2" disabled> <label>  The content are displayed by non-JS-based browser</label> <br>
-<input type="radio" class="form-check-input" name="2" disabled> <label> Clear all cookies and cache</label> <br>
-<input type="radio" class="form-check-input" name="2" disabled>  <label>  Both A and B</label> <br>
-<input type="radio" class="form-check-input" name="2"  value="" checked >  <label> None of the above</label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer: d <br>
-Explanation: Since only underscore and no other special character is allowed in a variable name, it results in an error.</details> <br>  </ul> 
-
-<label>3.  What is/are the correct value(s) of font-weight property?</label> <br>
-<input type="radio" class="form-check-input"  name="3" disabled> <label> bold, italic, underline </label> <br>
-<input type="radio" class="form-check-input" name="3" disabled> <label> normal, bold, italic </label>  <br>
-<input type="radio" class="form-check-input" name="3"  value="" checked >  <label> normal, bold, bolder, lighter, initial, and inherit </label> <br>
-<input type="radio" class="form-check-input" name="3" disabled>  <label> None of the above </label> <br> <br>
-
-<ul> <summary>Answer</summary>
-<details>Answer: c <br>
-Explanation: The valid values of the font-weight property: <br>
-
-normal <br>
-bold <br>
-bolder <br>
-lighter <br>
-initial <br>
-inherit <br>
-</details> <br> </ul> 
-
-<label>4. Which of these classes helps make a text stand out?</label> <br>
-<input type="radio" class="form-check-input"  name="4" disabled> <label> small</label> <br>
-<input type="radio" class="form-check-input" name="4" disabled> <label> lead</label> <br>
-<input type="radio" class="form-check-input" name="4"  value="" checked >  <label> text-center</label> <br>
-<input type="radio" class="form-check-input" name="4" disabled>  <label>text-left</label> <br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer: b <br>
-Explanation: None.</details> <br> </ul> 
-
-<label>5. Functions in C Language are always _________ ?</label> <br>  
-<input type="radio" class="form-check-input"  name="5" disabled> <label> Internal</label> <br>
-<input type="radio" class="form-check-input" name="5" value="" checked > <label> External</label>  <br>
-<input type="radio" class="form-check-input" name="5" disabled>  <label>Both Internal and External </label> <br>
-<input type="radio" class="form-check-input" name="5" disabled>  <label>External and Internal are not valid terms for functions</label> <br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer: b
-Explanation: None</details> <br> </ul> 
-
-<label> 6.What do we call after initializing a plug-in to get A scripting interface?</label> <br>  
-<input type="radio" class="form-check-input"  name="6" disabled> <label> NP_GetMIMEDescription</label> <br>
-<input type="radio" class="form-check-input" name="6" disabled> <label>  NP_Initialize</label>  <br>
-<input type="radio" class="form-check-input" name="6" value="" checked >  <label> NPP_GetValue</label> <br>
-<input type="radio" class="form-check-input" name="6" disabled>  <label>  NP_GetValue</label> <br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer: c <br>
-Explanation: None</details> <br> </ul> 
-
-<label>7. Which of the follwing below live on the heap in java?</label> <br>  
-<input type="radio" class="form-check-input"  name="7" disabled> <label> Class</label> <br>
-<input type="radio" class="form-check-input" name="7" disabled> <label> Instance variable</label>  <br>
-<input type="radio" class="form-check-input" name="7" value="" checked > <label> Object</label> <br>
-<input type="radio" class="form-check-input" name="7" disabled>  <label> Method</label> <br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer:c <br>
-Explanation: None</details> <br>  </ul> 
-
-<label>8. Which of these interface handle sequences?</label> <br>  
-<input type="radio" class="form-check-input"  name="8" disabled> <label> Set</label> <br>
-<input type="radio" class="form-check-input" name="8" value="" checked> <label> List</label>  <br>
-<input type="radio" class="form-check-input" name="8" disabled>  <label> Comparator</label> <br>
-<input type="radio" class="form-check-input" name="8" disabled>  <label> Collection</label> <br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer:b <br>
-Explanation: None</details> <br> </ul>  
-
-
-<label>9.What is true of the finalize() method? </label> <br>  
-<input type="radio" class="form-check-input"  name="9" value="" checked > <label> It may be called zero or one times.</label> <br>
-<input type="radio" class="form-check-input" name="9" disabled> <label> It may be called zero or more times.</label>  <br>
-<input type="radio" class="form-check-input" name="9" disabled>  <label> It will be called exactly once.</label> <br>
-<input type="radio" class="form-check-input" name="9" disabled>  <label>  It may be called one or more times.</label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer:a <br>
-Explanation: The finalize() method may not be called, such as if your program crashes. However, it is guaranteed to be called no more than once.</details> <br> </ul>  
-
-<label>10. Which of the following is true about primitives?</label> <br>  
-<input type="radio" class="form-check-input"  name="10" disabled> <label> You can call methods on a primitive.</label> <br>
-<input type="radio" class="form-check-input" name="10" value="" checked > <label> </label>  You can convert a primitive to a wrapper class object simply by assigning it.<br>
-<input type="radio" class="form-check-input" name="10" disabled>  <label> </label> You can convert a wrapper class object to a primitive by calling valueOf().<br>
-<input type="radio" class="form-check-input" name="10" disabled>  <label> </label>   You can store a primitive directly into an ArrayList. <br> <br>
-<ul> <summary>Answer</summary>
-<details>Answer:b <br>
-Explanation: You can convert a primitive to a wrapper class object simply by assigning it</details> <br> </ul>  
-
-
-<label>11. Where is Client-side JavaScript code is embedded within HTML documents?</label> <br>  
-<input type="radio" class="form-check-input"  name="11" disabled> <label>A URL that uses the special javascript:code </label> <br>
-<input type="radio" class="form-check-input" name="11" value="" checked > <label> A URL that uses the special javascript:protocol</label>  <br>
-<input type="radio" class="form-check-input" name="11" disabled>  <label>A URL that uses the special javascript:encoding </label> <br>
-<input type="radio" class="form-check-input" name="11" disabled>  <label>A URL that uses the special javascript:stack </label> <br> <br> 
-<ul><summary>Answer</summary>
-<details>Answer:b <br>
-Explanation: The Client-side JavaScript code is embedded within HTML documents in four ways : <br>
-1.Inline, between a pair of “script” tags <br>
-2.From an external file specified by the src attribute of a “script” tag <br>
-3.In an HTML event handler attribute, such as onclick or onmouseover <br>
-4.In a URL that uses the special javascript: protocol. </details> <br> </ul>  
-
-<label>12. Which CSS property specifies an image as the list item marker?</label> <br>  
-<input type="radio" class="form-check-input"  name="12" value="" checked > <label>list-style-image </label> <br>
-<input type="radio" class="form-check-input" name="12" disabled> <label> list-style-picture</label>  <br>
-<input type="radio" class="form-check-input" name="12" disabled>  <label> list-style-background</label> <br>
-<input type="radio" class="form-check-input" name="12" disabled>  <label> list-style-bgimage</label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer:a <br>
-Explanation: The list-style-image property specifies an image as the list item marker. <br>
-
-Example: <br>
-
-ul { <br>
-  list-style-image: url('sqpurple.gif'); <br>
-} </deatils><br> </ul>  <br> 
-
-<label>13. Which of the following is correct about Bootstrap cross-browser consistency? </label> <br>  
-<input type="radio" class="form-check-input"  name="13" disabled> <label>Bootstrap uses Normalize to establish cross-browser consistency. </label> <br>
-<input type="radio" class="form-check-input" name="13" disabled> <label>Normalize.css is a modern, HTML5-ready alternative to CSS resets. </label>  <br>
-<input type="radio" class="form-check-input" name="13" disabled>  <label>Normalize.css a small CSS file to get better cross-browser consistency in the default styling of HTML . </label><br>
-<input type="radio" class="form-check-input" name="13" value="" checked >  <label>All of the above </label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer:d <br>
-Explanation: None</details> <br> </ul>  
-
-<label>14. Which of the following is correct about Bootstrap?</label> <br>  
-<input type="radio" class="form-check-input"  name="14" disabled> <label> Bootstrap's responsive CSS adjusts to Desktops, Tablets, and Mobiles.</label> <br>
-<input type="radio" class="form-check-input" name="14" disabled> <label> Provides a clean and uniform solution for building an interface for developers.</label>  <br>
-<input type="radio" class="form-check-input" name="14" disabled>  <label> It contains beautiful and functional built-in components which are easy to customize.</label> <br>
-<input type="radio" class="form-check-input" name="14" value="" checked >  <label>All of the above  </label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer:d <br>
-Explanation:None </details> <br> </ul>  
-
-<label>15.Which CSS property is used to specify uppercase and lowercase letters in a text? </label> <br>  
-<input type="radio" class="form-check-input"  name="15" value="" checked > <label>text-transform </label> <br>
-<input type="radio" class="form-check-input" name="15" disabled> <label> text-case</label>  <br>
-<input type="radio" class="form-check-input" name="15" disabled>  <label> case</label> <br>
-<input type="radio" class="form-check-input" name="15" disabled> <label>text-casing </label> <br> <br> 
-<ul> <summary>Answer</summary>
-<details>Answer:a <br>
-Explanation: The text-transform property is used to specify uppercase and lowercase letters in a text.
-Example: <br>
-
-p { <br>
-  text-transform: uppercase / lowercase / capitalize; <br>
-}
-</details> <br> </ul>  
-
-
-
-
-</div>
-<div class="text-end">
-<a href="feedback1.html" type="ok" class="btn btn-primary">Ok</a>
-</div>
-</div>
-</body>
->>>>>>> 0ea0fc3f2dba0c5d06f846c08d11817ac9dd0a4b
 </html>

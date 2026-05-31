@@ -1,378 +1,157 @@
-<<<<<<< HEAD
-<html>
-      <head>
-<!-- CSS only -->
-<link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<title>Gallery - Web-software Solutions</title>
+</head>
+<body>
 
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-
-<style>
-.btn{
-text-align: center;
-}
-
-.header{
-height:9%;
-width:100%;
-color:white;
-background-color:purple;
-}
-
-.img-fluid{
-width:100%;
-height:80%;
-}
-
-.carousel-control-next{
-color:white;
-background-color:black;
-height:10%;
-top:45%;
-width:5%;
-}
-
-.carousel-control-prev{
-color:white;
-background-color:black;
-height:10%;
-top:45%;
-width:5%;
-}
-	
-.justify{
-text-align: justify;
-}
-
-.carousel-caption {
-color:brown;
-background-color:white;
-}
-
-.footer{
-height:10%;
-width:100%;
-background-color:RebeccaPurple;
-color:white;
-}
-
-a{
-text-decoration:none;
-color:white;
-}
-
-
-body{
-background-image:url('Images/logos.jpg');
-background-repeat:no-repeat;
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
--webkit-backdrop-filter:blur(5.5px);
-backdrop-filter:blur(4.0px);
-}
-
-</style>
-      </head>
-   <body>
-
-<div class="header">
-<h1 align="center"><u>Web-software solutions</u></h1></div>
-
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"></a>
-        <img src="Images\logos.jpg" style="width:40px;" class="rounded-pill"> &nbsp &nbsp &nbsp &nbsp
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+<nav class="navbar navbar-expand-lg navbar-modern">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <i class="fas fa-code me-2" style="color:var(--accent);font-size:1.5rem;"></i><span class="fw-bold" style="color:#fff;">WebSoft</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="home.html">Home</a>
-        </li><li class="nav-item dropdown">
-          <a class="nav-link" href="about.html">About us</a>
-          </li>
-        <li class="nav-item">
-          <a class="nav-link" href="gallery.html">Gallery</a>
-        </li>  
-        <li class="nav-item">
-          <a class="nav-link" href="carrer.html">carrer</a>
-        </li> 
-        <li class="nav-item">
-          <a class="nav-link" href="service.html">Service</a>
-        </li>   
-        <li class="nav-item">
-          <a class="nav-link" href="login form.html">Sign in</a>
-        </li>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="carrer.html">Career</a></li>
+        <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="login form.html">Sign In</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-</div>
+<main class="container py-5">
+  <div class="text-center mb-5 fade-in-up">
+    <div class="icon-decoration icon-decoration-lg mb-3" style="margin:0 auto 1.5rem;">
+      <i class="fas fa-images"></i>
+    </div>
+    <h1 class="display-4 fw-bold gradient-text">Our Gallery</h1>
+    <p class="lead" style="color:rgba(255,255,255,0.7);max-width:700px;margin:0 auto;">Take a visual tour of our workspace, culture, and the people behind the innovation.</p>
+    <div class="section-divider"></div>
+  </div>
 
-<br> <br>
-
-<div class="container">
-	<div class="carousel slide" data-bs-ride="carousel" id="myCarousel">
-                         <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#myCarousel">
-                   	            <span class="carousel-control-next-icon"></span>
-	    </button>
-                         <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#myCarousel">
-		<span class="carousel-control-prev-icon"></span>
-	     </button>
-                         <div class="carousel-indicators">
-	            <button data-bs-slide-to="0" data-bs-target="#myCarousel" class="active"></button>
-	             <button data-bs-slide-to="1" data-bs-target="#myCarousel" ></button>
-	              <button data-bs-slide-to="2" data-bs-target="#myCarousel" ></button>
-                    <button data-bs-slide-to="3" data-bs-target="#myCarousel" class="active"></button>
-	             <button data-bs-slide-to="4" data-bs-target="#myCarousel" ></button>
-	              <button data-bs-slide-to="5" data-bs-target="#myCarousel" ></button>
-	     </div>
-	      <div class="carousel-inner">
-	             <div class="carousel-item active" data-bs-interval="4500">
-		<img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/cc57c047013995.586d62956123a.jpg" class="img-fluid" />
-                                 <div class="carousel-caption">
-                                  <h3>Reception</h3>
-                                    </div>
-                                      </div>
-	             <div class="carousel-item" data-bs-interval="4500">
-		<img src="https://content3.jdmagicbox.com/comp/def_content/art-galleries/hw6shh8urw-art-galleries-6-g3w4z.jpg?clr=521414" class="img-fluid"/>
-                                 <div class="carousel-caption">
-                                  <h3>Art Gallery</h3>
-                                    </div>
-                                      </div>                                 
-	              <div class="carousel-item"  data-bs-interval="4500">
-		<img src="https://media.istockphoto.com/vectors/team-work-in-office-vector-id872549924?k=20&m=872549924&s=612x612&w=0&h=hPjQ1DLQHTfVLZqXT1KaHJEYEcPXriTpc6O74tQiqxA=" class="img-fluid"/>
-                                 <div class="carousel-caption">
-                                  <h3>Team-Work</h3>
-                                    </div>
-                                      </div>                                 
-                      <div class="carousel-item" data-bs-interval="3500">
-		<img src="https://cloudwalkerbusiness.com/blogs/wp-content/uploads/2022/02/Conference-Room-Technology-Trends-In-2022-banner-1-1.jpg" class="img-fluid" />
-                                 <div class="carousel-caption">
-                                  <h3>Team-Conference</h3>
-                                    </div>
-                                      </div>                                 
-	             <div class="carousel-item" data-bs-interval="3500">
-		<img src="https://i.pinimg.com/originals/0b/a7/5c/0ba75c3b5aada1ee95ccc2bc614f1f23.jpg" class="img-fluid"/>
-                                 <div class="carousel-caption">
-                                  <h3>Cafeteria</h3>
-                                    </div>
-                                      </div>                                 
-	              <div class="carousel-item" data-bs-interval="3500">
-		<img src="https://www.getdigsy.com/blog/wp-content/uploads/2019/09/Gym-Space-e1568761495749.png" class="img-fluid"/>
-                                 <div class="carousel-caption">
-                                  <h3>Gym-area</h3>
-                                    </div>
-                                      </div>                                
-                           </div>
-
-                   </div>
-             </div> <br> <br>
-
-
-<div class="footer"> <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp     
-&copy; Copy rights by software solutions Pvt Ltd., &nbsp &nbsp &nbsp 
-
-  Teams
-
- &nbsp &nbsp &nbsp  @Terms and conditions
-
- &nbsp &nbsp &nbsp<a href="quotes.html">quotes</a>
-	       
-              </div>  
-       </body>
-=======
-<html>
-      <head>
-<!-- CSS only -->
-<link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-
-<style>
-.btn{
-text-align: center;
-}
-
-.header{
-height:9%;
-width:100%;
-color:white;
-background-color:purple;
-}
-
-.img-fluid{
-width:100%;
-height:80%;
-}
-
-.carousel-control-next{
-color:white;
-background-color:black;
-height:10%;
-top:45%;
-width:5%;
-}
-
-.carousel-control-prev{
-color:white;
-background-color:black;
-height:10%;
-top:45%;
-width:5%;
-}
-	
-.justify{
-text-align: justify;
-}
-
-.carousel-caption {
-color:brown;
-background-color:white;
-}
-
-.footer{
-height:10%;
-width:100%;
-background-color:RebeccaPurple;
-color:white;
-}
-
-a{
-text-decoration:none;
-color:white;
-}
-
-
-body{
-background-image:url('Images/logos.jpg');
-background-repeat:no-repeat;
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
--webkit-backdrop-filter:blur(5.5px);
-backdrop-filter:blur(4.0px);
-}
-
-</style>
-      </head>
-   <body>
-
-<div class="header">
-<h1 align="center"><u>Web-software solutions</u></h1></div>
-
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"></a>
-        <img src="Images\logos.jpg" style="width:40px;" class="rounded-pill"> &nbsp &nbsp &nbsp &nbsp
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
+  <div id="galleryCarousel" class="carousel slide carousel-fade shadow-lg rounded-3 overflow-hidden" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="4500">
+        <div class="carousel-decorative" style="background:linear-gradient(135deg,#1e1b4b,#312e81);">
+          <div><i class="fas fa-door-open slide-icon"></i><h3>Reception</h3><p>Our welcoming reception area sets the tone for innovation and collaboration from the moment you arrive.</p></div>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="4500">
+        <div class="carousel-decorative" style="background:linear-gradient(135deg,#1e1b4b,#4c1d95);">
+          <div><i class="fas fa-paint-brush slide-icon"></i><h3>Art Gallery</h3><p>Our walls showcase inspiring art that fuels creativity and sparks fresh ideas every day.</p></div>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="4500">
+        <div class="carousel-decorative" style="background:linear-gradient(135deg,#1e1b4b,#065f46);">
+          <div><i class="fas fa-users slide-icon"></i><h3>Team Work</h3><p>Collaboration is at our core. Our teams work together seamlessly to deliver exceptional results.</p></div>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="3500">
+        <div class="carousel-decorative" style="background:linear-gradient(135deg,#1e1b4b,#701a75);">
+          <div><i class="fas fa-chalkboard-teacher slide-icon"></i><h3>Team Conference</h3><p>Our conference rooms are equipped with cutting-edge technology for productive brainstorming sessions.</p></div>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="3500">
+        <div class="carousel-decorative" style="background:linear-gradient(135deg,#1e1b4b,#1e3a5f);">
+          <div><i class="fas fa-coffee slide-icon"></i><h3>Cafeteria</h3><p>Our cafeteria is the perfect spot to recharge, network, and share ideas over great food and coffee.</p></div>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="3500">
+        <div class="carousel-decorative" style="background:linear-gradient(135deg,#1e1b4b,#15803d);">
+          <div><i class="fas fa-dumbbell slide-icon"></i><h3>Gym Area</h3><p>We believe in a healthy work-life balance. Our on-site gym helps keep our team energized and fit.</p></div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
     </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="home.html">Home</a>
-        </li><li class="nav-item dropdown">
-          <a class="nav-link" href="about.html">About us</a>
-          </li>
-        <li class="nav-item">
-          <a class="nav-link" href="gallery.html">Gallery</a>
-        </li>  
-        <li class="nav-item">
-          <a class="nav-link" href="carrer.html">carrer</a>
-        </li> 
-        <li class="nav-item">
-          <a class="nav-link" href="service.html">Service</a>
-        </li>   
-        <li class="nav-item">
-          <a class="nav-link" href="login form.html">Sign in</a>
-        </li>
-      </ul>
+    <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="row g-4 mt-5">
+    <div class="col-md-4 fade-in-up">
+      <div class="glass-card text-center p-4"><i class="fas fa-laptop-code mb-3" style="font-size:2.5rem;color:var(--accent);"></i><h5>Modern Workspace</h5><p style="color:rgba(255,255,255,0.6);">State-of-the-art infrastructure designed for maximum productivity.</p></div>
+    </div>
+    <div class="col-md-4 fade-in-up">
+      <div class="glass-card text-center p-4"><i class="fas fa-gamepad mb-3" style="font-size:2.5rem;color:var(--accent);"></i><h5>Recreation Zone</h5><p style="color:rgba(255,255,255,0.6);">Break areas with games and activities to keep the team refreshed.</p></div>
+    </div>
+    <div class="col-md-4 fade-in-up">
+      <div class="glass-card text-center p-4"><i class="fas fa-leaf mb-3" style="font-size:2.5rem;color:var(--accent);"></i><h5>Green Campus</h5><p style="color:rgba(255,255,255,0.6);">Eco-friendly campus with sustainable practices and green spaces.</p></div>
     </div>
   </div>
-</nav>
+</main>
 
-</div>
+<footer class="footer-modern">
+  <div class="container">
+    <div class="row g-4 pb-4 border-bottom border-light border-opacity-10 mb-4">
+      <div class="col-lg-4">
+        <h5 class="text-white fw-bold mb-3"><i class="fas fa-code me-2" style="color:var(--accent);"></i>WebSoft</h5>
+        <p class="mb-0" style="color:rgba(255,255,255,0.55);font-size:0.9rem;">Empowering learners with cutting-edge web development and software testing education. Build your future with industry-aligned courses.</p>
+      </div>
+      <div class="col-lg-2 col-md-4">
+        <h6 class="text-white fw-semibold mb-3">Quick Links</h6>
+        <div class="d-flex flex-column gap-2">
+          <a href="home.html" style="color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.9rem;transition:color 0.3s;"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;"></i>Home</a>
+          <a href="about.html" style="color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.9rem;transition:color 0.3s;"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;"></i>About</a>
+          <a href="gallery.html" style="color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.9rem;transition:color 0.3s;"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;"></i>Gallery</a>
+          <a href="carrer.html" style="color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.9rem;transition:color 0.3s;"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;"></i>Career</a>
+          <a href="service.html" style="color:rgba(255,255,255,0.55);text-decoration:none;font-size:0.9rem;transition:color 0.3s;"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;"></i>Services</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4">
+        <h6 class="text-white fw-semibold mb-3">Contact</h6>
+        <div class="d-flex flex-column gap-2" style="color:rgba(255,255,255,0.55);font-size:0.9rem;">
+          <span><i class="fas fa-envelope me-2" style="color:var(--accent);"></i>info@websoft.com</span>
+          <span><i class="fas fa-phone me-2" style="color:var(--accent);"></i>+1 (555) 123-4567</span>
+          <span><i class="fas fa-map-marker-alt me-2" style="color:var(--accent);"></i>123 Tech St, Silicon Valley, CA</span>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4">
+        <h6 class="text-white fw-semibold mb-3">Follow Us</h6>
+        <div class="d-flex gap-3">
+          <a href="#" class="d-flex align-items-center justify-content-center" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='var(--gradient)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.color='rgba(255,255,255,0.6)'"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="d-flex align-items-center justify-content-center" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='var(--gradient)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.color='rgba(255,255,255,0.6)'"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="d-flex align-items-center justify-content-center" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='var(--gradient)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.color='rgba(255,255,255,0.6)'"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="d-flex align-items-center justify-content-center" style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);text-decoration:none;transition:all 0.3s;" onmouseover="this.style.background='var(--gradient)';this.style.color='#fff'" onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.color='rgba(255,255,255,0.6)'"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p class="mt-3 mb-0" style="color:rgba(255,255,255,0.4);font-size:0.8rem;">Stay connected for updates and new courses.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        <p class="mb-0" style="color:rgba(255,255,255,0.4);font-size:0.85rem;">&copy; 2026 WebSoft Solutions Pvt Ltd. All rights reserved. | <a href="#" style="color:var(--accent);text-decoration:none;">Privacy Policy</a> | <a href="#" style="color:var(--accent);text-decoration:none;">Terms of Service</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
 
-<br> <br>
-
-<div class="container">
-	<div class="carousel slide" data-bs-ride="carousel" id="myCarousel">
-                         <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#myCarousel">
-                   	            <span class="carousel-control-next-icon"></span>
-	    </button>
-                         <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#myCarousel">
-		<span class="carousel-control-prev-icon"></span>
-	     </button>
-                         <div class="carousel-indicators">
-	            <button data-bs-slide-to="0" data-bs-target="#myCarousel" class="active"></button>
-	             <button data-bs-slide-to="1" data-bs-target="#myCarousel" ></button>
-	              <button data-bs-slide-to="2" data-bs-target="#myCarousel" ></button>
-                    <button data-bs-slide-to="3" data-bs-target="#myCarousel" class="active"></button>
-	             <button data-bs-slide-to="4" data-bs-target="#myCarousel" ></button>
-	              <button data-bs-slide-to="5" data-bs-target="#myCarousel" ></button>
-	     </div>
-	      <div class="carousel-inner">
-	             <div class="carousel-item active" data-bs-interval="4500">
-		<img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/cc57c047013995.586d62956123a.jpg" class="img-fluid" />
-                                 <div class="carousel-caption">
-                                  <h3>Reception</h3>
-                                    </div>
-                                      </div>
-	             <div class="carousel-item" data-bs-interval="4500">
-		<img src="https://content3.jdmagicbox.com/comp/def_content/art-galleries/hw6shh8urw-art-galleries-6-g3w4z.jpg?clr=521414" class="img-fluid"/>
-                                 <div class="carousel-caption">
-                                  <h3>Art Gallery</h3>
-                                    </div>
-                                      </div>                                 
-	              <div class="carousel-item"  data-bs-interval="4500">
-		<img src="https://media.istockphoto.com/vectors/team-work-in-office-vector-id872549924?k=20&m=872549924&s=612x612&w=0&h=hPjQ1DLQHTfVLZqXT1KaHJEYEcPXriTpc6O74tQiqxA=" class="img-fluid"/>
-                                 <div class="carousel-caption">
-                                  <h3>Team-Work</h3>
-                                    </div>
-                                      </div>                                 
-                      <div class="carousel-item" data-bs-interval="3500">
-		<img src="https://cloudwalkerbusiness.com/blogs/wp-content/uploads/2022/02/Conference-Room-Technology-Trends-In-2022-banner-1-1.jpg" class="img-fluid" />
-                                 <div class="carousel-caption">
-                                  <h3>Team-Conference</h3>
-                                    </div>
-                                      </div>                                 
-	             <div class="carousel-item" data-bs-interval="3500">
-		<img src="https://i.pinimg.com/originals/0b/a7/5c/0ba75c3b5aada1ee95ccc2bc614f1f23.jpg" class="img-fluid"/>
-                                 <div class="carousel-caption">
-                                  <h3>Cafeteria</h3>
-                                    </div>
-                                      </div>                                 
-	              <div class="carousel-item" data-bs-interval="3500">
-		<img src=" https://planner5d.com/s/6/images/landing-seo/gym-floor-plan/created_with_our_tool@2x.jpg" class="img-fluid"/>
-                                 <div class="carousel-caption">
-                                  <h3>Gym-area</h3>
-                                    </div>
-                                      </div>                                
-                           </div>
-
-                   </div>
-             </div> <br> <br>
-
-
-<div class="footer"> <br>
-&nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp     
-&copy; Copy rights by software solutions Pvt Ltd., &nbsp &nbsp &nbsp 
-
-  Teams
-
- &nbsp &nbsp &nbsp  @Terms and conditions
-
- &nbsp &nbsp &nbsp<a href="quotes.html">quotes</a>
-	       
-              </div>  
-       </body>
->>>>>>> 0ea0fc3f2dba0c5d06f846c08d11817ac9dd0a4b
+</body>
 </html>
